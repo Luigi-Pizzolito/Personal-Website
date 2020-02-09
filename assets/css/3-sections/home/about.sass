@@ -1,0 +1,32 @@
+section.about
+    background:
+        image: url("/assets/img/home/about-bg.png")
+        position: center bottom
+        size: cover
+        // color: lightblue
+
+    h2
+        color: white
+        font:
+            family: 'Oswald'
+            style: italic
+            size: 60px
+            weight: 400
+        line-height: 1
+        margin-left: -80px
+        margin-top: 0
+        margin-bottom: 20px
+
+    .home-lead
+        color: white
+        font:
+            family: 'Open Sans'
+        padding-bottom: 160px
+        margin-left: 30px
+
+    @media( max-width: 640px)
+        h2, .home-lead
+            margin-right: 30px
+            margin-left: auto
+            max-width: 300px
+            text-align: right

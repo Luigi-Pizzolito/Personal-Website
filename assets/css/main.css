@@ -412,9 +412,9 @@ body {
     margin: 10px 0 0 10px;
     border-radius: 8px; }
   .home-wrap header .logo-div p, .home-wrap header .logo-desc {
-    font-family: Oswald;
+    font-family: 'Oswald';
+    font-weight: 200;
     color: #000;
-    letter-spacing: 2px;
     text-align: center;
     padding-top: 5px;
     margin: 0;
@@ -550,12 +550,35 @@ body {
             transform: translateY(0%); } }
 
 section.about {
-  background-color: lightblue; }
+  background-image: url("/assets/img/home/about-bg.png");
+  background-position: center bottom;
+  background-size: cover; }
   section.about h2 {
     color: white;
     font-family: 'Oswald';
     font-style: italic;
-    line-height: 1; }
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    margin-left: -80px;
+    margin-top: 0;
+    margin-bottom: 20px; }
+  section.about .home-lead {
+    color: white;
+    font-family: 'Open Sans';
+    padding-bottom: 160px;
+    margin-left: 30px; }
+  @media (max-width: 640px) {
+    section.about h2, section.about .home-lead {
+      margin-right: 30px;
+      margin-left: auto;
+      max-width: 300px;
+      text-align: right; } }
+
+section.electronics {
+  background-image: url("/assets/img/home/electronics-bg.png"); }
+  section.electronics .caroussel {
+    background: pink; }
 
 .home-wrap {
   display: -ms-flexbox;
@@ -596,13 +619,18 @@ section.about {
 .col-50 {
   width: 50%; }
 
+.push-right {
+  margin-left: 330px; }
+
 @media (max-width: 640px) {
   .home-sections .flex {
     display: block; }
   .col-1 {
     max-width: 100%; }
   .col-50 {
-    width: auto; } }
+    width: auto; }
+  .push-right {
+    margin-left: 10px; } }
 
 body {
   background: #A4A4A4; }
