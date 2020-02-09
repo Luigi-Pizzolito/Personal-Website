@@ -9,20 +9,22 @@ mixin nav-content()
         li: a(href="#academics") Academics/CV
         li: a(href="#contact") Contact
 
-.mobile-nav.is-open
-    +nav-content()
-
 header
     .header-position
 
-        div.logo-div
+        .logo-div
             h1.logo Luigi Pizzolito
-            p.logo-desc Luigi Pizzolito
+            p Luigi Pizzolito
+        span.logo-desc Luigi Pizzolito
 
         nav.site-nav
             +nav-content()
 
-        a(href="mailto:luigi.pizzolito@hotmail.com").email-link +Email Me
+        ul
+            a(href="mailto:luigi.pizzolito@hotmail.com").email-link +Email Me
 
 
         .mobile-nav-toggle: span
+
+.mobile-nav
+    +nav-content()
