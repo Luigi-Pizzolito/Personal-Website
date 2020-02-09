@@ -4,6 +4,7 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var jade        = require('gulp-jade');
+var deploy      = require("gulp-gh-pages");
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
@@ -15,7 +16,7 @@ var messages = {
  */
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
-    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
+    return cp.spawn( jekyll , ['build', '-q'], {stdio: 'inherit'})
         .on('close', done);
 });
 
@@ -29,12 +30,12 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['jade','sass', 'jekyll-build'], function() {
     browserSync({
         server: {
             baseDir: '_site'
         },
-        notify: true
+        notify: false
     });
 });
 
@@ -77,3 +78,11 @@ gulp.task('watch', function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+
+/**
+ * Deploy to GitHub Pages (to be tested)
+ */
+gulp.task("deploy", ['jade','sass', 'jekyll-build'], function () {
+    return gulp.src("./_site/**/*")
+        .pipe(deploy());
+});

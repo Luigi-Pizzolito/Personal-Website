@@ -1,0 +1,175 @@
+.home-wrap
+    header
+        width: 135px
+        background: white
+        padding: 20px 0
+
+        .header-position
+            width: 135px
+            position: fixed
+            top: 0
+            left: 0
+            bottom: 0
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            pointer-events: none
+
+        .logo
+            +hide-text
+            max-width: 135px
+            background:
+                image: url(/assets/img/logo.jpg)
+                repeat: no-repeat
+                position: center
+                size: contain
+                // color: pink
+            height: 115px
+            padding: 0
+            margin: 10px 0 0 0
+
+        .logo-desc
+            font-family: Oswald
+            color: $nav-title
+            letter-spacing: 2px
+            text-align: center
+            padding-top: 5px
+            margin: 0
+
+        .logo-div
+            margin: 0
+            padding: 0
+
+        .site-nav
+            ul
+                list-style: none
+                margin: 20px 0
+                padding: 0 20px 0 0
+                text-align: right
+
+            li
+                margin-bottom: 10px
+
+                &:last-child
+                    margin-bottom: 0
+
+        .email-link
+            display: block
+            text-align: right
+            padding-right: 20px
+            padding-bottom: 5px
+            text-decoration: underline
+
+        .mobile-nav-toggle
+            display: none
+            width: 50px
+            height: 50px
+            // background: pink
+            margin-right: 20px
+            align-items: center
+
+            span,
+            span::before,
+            span::after
+                content: ""
+                display: block
+                width: 100%
+                height: 2px
+                background-color: #333
+                position: relative
+                transition: all 0.3s ease-in-out
+
+            span::before
+                top: 15px
+
+            span::after
+                top: -17px
+
+            &.is-open span
+                background: transparent
+
+            &.is-open span::before,
+            &.is-open span::after
+                transform-origin: center
+                transform: rotate(45deg)
+                top: 0    
+
+            &.is-open span::after  
+                transform: rotate(-45deg) 
+
+    ul
+        a
+            font-family: Oswald
+            text-decoration: none
+        a:link,
+        a:visited
+            color: $nav-link
+        a:hover
+            color: $nav-link-hover
+        a:active
+            color: $nav-link-active 
+
+    .mobile-nav
+        display: none
+        position: absolute
+        width: 100%
+        background: white
+        padding: 30px 0 20px
+        transform: translateY(-100%)
+        transition: all 0.3s ease-in-out
+
+        ul
+            list-style: none
+            margin: 0
+            padding: 0
+
+        li
+            text-align: center
+            margin-bottom: 10px
+
+
+
+@media (max-width: 775px)
+    // .home-wrap
+    //     width: auto
+
+    .home-wrap
+        header
+            width: auto
+            padding: 10px 0
+            //
+            // position: fixed
+            // top: 0
+            // left: 0
+            // right: 0
+            //
+
+            .header-position
+                width: auto
+                position: relative
+                top: auto
+                bottom: auto
+                left: auto
+                flex-direction: row
+                align-items: center
+
+            .site-nav,
+            .email-link,
+            .logo-desc
+                display: none
+                margin: 0
+                padding: 0
+            
+            .logo
+                height: 45px
+                margin: 0
+                padding: 0
+
+            .mobile-nav-toggle
+                display: flex
+                cursor: pointer
+            
+        .mobile-nav.is-open
+            display: block
+            transform: translateY(0%)
+            

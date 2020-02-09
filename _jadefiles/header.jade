@@ -1,0 +1,28 @@
+mixin nav-content()
+    ul
+        li: a(href="#about") About
+        li: a(href="#electronics") Electronics
+        li: a(href="#software") Software
+        li: a(href="#theatre") Sound Design
+        li: a(href="#videography") Videography
+        li: a(href="#publicspeaking",style="letter-spacing:-0.2px;") Public Appearances
+        li: a(href="#academics") Academics/CV
+        li: a(href="#contact") Contact
+
+.mobile-nav.is-open
+    +nav-content()
+
+header
+    .header-position
+
+        div.logo-div
+            h1.logo Luigi Pizzolito
+            p.logo-desc Luigi Pizzolito
+
+        nav.site-nav
+            +nav-content()
+
+        a(href="mailto:luigi.pizzolito@hotmail.com").email-link +Email Me
+
+
+        .mobile-nav-toggle: span
