@@ -1,0 +1,37 @@
+.home-cta
+    width: 80%
+    font:
+        family: 'Oswald'
+        style: normal
+        weight: 500
+        size: 28px
+    line-height: 1
+    text-decoration: none
+    color: $button-color
+    text-align: center
+    display: block
+    border: 1px solid $button-color
+    padding: 0.3em 0
+    margin: 0.3em auto
+    box-shadow: 0px 5px 14px rgba(0,0,0,0.4)
+    position: relative
+    z-index: 1
+    transition: 0.08s ease-in
+    border-radius: 4px
+    &::before
+        content: ""
+        position: absolute
+        background: $nav-mob-sub-background
+        bottom: 0
+        left: 0
+        right: 100%
+        top: 0
+        z-index: -1
+        -webkit-transition: right 0.2s ease-in-out
+    &:hover::before
+        right: 0
+    &:hover
+        color: $button-hover
+    &:active
+        color: $button-active
+

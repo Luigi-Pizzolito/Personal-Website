@@ -1,8 +1,24 @@
+mixin projects()
+    a(href="1").container-item UPS Clock
+    a(href="2").container-item Ring Clock
+    a(href="3").container-item IoT System
+    a(href="4").container-item Bass Pedal
+    a(href="5").container-item Music Box
+    a(href="6").container-item Air Ionizer
+    a(href="7").container-item Sonic Deauther
+
 section.electronics
     .flex.flex--center
-        .col-50
-            .caroussel caroussel
-        .col-50.flex.flex--center.order-first
-            .col-1
+        .col-1
                 h2 Electronics
                 p.home-lead As a self-taught electronics aficionado, I create everything. Whether it is laying out a circuit board, designing a schematic, prototyping on breadboard or 3D printing an enclousure; I’m onto it.
+                a(href="/projects/").home-cta See Projects
+        .col-50
+    .flex.flex--center
+        .col-100
+            .caroussel
+                .container
+                    +projects()
+                    +projects()
+                    //- .container
+                        

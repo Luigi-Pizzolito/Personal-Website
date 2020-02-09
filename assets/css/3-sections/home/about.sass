@@ -6,27 +6,35 @@ section.about
         // color: lightblue
 
     h2
-        color: white
+        color: $section-title
         font:
             family: 'Oswald'
             style: italic
             size: 60px
-            weight: 400
+            weight: 600
         line-height: 1
-        margin-left: -80px
+        margin-left: -60px
         margin-top: 0
         margin-bottom: 20px
 
     .home-lead
-        color: white
+        color: $section-text
         font:
             family: 'Open Sans'
-        padding-bottom: 160px
+        padding-bottom: 200px
         margin-left: 30px
+
+    .home-cta
+        margin-right: 0px
+        width: 65%
 
     @media( max-width: 640px)
         h2, .home-lead
-            margin-right: 30px
+            margin-right: 10px
             margin-left: auto
             max-width: 300px
             text-align: right
+
+        .home-cta
+            margin-right: 5px
+            width: 45%

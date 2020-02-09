@@ -387,6 +387,7 @@ body {
   background: white;
   padding: 20px 0; }
   .home-wrap header .header-position {
+    background: white;
     width: 135px;
     position: fixed;
     top: 0;
@@ -413,6 +414,7 @@ body {
     border-radius: 8px; }
   .home-wrap header .logo-div p, .home-wrap header .logo-desc {
     font-family: 'Oswald';
+    font-style: normal;
     font-weight: 200;
     color: #000;
     text-align: center;
@@ -549,36 +551,178 @@ body {
     -webkit-transform: translateY(0%);
             transform: translateY(0%); } }
 
+.home-cta {
+  width: 80%;
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1;
+  text-decoration: none;
+  color: #FFF;
+  text-align: center;
+  display: block;
+  border: 1px solid #FFF;
+  padding: 0.3em 0;
+  margin: 0.3em auto;
+  box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+  transition: 0.08s ease-in;
+  border-radius: 4px; }
+  .home-cta::before {
+    content: "";
+    position: absolute;
+    background: #EEE;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.2s ease-in-out; }
+  .home-cta:hover::before {
+    right: 0; }
+  .home-cta:hover {
+    color: #777; }
+  .home-cta:active {
+    color: #000; }
+
 section.about {
   background-image: url("/assets/img/home/about-bg.png");
   background-position: center bottom;
   background-size: cover; }
   section.about h2 {
-    color: white;
+    color: #FFF;
     font-family: 'Oswald';
     font-style: italic;
     font-size: 60px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1;
-    margin-left: -80px;
+    margin-left: -60px;
     margin-top: 0;
     margin-bottom: 20px; }
   section.about .home-lead {
-    color: white;
+    color: #FFF;
     font-family: 'Open Sans';
-    padding-bottom: 160px;
+    padding-bottom: 200px;
     margin-left: 30px; }
+  section.about .home-cta {
+    margin-right: 0px;
+    width: 65%; }
   @media (max-width: 640px) {
     section.about h2, section.about .home-lead {
-      margin-right: 30px;
+      margin-right: 10px;
       margin-left: auto;
       max-width: 300px;
-      text-align: right; } }
+      text-align: right; }
+    section.about .home-cta {
+      margin-right: 5px;
+      width: 45%; } }
 
 section.electronics {
-  background-image: url("/assets/img/home/electronics-bg.png"); }
+  position: relative; }
+  section.electronics::after {
+    content: "";
+    background-image: url("/assets/img/home/electronics-bg.png");
+    background-position: right bottom;
+    background-size: cover;
+    z-index: -2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  section.electronics::before {
+    content: "";
+    background-color: black;
+    opacity: 0.1;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  section.electronics h2 {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-style: italic;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1;
+    margin-left: 30px;
+    margin-top: 0;
+    margin-bottom: 20px; }
+  section.electronics .home-lead {
+    color: #FFF;
+    font-family: 'Open Sans';
+    margin-left: 30px; }
   section.electronics .caroussel {
-    background: pink; }
+    width: 85%;
+    margin: 20px auto 0 auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #FFF;
+    border-radius: 4px; }
+    section.electronics .caroussel .container {
+      padding: 10px 0;
+      margin: 5px;
+      display: inline-block;
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+      -webkit-animation: moveSlideshow 10s linear infinite;
+              animation: moveSlideshow 10s linear infinite; }
+      section.electronics .caroussel .container:hover {
+        -webkit-animation-play-state: paused;
+                animation-play-state: paused; }
+      section.electronics .caroussel .container .container-item {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 2px solid white;
+        border-radius: 4px;
+        padding: 2.5px 10px;
+        margin: 0px 5px;
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1;
+        overflow: shown;
+        white-space: nowrap;
+        text-decoration: none;
+        text-align: center; }
+        section.electronics .caroussel .container .container-item:hover {
+          color: #777;
+          background: #FFF; }
+        section.electronics .caroussel .container .container-item:active {
+          color: #000; }
+
+@-webkit-keyframes moveSlideshow {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%); }
+  100% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); } }
+
+@keyframes moveSlideshow {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%); }
+  100% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); } }
+  @media (max-width: 640px) {
+    section.electronics .home-lead {
+      margin-bottom: 75vw; }
+    section.electronics h2, section.electronics .home-lead {
+      margin-left: 20px;
+      margin-right: 20px; }
+    section.electronics .caroussel {
+      width: 77%; } }
+  @media (min-width: 775px) {
+    section.electronics .caroussel {
+      width: calc( (100vw - 135px) *0.85); } }
 
 .home-wrap {
   display: -ms-flexbox;
@@ -618,6 +762,9 @@ section.electronics {
 
 .col-50 {
   width: 50%; }
+
+.col-100 {
+  width: 100%; }
 
 .push-right {
   margin-left: 330px; }
