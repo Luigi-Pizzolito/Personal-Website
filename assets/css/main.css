@@ -423,7 +423,8 @@ body {
     display: block; }
   .home-wrap header .logo-desc {
     padding: 0;
-    display: none; }
+    display: none;
+    font-weight: 200; }
   .home-wrap header .logo-div {
     margin: 0;
     padding: 0; }
@@ -444,8 +445,8 @@ body {
     text-decoration: underline; }
   .home-wrap header .mobile-nav-toggle {
     display: none;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin-right: 20px;
     margin-left: 65px;
     -ms-flex-align: center;
@@ -536,7 +537,7 @@ body {
     .home-wrap header .logo-desc {
       padding: 0;
       position: absolute;
-      top: 25px;
+      top: 20px;
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
@@ -590,7 +591,8 @@ body {
 section.about {
   background-image: url("/assets/img/home/about-bg.png");
   background-position: center bottom;
-  background-size: cover; }
+  background-size: cover;
+  border-bottom: 1px solid white; }
   section.about h2 {
     color: #FFF;
     font-family: 'Oswald';
@@ -615,12 +617,15 @@ section.about {
       margin-left: auto;
       max-width: 300px;
       text-align: right; }
+    section.about .home-lead {
+      font-size: 20px; }
     section.about .home-cta {
       margin-right: 5px;
       width: 45%; } }
 
 section.electronics {
-  position: relative; }
+  position: relative;
+  border-bottom: 1px solid white; }
   section.electronics::after {
     content: "";
     background-image: url("/assets/img/home/electronics-bg.png");
@@ -632,16 +637,16 @@ section.electronics {
     bottom: 0;
     left: 0;
     right: 0; }
-  section.electronics::before {
-    content: "";
+  section.electronics .cover {
     background-color: black;
-    opacity: 0.1;
+    opacity: 0.25;
     z-index: -1;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0; }
+    right: 0;
+    display: none; }
   section.electronics h2 {
     color: #FFF;
     font-family: 'Oswald';
@@ -677,6 +682,7 @@ section.electronics {
                 animation-play-state: paused; }
       section.electronics .caroussel .container .container-item {
         background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
         color: white;
         border: 2px solid white;
         border-radius: 4px;
@@ -713,8 +719,11 @@ section.electronics {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%); } }
   @media (max-width: 640px) {
+    section.electronics .cover {
+      display: block; }
     section.electronics .home-lead {
-      margin-bottom: 75vw; }
+      margin-bottom: 40vw;
+      font-size: 20px; }
     section.electronics h2, section.electronics .home-lead {
       margin-left: 20px;
       margin-right: 20px; }
@@ -722,7 +731,7 @@ section.electronics {
       width: 77%; } }
   @media (min-width: 775px) {
     section.electronics .caroussel {
-      width: calc( (100vw - 135px) *0.85); } }
+      width: calc( (100vw - 135px) *0.8); } }
 
 .home-wrap {
   display: -ms-flexbox;
