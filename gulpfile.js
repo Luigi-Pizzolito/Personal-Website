@@ -58,7 +58,7 @@ gulp.task('sass', function () {
  * Compile files from _jadefiles into html for _includes
  */
 gulp.task('jade', function () {
-    return gulp.src('_jadefiles/*.jade')
+    return gulp.src('_jadefiles/*/*.jade')
     .pipe(jade())
     .pipe(gulp.dest('_includes'));
 });
@@ -70,7 +70,7 @@ gulp.task('jade', function () {
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
     gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_includes/*', '*.yml'], ['jekyll-rebuild']);
-    gulp.watch('_jadefiles/*.jade', ['jade']);
+    gulp.watch('_jadefiles/*/*.jade', ['jade']);
 });
 
 /**
