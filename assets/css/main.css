@@ -482,7 +482,8 @@ html {
 .home-wrap header {
   width: 135px;
   background: white;
-  padding: 20px 0; }
+  padding: 20px 0;
+  z-index: 2; }
   .home-wrap header .header-position {
     background: white;
     width: 135px;
@@ -495,7 +496,8 @@ html {
     -ms-flex-direction: column;
         flex-direction: column;
     -ms-flex-pack: justify;
-        justify-content: space-between; }
+        justify-content: space-between;
+    z-index: 1; }
   .home-wrap header .logo {
     overflow: hidden;
     text-indent: 101%;
@@ -508,7 +510,8 @@ html {
     height: 115px;
     padding: 0;
     margin: 10px 0 0 10px;
-    border-radius: 8px; }
+    border-radius: 8px;
+    z-index: 1; }
   .home-wrap header .logo-div p, .home-wrap header .logo-desc {
     font-family: 'Oswald';
     font-style: normal;
@@ -517,29 +520,35 @@ html {
     text-align: center;
     padding-top: 5px;
     margin: 0;
-    display: block; }
+    display: block;
+    z-index: 1; }
   .home-wrap header .logo-desc {
     padding: 0;
     display: none;
-    font-weight: 200; }
+    font-weight: 200;
+    z-index: 1; }
   .home-wrap header .logo-div {
     margin: 0;
-    padding: 0; }
-  .home-wrap header .site-nav ul {
-    list-style: none;
-    margin: 20px 0;
-    padding: 0 20px 0 0;
-    text-align: right; }
-  .home-wrap header .site-nav li {
-    margin-bottom: 10px; }
-    .home-wrap header .site-nav li:last-child {
-      margin-bottom: 0; }
+    padding: 0;
+    z-index: 1; }
+  .home-wrap header .site-nav {
+    z-index: 1; }
+    .home-wrap header .site-nav ul {
+      list-style: none;
+      margin: 20px 0;
+      padding: 0 20px 0 0;
+      text-align: right; }
+    .home-wrap header .site-nav li {
+      margin-bottom: 10px; }
+      .home-wrap header .site-nav li:last-child {
+        margin-bottom: 0; }
   .home-wrap header .email-link {
     display: block;
     text-align: right;
     padding-right: 20px;
     padding-bottom: 5px;
-    text-decoration: underline; }
+    text-decoration: underline;
+    z-index: 1; }
   .home-wrap header .mobile-nav-toggle {
     display: none;
     width: 40px;
@@ -547,7 +556,8 @@ html {
     margin-right: 20px;
     margin-left: 65px;
     -ms-flex-align: center;
-        align-items: center; }
+        align-items: center;
+    z-index: 1; }
     .home-wrap header .mobile-nav-toggle span,
     .home-wrap header .mobile-nav-toggle span::before,
     .home-wrap header .mobile-nav-toggle span::after {
@@ -568,12 +578,12 @@ html {
     .home-wrap header .mobile-nav-toggle.is-open span::after {
       -webkit-transform-origin: center;
               transform-origin: center;
-      -webkit-transform: rotate(45deg);
-              transform: rotate(45deg);
+      -webkit-transform: translateY(1px) rotate(45deg);
+              transform: translateY(1px) rotate(45deg);
       top: 0; }
     .home-wrap header .mobile-nav-toggle.is-open span::after {
-      -webkit-transform: rotate(-45deg);
-              transform: rotate(-45deg); }
+      -webkit-transform: translateY(-1px) rotate(-45deg);
+              transform: translateY(-1px) rotate(-45deg); }
 
 .home-wrap ul a {
   font-family: Oswald;
@@ -590,14 +600,15 @@ html {
   color: #000; }
 
 .home-wrap .mobile-nav {
-  display: none;
+  position: absolute;
   width: 100%;
   background: #EEE;
   padding: 10px 0 5px 0;
   margin-left: 0;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  transition: all 0.3s ease-in-out; }
+  -webkit-transform: translateY(calc(-100% - 65px));
+          transform: translateY(calc(-100% - 65px));
+  transition: all 0.5s ease-in-out;
+  z-index: 0; }
   .home-wrap .mobile-nav ul {
     list-style: none;
     margin: 0;
@@ -619,7 +630,9 @@ html {
       -ms-flex-direction: row;
           flex-direction: row;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+      padding: 10px 0;
+      margin: -10px 0; }
     .home-wrap header .site-nav,
     .home-wrap header .email-link {
       display: none;
@@ -628,13 +641,14 @@ html {
     .home-wrap header .logo {
       height: 45px;
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      border-radius: 2px; }
     .home-wrap header .logo-div p {
       display: none; }
     .home-wrap header .logo-desc {
       padding: 0;
       position: absolute;
-      top: 20px;
+      top: 50%;
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
@@ -884,6 +898,3 @@ section.electronics {
     width: auto; }
   .push-right {
     margin-left: 10px; } }
-
-body {
-  background: #A4A4A4; }

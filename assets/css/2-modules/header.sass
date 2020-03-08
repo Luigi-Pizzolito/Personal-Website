@@ -3,6 +3,7 @@
         width: 135px
         background: $nav-background
         padding: 20px 0
+        z-index: 2
 
         .header-position
             background: $nav-background
@@ -15,6 +16,7 @@
             flex-direction: column
             justify-content: space-between
             // pointer-events: none
+            z-index: 1
 
         .logo
             +hide-text
@@ -29,6 +31,7 @@
             padding: 0
             margin: 10px 0 0 10px
             border-radius: 8px
+            z-index: 1
 
         .logo-div p, .logo-desc
             font:
@@ -41,17 +44,21 @@
             padding-top: 5px
             margin: 0
             display: block
+            z-index: 1
 
         .logo-desc
             padding: 0
             display: none
             font-weight: 200
+            z-index: 1
 
         .logo-div
             margin: 0
             padding: 0
+            z-index: 1
 
         .site-nav
+            z-index: 1
             ul
                 list-style: none
                 margin: 20px 0
@@ -70,6 +77,7 @@
             padding-right: 20px
             padding-bottom: 5px
             text-decoration: underline
+            z-index: 1
 
         .mobile-nav-toggle
             display: none
@@ -79,6 +87,7 @@
             margin-right: 20px
             margin-left: 65px
             align-items: center
+            z-index: 1
 
             span,
             span::before,
@@ -103,11 +112,11 @@
             &.is-open span::before,
             &.is-open span::after
                 transform-origin: center
-                transform: rotate(45deg)
+                transform: translateY(1px) rotate(45deg)
                 top: 0    
 
             &.is-open span::after  
-                transform: rotate(-45deg) 
+                transform: translateY(-1px) rotate(-45deg) 
 
     ul
         a
@@ -122,14 +131,15 @@
             color: $nav-link-active 
 
     .mobile-nav
-        display: none
-        // position: absolute
+        // display: none
+        position: absolute
         width: 100%
         background: $nav-mob-sub-background
         padding: 10px 0 5px 0
         margin-left: 0
-        transform: translateY(-100%)
-        transition: all 0.3s ease-in-out
+        transform: translateY( calc(-100% - 65px))
+        transition: all 0.5s ease-in-out
+        z-index: 0
 
         ul
             list-style: none
@@ -165,6 +175,8 @@
                 left: auto
                 flex-direction: row
                 align-items: center
+                padding: 10px 0
+                margin: -10px 0
 
             .site-nav,
             .email-link
@@ -176,6 +188,7 @@
                 height: 45px
                 margin: 0
                 padding: 0
+                border-radius: 2px
 
             .logo-div p
                 display: none
@@ -184,7 +197,7 @@
             .logo-desc
                 padding: 0
                 position: absolute
-                top: 20px
+                top: 50%
                 left: 50%
                 transform: translate(-50%, -50%)
                 display: block

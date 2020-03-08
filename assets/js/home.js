@@ -1,6 +1,14 @@
 /*
+ * NavBar
+ */
+function mobileNav() {
+        $('.mobile-nav').toggleClass('is-open');
+        $('.mobile-nav-toggle').toggleClass('is-open');
+}
+
+/*
  *  Contact Section
-*/
+ */
 // Instagram Listing
 // IGhref = [];
 // IGthumb = [];
