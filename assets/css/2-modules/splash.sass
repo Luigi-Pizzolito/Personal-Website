@@ -1,0 +1,73 @@
+.splash
+    background-color: white
+    width: 100vw
+    height: 100vh
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1000
+
+.splash-loaded
+    animation: slideupoot 0.8s ease-in forwards
+
+@keyframes slideupoot
+    0%
+        transform: translateY(0)
+    100%
+        transform: translateY(-100%)
+        display: none
+
+.splash-logo-div
+    text-align: center
+    // width: 50%
+    // height: 50%
+    overflow: auto
+    margin: auto
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    border: solid $nav-link 1px
+    padding-top: calc( 50vh - ( (115px/2) + 18px) )
+    img
+        max-width: 115px
+        height: 115px
+        size: contain
+        border-radius: 8px
+        z-index: 1
+    p
+        font:
+        family: "Oswald"
+        weight: 100
+        color: $nav-title
+        size: 12pt
+        letter-spacing: 1px
+    .lds-dual-ring
+        width: 320px
+        height: 320px
+        position: absolute
+        top: 0
+        left: calc( 50vw - (320px/2))
+        top: calc( 50vh - (320px/2))
+        margin-top: 18px
+        overflow: hidden
+        text-align: center
+        &:after
+            content: " "
+            display: inline-block
+            width: 250px
+            height: 250px
+            padding: 0
+            border-radius: 50%
+            border: 6px solid
+            border-color: $splash-loader transparent $splash-loader2 transparent
+            animation: lds-dual-ring 1.2s linear infinite
+            @keyframes lds-dual-ring
+                0%
+                    transform: rotate(0deg)
+
+                100%
+                    transform: rotate(360deg)

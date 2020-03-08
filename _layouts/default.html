@@ -7,6 +7,8 @@
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width">
   {% include favicon.html %}
+  {% include splash.html %}
+  <script src="/assets/js/splash.js"></script>
   <link rel="stylesheet" href="/assets/css/main.css">
 
   <!-- ! github pages fix -->
@@ -16,7 +18,7 @@
 
 </head>
 
-<body>
+<body onload="pageLoaded();">
 
   {{ content }}
 
