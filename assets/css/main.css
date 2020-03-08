@@ -382,6 +382,9 @@ hr {
 body {
   font-family: 'Open Sans'; }
 
+html {
+  scroll-behavior: smooth; }
+
 .home-wrap header {
   width: 135px;
   background: white;
