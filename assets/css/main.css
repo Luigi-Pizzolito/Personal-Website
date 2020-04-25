@@ -884,13 +884,14 @@ section.software {
 @media (max-width: 640px) {
   .bus-in {
     oveflow-y: scroll !important;
-    padding: 2vh 0; }
+    width: auto;
+    margin: 0 10vw;
+    text-align: center; }
     .bus-in .item {
-      background-color: red; }
+      display: inline-block; }
       .bus-in .item img {
         width: 80vw !important;
-        height: auto !important;
-        margin: 0 10vw !important; } }
+        height: auto !important; } }
 
 .home-wrap {
   display: -ms-flexbox;
