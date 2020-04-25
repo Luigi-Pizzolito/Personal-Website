@@ -860,8 +860,10 @@ section.software {
     height: 375px;
     overflow-y: hidden;
     overflow-x: hidden;
-    border-radius: 10px;
-    margin-left: 7vw; }
+    margin-left: 7vw;
+    box-shadow: 0 8px 6px -8px #444, 0 -8px 6px -8px #444;
+    margin-top: 6px;
+    margin-bottom: 6px; }
     section.software .bus-in .item {
       width: auto; }
       section.software .bus-in .item img {
