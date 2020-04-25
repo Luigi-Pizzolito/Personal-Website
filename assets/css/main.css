@@ -736,18 +736,10 @@ section.about {
 
 section.electronics {
   position: relative;
-  border-bottom: 1px solid white; }
-  section.electronics::after {
-    content: "";
-    background-image: url("/assets/img/home/electronics-bg.png");
-    background-position: right bottom;
-    background-size: cover;
-    z-index: -2;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; }
+  border-bottom: 1px solid white;
+  background-image: url("/assets/img/home/electronics-bg.png");
+  background-position: right bottom;
+  background-size: cover; }
   section.electronics .cover {
     background-color: black;
     opacity: 0.25;
@@ -786,8 +778,8 @@ section.electronics {
       display: inline-block;
       -webkit-transform: translateX(0%);
               transform: translateX(0%);
-      -webkit-animation: moveSlideshow 15s linear infinite;
-              animation: moveSlideshow 15s linear infinite; }
+      -webkit-animation: moveSlideshow 45s linear infinite;
+              animation: moveSlideshow 45s linear infinite; }
       section.electronics .caroussel .container:hover {
         -webkit-animation-play-state: paused;
                 animation-play-state: paused; }
@@ -843,6 +835,63 @@ section.electronics {
   @media (min-width: 775px) {
     section.electronics .caroussel {
       width: calc( (100vw - 135px) *0.8); } }
+
+section.software {
+  position: relative;
+  border-bottom: 1px solid white;
+  background-color: #eee; }
+  section.software h2 {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-style: italic;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1;
+    margin-left: 30px;
+    margin-top: 0;
+    margin-bottom: 20px; }
+  section.software .home-lead {
+    color: #FFF;
+    font-family: 'Open Sans';
+    margin-left: 30px; }
+  section.software .col-1 {
+    padding-bottom: 1vh; }
+  section.software .bus-in {
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: orange;
+    border-radius: 10px;
+    margin-left: 7vw; }
+    section.software .bus-in .item {
+      width: auto; }
+      section.software .bus-in .item img {
+        border-radius: 10px;
+        opacity: 0;
+        background-color: #fff;
+        margin: 10px 0;
+        border: 1px solid #d1d5da;
+        width: 100%;
+        height: auto; }
+      section.software .bus-in .item img:not(.initial) {
+        transition: opacity 1s; }
+      section.software .bus-in .item img.initial,
+      section.software .bus-in .item img.loaded,
+      section.software .bus-in .item img.error {
+        opacity: 1; }
+      section.software .bus-in .item img:not([src]) {
+        visibility: hidden; }
+
+@media (max-width: 640px) {
+  .bus-in {
+    height: auto !important;
+    padding: 2vh 0; }
+    .bus-in .item {
+      background-color: red; }
+      .bus-in .item img {
+        width: 80vw !important;
+        height: auto !important;
+        margin: 0 10vw !important; } }
 
 .home-wrap {
   display: -ms-flexbox;

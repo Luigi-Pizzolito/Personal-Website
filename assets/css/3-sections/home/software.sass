@@ -1,0 +1,70 @@
+section.software
+    position: relative
+    border-bottom: 1px solid white
+    background-color: #eee
+
+    h2
+        color: $section-title
+        font:
+            family: 'Oswald'
+            style: italic
+            size: 60px
+            weight: 600
+        line-height: 1
+        margin-left: 30px
+        margin-top: 0
+        margin-bottom: 20px
+
+    .home-lead
+        color: $section-text
+        font:
+            family: 'Open Sans'
+        margin-left: 30px
+
+    .col-1
+        padding-bottom: 1vh
+
+    .bus-in
+        height: 400px
+        overflow-y: scroll
+        overflow-x: hidden
+        background-color: orange
+        border-radius: 10px
+        margin-left: 7vw
+
+        .item
+            width: auto
+            
+            & img
+                border-radius: 10px
+                opacity: 0
+                background-color: #fff
+                // width: 340px
+                // height: 100px
+                margin: 10px 0
+                border: 1px solid #d1d5da
+                width: 100%
+                height: auto
+                // width: 220px
+                // height: 280px
+            & img:not(.initial) 
+                transition: opacity 1s
+            & img.initial,
+            & img.loaded,
+            & img.error 
+                opacity: 1
+            & img:not([src]) 
+                visibility: hidden
+                    
+            
+@media( max-width: 640px) // column collapse
+    .bus-in
+        height: auto !important
+        padding: 2vh 0
+        .item
+            background-color: red
+            img
+                width: 80vw !important
+                height: auto !important
+                margin: 0 10vw !important
+        
