@@ -20,7 +20,8 @@ function* shuffle(array) {
 }
 $.getJSON("https://api.github.com/users/Luigi-Pizzolito/repos", function (jsonGH) {
         var ranNums = shuffle([...Array(jsonGH.length).keys()]);
-        for (let i = 0; i < jsonGH.length; i++) { //needs to be asynchronous for loading time improvement
+        //just show ten instead of jsonGH.length
+        for (let i = 0; i < 8; i++) { //needs to be asynchronous for loading time improvement
                 let ran = ranNums.next().value;
                 let href = jsonGH[ran].full_name;
                 // GHnames.push(href);
@@ -94,6 +95,39 @@ $.getJSON("https://api.github.com/users/Luigi-Pizzolito/repos", function (jsonGH
         //         downloadingImage.src = image.dataset.src;
         // }
 });
+
+
+//scrollspy
+setTimeout(() => {
+        // init controller
+        var controller = new ScrollMagic.Controller();
+
+        // build scene
+        var scene = new ScrollMagic.Scene({
+                duration: document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight+(2*document.querySelector('#scrollparalaxsoftitemsdiv').offsetTop) + ((1/8)*2*window.innerHeight) , // the scene should last for a scroll distance of 100px
+                offset: -document.querySelector('#scrollparalaxsoftitemsdiv').offsetTop -((1/8)*window.innerHeight) , // start this scene after scrolling for 50px
+                triggerElement: "#scrollparalaxsoftitemsdiv"
+        })
+                .addTo(controller)
+                .addIndicators() // add indicators (requires plugin)
+                .on("update", function (e) {
+                        // $("#scrollDirection").text(e.target.controller().info("scrollDirection"));
+                })
+                .on("enter leave", function (e) {
+                        // $("#state").text(e.type == "enter" ? "inside" : "outside");
+                        // console.log("enter" ? "inside" : "outside");
+                })
+                .on("start end", function (e) {
+                        // $("#lastHit").text(e.type == "start" ? "top" : "bottom");
+                })
+                .on("progress", function (e) {
+                        // $("#progress").text(e.progress.toFixed(3));
+                        // console.log(e.progress.toFixed(3));
+                        // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
+                        document.querySelector('#scrollparalaxsoftitemsdiv').scroll(0, e.progress.toFixed(3)*(document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight-document.querySelector('#scrollparalaxsoftitemsdiv').offsetHeight))
+                        console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
+                });
+}, 50);
 
 // function lazyloadimage(imagetagin, imageurl) {
 //         var image = imagetagin;

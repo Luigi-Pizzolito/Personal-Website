@@ -25,10 +25,10 @@ section.software
         padding-bottom: 1vh
 
     .bus-in
-        height: 400px
-        overflow-y: scroll
+        height: 375px
+        overflow-y: hidden //not scroll
         overflow-x: hidden
-        background-color: orange
+        // background-color: orange
         border-radius: 10px
         margin-left: 7vw
 
@@ -41,7 +41,7 @@ section.software
                 background-color: #fff
                 // width: 340px
                 // height: 100px
-                margin: 10px 0
+                margin: 5px 0
                 border: 1px solid #d1d5da
                 width: 100%
                 height: auto
@@ -59,7 +59,8 @@ section.software
             
 @media( max-width: 640px) // column collapse
     .bus-in
-        height: auto !important
+        // height: auto !important
+        oveflow-y: scroll !important
         padding: 2vh 0
         .item
             background-color: red

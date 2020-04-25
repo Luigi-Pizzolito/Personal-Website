@@ -857,10 +857,9 @@ section.software {
   section.software .col-1 {
     padding-bottom: 1vh; }
   section.software .bus-in {
-    height: 400px;
-    overflow-y: scroll;
+    height: 375px;
+    overflow-y: hidden;
     overflow-x: hidden;
-    background-color: orange;
     border-radius: 10px;
     margin-left: 7vw; }
     section.software .bus-in .item {
@@ -869,7 +868,7 @@ section.software {
         border-radius: 10px;
         opacity: 0;
         background-color: #fff;
-        margin: 10px 0;
+        margin: 5px 0;
         border: 1px solid #d1d5da;
         width: 100%;
         height: auto; }
@@ -884,7 +883,7 @@ section.software {
 
 @media (max-width: 640px) {
   .bus-in {
-    height: auto !important;
+    oveflow-y: scroll !important;
     padding: 2vh 0; }
     .bus-in .item {
       background-color: red; }
