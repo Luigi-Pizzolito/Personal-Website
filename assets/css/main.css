@@ -864,6 +864,8 @@ section.software {
     box-shadow: 0 8px 6px -8px #444, 0 -8px 6px -8px #444;
     margin-top: 6px;
     margin-bottom: 6px; }
+    section.software .bus-in:hover {
+      overflow-y: scroll; }
     section.software .bus-in .item {
       width: auto; }
       section.software .bus-in .item img {

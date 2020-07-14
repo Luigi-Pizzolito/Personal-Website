@@ -31,6 +31,7 @@ $.getJSON("https://api.github.com/users/Luigi-Pizzolito/repos", function (jsonGH
                 // var img = new Image();
                 img.type = "image/svg+xml";
                 // img.src = "https://gh-card.dev/repos/" + href + ".svg?link_target=_top";
+                img.setAttribute("alt", "GitHub Card for "+jsonGH[ran].full_name)
                 img.setAttribute("data-src", "https://gh-card.dev/repos/" + href + ".svg?link_target=_top");
                 img.classList.add("lazy")
                 // img.onloaad = function () {
@@ -125,7 +126,7 @@ setTimeout(() => {
                         // console.log(e.progress.toFixed(3));
                         // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
                         document.querySelector('#scrollparalaxsoftitemsdiv').scroll(0, e.progress.toFixed(3)*(document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight-document.querySelector('#scrollparalaxsoftitemsdiv').offsetHeight))
-                        console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
+                        // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
                 });
 }, 50);
 
