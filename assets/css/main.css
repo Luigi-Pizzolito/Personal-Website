@@ -839,7 +839,18 @@ section.electronics {
 section.software {
   position: relative;
   border-bottom: 1px solid white;
-  background-color: #eee; }
+  background-image: url("../img/home/software-bg.png");
+  background-position: top;
+  background-size: cover; }
+  section.software .cover {
+    background-color: black;
+    opacity: 0.25;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
   section.software h2 {
     color: #FFF;
     font-family: 'Oswald';
@@ -896,6 +907,35 @@ section.software {
       .bus-in .item img {
         width: 80vw !important;
         height: auto !important; } }
+
+section.sounddesign {
+  position: relative;
+  border-bottom: 1px solid white;
+  background-image: url("/assets/img/home/sounddesign-bg.png");
+  background-position: center;
+  background-size: cover; }
+  section.sounddesign h2 {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-style: italic;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1;
+    margin-left: 30px;
+    margin-top: 0;
+    margin-bottom: 20px; }
+  section.sounddesign .home-lead {
+    color: #FFF;
+    font-family: 'Open Sans';
+    margin-left: 30px; }
+
+@media (max-width: 640px) {
+  section.sounddesign {
+    background-position: center bottom;
+    font-size: 20px; }
+    section.sounddesign .home-lead {
+      margin-top: 50vw;
+      max-width: 50vw; } }
 
 .home-wrap {
   display: -ms-flexbox;

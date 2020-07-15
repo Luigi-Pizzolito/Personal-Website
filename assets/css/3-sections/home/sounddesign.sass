@@ -1,0 +1,56 @@
+section.sounddesign
+    position: relative
+    border-bottom: 1px solid white
+    background:
+        image: url("/assets/img/home/sounddesign-bg.png")
+        position: center
+        size: cover
+
+    // &::after
+    //     content: ""
+    //     background-color: black
+    //     z-index: -1
+    //     position: absolute
+    //     top: 0
+    //     bottom: 0
+    //     left: 0
+    //     right: 0
+    // &:hover
+    //     transform: scale(1.2)
+    // .cover
+    //     background-color: black
+    //     opacity: 0.25
+    //     z-index: -1
+    //     position: absolute
+    //     top: 0
+    //     bottom: 0
+    //     left: 0
+    //     right: 0
+    //     display: none
+
+    h2
+        color: $section-title
+        font:
+            family: 'Oswald'
+            style: italic
+            size: 60px
+            weight: 600
+        line-height: 1
+        margin-left: 30px
+        margin-top: 0
+        margin-bottom: 20px
+
+    .home-lead
+        color: $section-text
+        font:
+            family: 'Open Sans'
+        margin-left: 30px
+
+@media( max-width: 640px)
+    section.sounddesign
+        background-position: center bottom
+
+        .home-lead
+            margin-top: 50vw
+            max-width: 50vw
+        font-size: 20px
