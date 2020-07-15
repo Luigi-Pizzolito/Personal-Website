@@ -1,5 +1,5 @@
 @import '1-base/vars';
-@import '2-modules/splash';
+// @import '2-modules/splash';
 
 @import '0-tools/bourbon/bourbon';
 @import '0-tools/normalize';
@@ -14,5 +14,7 @@
 @import '3-sections/home/electronics';
 @import '3-sections/home/software';
 @import '3-sections/home/sounddesign';
+@import '3-sections/home/publicspeaking';
+@import '3-sections/home/videography';
 
 @import '4-layouts/home';

@@ -1,0 +1,65 @@
+section.publicspeaking
+    position: relative
+    border-bottom: 1px solid white
+    background:
+        image: url("/assets/img/home/publicspeaking-bg.png")
+        position: center bottom
+        size: cover
+
+    // &::after
+    //     content: ""
+    //     background-color: black
+    //     z-index: -1
+    //     position: absolute
+    //     top: 0
+    //     bottom: 0
+    //     left: 0
+    //     right: 0
+    // &:hover
+    //     transform: scale(1.2)
+    // .cover
+    //     background-color: black
+    //     opacity: 0.25
+    //     z-index: -1
+    //     position: absolute
+    //     top: 0
+    //     bottom: 0
+    //     left: 0
+    //     right: 0
+    //     display: none
+
+    h2
+        color: $section-title
+        font:
+            family: 'Oswald'
+            style: italic
+            size: 60px
+            weight: 600
+        line-height: 1
+        margin-left: 30px
+        margin-top: 0
+        margin-bottom: 20px
+
+    .home-lead
+        color: $section-text
+        font:
+            family: 'Open Sans'
+        margin-left: 30px
+
+    .home-cta
+        margin-bottom: 20vw
+
+@media( max-width: 640px)
+    section.publicspeaking
+        .home-cta
+            margin-bottom: 0vw
+            margin-right: 5px
+            width: 50%
+            margin-bottom: 30vw
+
+        .home-lead
+            // margin-top: 0vw
+            // margin-bottom: 20vw
+            max-width: 50vw
+            font-size: 20px
+            margin-left: auto

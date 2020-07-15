@@ -1,0 +1,98 @@
+section.videography
+    position: relative
+    border-bottom: 1px solid white
+    // background-color: lightgrey
+    .bg-one, .bg-two
+        position: absolute
+        // width: 66.5%
+        height: 100%
+        z-index: -1
+        // margin-top: -20px
+        
+
+    .bg-one
+        background:
+            image: url("/assets/img/home/videography-bg-0.png")
+            size: 131%
+            position: -136px -44px
+        left: 0
+        top: 0
+        // clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%)
+        clip-path: polygon(0 0, 84.8% 0%, 54.5% 100%, 0% 100%)
+        width: 80%
+
+    .bg-two
+        background:
+            image: url("/assets/img/home/videography-bg-1.png")
+            size: cover
+            position: left center
+        right: 0
+        top: 0
+        // clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%)
+        clip-path: polygon(52% 0, 100% 0%, 100% 100%, 0% 143%)
+        width: 66.5%
+
+    // background:
+    //     image: url("/assets/img/home/publicspeaking-bg.png")
+    //     position: center bottom
+    //     size: cover
+
+    // &::after
+    //     content: ""
+    //     background-color: black
+    //     z-index: -1
+    //     position: absolute
+    //     top: 0
+    //     bottom: 0
+    //     left: 0
+    //     right: 0
+    // &:hover
+    //     transform: scale(1.2)
+    // .cover
+    //     background-color: black
+    //     opacity: 0.25
+    //     z-index: -1
+    //     position: absolute
+    //     top: 0
+    //     bottom: 0
+    //     left: 0
+    //     right: 0
+    //     display: none
+
+    h2
+        color: $section-title
+        font:
+            family: 'Oswald'
+            style: italic
+            size: 60px
+            weight: 600
+        line-height: 1
+        margin-left: 30px
+        margin-top: 0
+        // margin-bottom: 20px
+        margin-bottom: 22vw
+
+    .home-lead
+        color: $section-text
+        font:
+            family: 'Open Sans'
+        margin-left: 30px
+        
+
+    .home-cta
+        
+
+@media( max-width: 640px)
+    // section.videography
+    //     .home-cta
+    //         margin-bottom: 0vw
+    //         margin-right: 5px
+    //         width: 50%
+    //         margin-bottom: 30vw
+
+    //     .home-lead
+    //         // margin-top: 0vw
+    //         // margin-bottom: 20vw
+    //         max-width: 50vw
+    //         font-size: 20px
+    //         margin-left: auto
