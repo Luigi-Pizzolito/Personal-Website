@@ -640,6 +640,10 @@ section.about {
       margin-right: 5px;
       width: 45%; } }
 
+@media (min-width: 1000px) {
+  section.about h2 {
+    margin-top: 20px; } }
+
 section.electronics {
   position: relative;
   border-bottom: 1px solid white;
@@ -742,11 +746,15 @@ section.electronics {
     section.electronics .caroussel {
       width: calc( (100vw - 135px) *0.8); } }
 
+@media (min-width: 1000px) {
+  section.electronics {
+    padding: calc(20px + 3vw) 0 !important; } }
+
 section.software {
   position: relative;
   border-bottom: 1px solid white;
   background-image: url("../img/home/software-bg.png");
-  background-position: top;
+  background-position: center;
   background-size: cover; }
   section.software .cover {
     background-color: black;
@@ -814,11 +822,15 @@ section.software {
         width: 80vw !important;
         height: auto !important; } }
 
+@media (min-width: 1000px) {
+  section.software {
+    padding: calc(20px + 3vw) 0 !important; } }
+
 section.sounddesign {
   position: relative;
   border-bottom: 1px solid white;
   background-image: url("/assets/img/home/sounddesign-bg.png");
-  background-position: center;
+  background-position: center top;
   background-size: cover; }
   section.sounddesign h2 {
     color: #FFF;
@@ -842,6 +854,10 @@ section.sounddesign {
     section.sounddesign .home-lead {
       margin-top: 50vw;
       max-width: 50vw; } }
+
+@media (min-width: 1000px) {
+  section.sounddesign {
+    padding: calc(20px + 5vw) 0 !important; } }
 
 section.publicspeaking {
   position: relative;
@@ -876,6 +892,10 @@ section.publicspeaking {
     max-width: 50vw;
     font-size: 20px;
     margin-left: auto; } }
+
+@media (min-width: 1000px) {
+  section.publicspeaking h2 {
+    margin-top: 40px; } }
 
 section.videography {
   position: relative;
@@ -959,6 +979,10 @@ section.videography {
 @media (max-width: 440px) {
   section.videography .bg-two {
     background-position: -42vw center; } }
+
+@media (min-width: 1200px) {
+  section.videography h2 {
+    margin-top: calc( 10px + 1vw); } }
 
 .home-wrap {
   display: -ms-flexbox;

@@ -31,7 +31,7 @@ $.getJSON("https://api.github.com/users/Luigi-Pizzolito/repos", function (jsonGH
                 // var img = new Image();
                 img.type = "image/svg+xml";
                 // img.src = "https://gh-card.dev/repos/" + href + ".svg?link_target=_top";
-                img.setAttribute("alt", "GitHub Card for "+jsonGH[ran].full_name)
+                img.setAttribute("alt", "GitHub Card for " + jsonGH[ran].full_name)
                 img.setAttribute("data-src", "https://gh-card.dev/repos/" + href + ".svg?link_target=_top");
                 img.classList.add("lazy")
                 // img.onloaad = function () {
@@ -105,8 +105,8 @@ setTimeout(() => {
 
         // build scene
         var scene = new ScrollMagic.Scene({
-                duration: document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight+(2*document.querySelector('#scrollparalaxsoftitemsdiv').offsetTop) + ((1/8)*2*window.innerHeight) , // the scene should last for a scroll distance of 100px
-                offset: -document.querySelector('#scrollparalaxsoftitemsdiv').offsetTop -((1/8)*window.innerHeight) , // start this scene after scrolling for 50px
+                duration: document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight + (2 * document.querySelector('#scrollparalaxsoftitemsdiv').offsetTop) + ((1 / 32) * 2 * window.innerHeight), // the scene should last for a scroll distance of 100px
+                offset: -document.querySelector('#scrollparalaxsoftitemsdiv').offsetTop - ((1 / 32) * window.innerHeight), // start this scene after scrolling for 50px
                 triggerElement: "#scrollparalaxsoftitemsdiv"
         })
                 .addTo(controller)
@@ -125,7 +125,7 @@ setTimeout(() => {
                         // $("#progress").text(e.progress.toFixed(3));
                         // console.log(e.progress.toFixed(3));
                         // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
-                        document.querySelector('#scrollparalaxsoftitemsdiv').scroll(0, e.progress.toFixed(3)*(document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight-document.querySelector('#scrollparalaxsoftitemsdiv').offsetHeight))
+                        document.querySelector('#scrollparalaxsoftitemsdiv').scroll(0, e.progress.toFixed(3) * (document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight - document.querySelector('#scrollparalaxsoftitemsdiv').offsetHeight))
                         // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
                 });
 }, 50);
@@ -157,3 +157,39 @@ setTimeout(() => {
 //         console.log(thumb);
 //     }
 // });
+
+
+
+
+setTimeout(() => {
+//sounddesign section
+var controller2 = new ScrollMagic.Controller();
+// build scene
+var animateElem2 = document.getElementById("sounddesign");
+var trigElem2 = document.querySelector('#trigger2');
+var scene2 = new ScrollMagic.Scene({
+        duration: animateElem2.scrollHeight,// + (2 * animateElem2.offsetTop), //+ ((1 / 8) * 2 * window.innerHeight), // the scene should last for a scroll distance of 100px
+        offset: -trigElem2.offsetTop + 20,// - ((1 / 8) * window.innerHeight), // start this scene after scrolling for 50px
+        triggerElement: animateElem2
+})
+        // .on("enter", function () {
+        //         // trigger animation by changing inline style.
+        //         animateElem2.style.backgroundColor = "grey";
+        // })
+        // .on("leave", function () {
+        //         // reset style
+        //         animateElem2.style.backgroundColor = "";
+        // })
+        .on("progress", function (e) {
+                // $("#progress").text(e.progress.toFixed(3));
+                // console.log(e.progress.toFixed(3));
+                // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
+                // document.querySelector('#scrollparalaxsoftitemsdiv').scroll(0, e.progress.toFixed(3)*(document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight-document.querySelector('#scrollparalaxsoftitemsdiv').offsetHeight))
+                // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
+                console.log(e.progress.toFixed(2)*100);
+                // animateElem2.style.backgroundPosition = "center " + e.progress.toFixed(2)*100 +"%";
+                animateElem2.style.setProperty("background-position-y", e.progress.toFixed(2)*100+"%");
+        })
+        .addIndicators()
+        .addTo(controller2);
+}, 50);
