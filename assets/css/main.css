@@ -592,14 +592,14 @@ html {
     content: "";
     position: absolute;
     background: #EEE;
-    bottom: 100%;
+    bottom: 0;
     left: 0;
-    right: 0;
+    right: 100%;
     top: 0;
     z-index: -1;
     -webkit-transition: right 0.2s ease-in-out; }
   .home-cta:hover::before {
-    bottom: 0; }
+    right: 0; }
   .home-cta:hover {
     color: #777; }
   .home-cta:active {
@@ -886,8 +886,9 @@ section.videography {
     z-index: -1; }
   section.videography .bg-one {
     background-image: url("/assets/img/home/videography-bg-0.png");
-    background-size: 131%;
-    background-position: -136px -44px;
+    background-position: center center;
+    background-position: -15vw -6vw;
+    background-size: 80vw;
     left: 0;
     top: 0;
     -webkit-clip-path: polygon(0 0, 84.8% 0%, 54.5% 100%, 0% 100%);
@@ -916,6 +917,48 @@ section.videography {
     color: #FFF;
     font-family: 'Open Sans';
     margin-left: 30px; }
+
+@media (max-width: 360px) {
+  section.videography .bg-one {
+    background-size: 80vw;
+    background-position: -9vw calc(3vh + 5vw);
+    background-color: black;
+    background-repeat: no-repeat; } }
+
+@media (max-width: 470px) and (min-width: 360px) {
+  section.videography .bg-one {
+    background-size: 80vw;
+    background-position: -11vw 7vw;
+    background-color: black;
+    background-repeat: no-repeat; } }
+
+@media (max-width: 640px) and (min-width: 470px) {
+  section.videography .bg-one {
+    background-size: 80vw;
+    background-position: -11vw 2vw;
+    background-color: black;
+    background-repeat: no-repeat; } }
+
+@media (max-width: 775px) and (min-width: 640px) {
+  section.videography .bg-one {
+    background-position: -10vw 0vw;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-size: 80vw; } }
+
+@media (max-width: 930px) and (min-width: 775px) {
+  section.videography .bg-one {
+    background-position: -15vw -3vw;
+    background-color: blue;
+    background-size: 80vw; } }
+
+@media (max-width: 640px) {
+  section.videography .home-lead {
+    max-width: 40vw; } }
+
+@media (max-width: 440px) {
+  section.videography .bg-two {
+    background-position: -42vw center; } }
 
 .home-wrap {
   display: -ms-flexbox;

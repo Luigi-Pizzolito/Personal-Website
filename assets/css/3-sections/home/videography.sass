@@ -11,15 +11,18 @@ section.videography
         
 
     .bg-one
-        background:
+        background: //biggest/default
             image: url("/assets/img/home/videography-bg-0.png")
-            size: 131%
-            position: -136px -44px
+            position: center center
+            position: -15vw -6vw
+            size: 80vw
         left: 0
         top: 0
         // clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%)
         clip-path: polygon(0 0, 84.8% 0%, 54.5% 100%, 0% 100%)
         width: 80%
+
+
 
     .bg-two
         background:
@@ -36,7 +39,6 @@ section.videography
     //     image: url("/assets/img/home/publicspeaking-bg.png")
     //     position: center bottom
     //     size: cover
-
     // &::after
     //     content: ""
     //     background-color: black
@@ -58,7 +60,6 @@ section.videography
     //     left: 0
     //     right: 0
     //     display: none
-
     h2
         color: $section-title
         font:
@@ -82,17 +83,70 @@ section.videography
     .home-cta
         
 
-@media( max-width: 640px)
-    // section.videography
+
     //     .home-cta
     //         margin-bottom: 0vw
     //         margin-right: 5px
     //         width: 50%
     //         margin-bottom: 30vw
-
     //     .home-lead
     //         // margin-top: 0vw
     //         // margin-bottom: 20vw
     //         max-width: 50vw
     //         font-size: 20px
     //         margin-left: auto
+    
+@media (max-width: 360px) //smallest
+    section.videography
+        .bg-one
+            background:
+                size: 80vw
+                position: -9vw calc(3vh + 5vw)
+                color: black
+                repeat: no-repeat
+
+@media (max-width: 470px) and (min-width: 360px) //smallest
+    section.videography
+        .bg-one
+            background:
+                size: 80vw
+                position: -11vw 7vw
+                color: black
+                repeat: no-repeat
+    
+
+@media ( max-width: 640px) and (min-width: 470px) //2nd smallest
+    section.videography
+        .bg-one
+            background:
+                size: 80vw
+                position: -11vw 2vw
+                color: black
+                repeat: no-repeat
+
+@media ( max-width: 775px) and (min-width: 640px) //medium
+    section.videography
+        .bg-one
+            background:
+                position: -10vw 0vw
+                repeat: no-repeat
+                color: black
+                size: 80vw
+    
+@media ( max-width: 930px) and (min-width: 775px) //medium
+    section.videography
+        .bg-one
+            background:
+                position: -15vw -3vw
+                color: blue
+                size: 80vw
+
+@media ( max-width: 640px)
+    section.videography
+        .home-lead
+            max-width: 40vw
+
+@media ( max-width: 440px)
+    section.videography
+        .bg-two
+            background-position: -42vw center
