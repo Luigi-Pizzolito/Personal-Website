@@ -1,3 +1,6 @@
+// GH card highlihgt colour!
+var highlightc = "ffffff";//"00f7a5";
+
 /*
  * NavBar
  */
@@ -17,8 +20,9 @@ function* shuffle(array) {
         while (i--) {
                 yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
         }
-}
-$.getJSON("https://api.github.com/users/Luigi-Pizzolito/repos", function (jsonGH) {
+}//"https://api.github.com/users/Luigi-Pizzolito/repos"
+// $.getJSON("assets/GHstatCache.php", function (jsonGH) { //! production cache
+$.getJSON("assets/repos.json", function (jsonGH) {
         var ranNums = shuffle([...Array(jsonGH.length).keys()]);
         //just show ten instead of jsonGH.length
         for (let i = 0; i < 8; i++) { //needs to be asynchronous for loading time improvement
@@ -32,7 +36,8 @@ $.getJSON("https://api.github.com/users/Luigi-Pizzolito/repos", function (jsonGH
                 img.type = "image/svg+xml";
                 // img.src = "https://gh-card.dev/repos/" + href + ".svg?link_target=_top";
                 img.setAttribute("alt", "GitHub Card for " + jsonGH[ran].full_name)
-                img.setAttribute("data-src", "https://gh-card.dev/repos/" + href + ".svg?link_target=_top");
+                // img.setAttribute("data-src", "https://gh-card.dev/repos/" + href + ".svg?link_target=_top");
+                img.setAttribute("data-src", "https://luigipizzolito.com/assets/darkGHcard.php?highlight=" + highlightc + "&href=" + href);
                 img.classList.add("lazy")
                 // img.onloaad = function () {
                 //         document.querySelectorAll(".bus-in")[0].appendChild(this);
@@ -186,7 +191,7 @@ var scene2 = new ScrollMagic.Scene({
                 // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
                 // document.querySelector('#scrollparalaxsoftitemsdiv').scroll(0, e.progress.toFixed(3)*(document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight-document.querySelector('#scrollparalaxsoftitemsdiv').offsetHeight))
                 // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
-                console.log(e.progress.toFixed(2)*100);
+                // console.log(e.progress.toFixed(2)*100);
                 // animateElem2.style.backgroundPosition = "center " + e.progress.toFixed(2)*100 +"%";
                 animateElem2.style.setProperty("background-position-y", e.progress.toFixed(2)*100+"%");
         })

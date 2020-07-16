@@ -798,7 +798,6 @@ section.software {
         opacity: 0;
         background-color: #fff;
         margin: 5px 0;
-        border: 1px solid #d1d5da;
         width: 100%;
         height: auto; }
       section.software .bus-in .item img:not(.initial) {
