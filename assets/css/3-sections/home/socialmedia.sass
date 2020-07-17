@@ -1,10 +1,9 @@
 section.socialmedia
     position: relative
     border-bottom: 1px solid white
-    background-color: darkgrey
     background:
             // image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("/assets/img/home/20200717_225935.jpg")
-            image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/assets/img/home/20200717_225935.jpg")
+            image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/assets/img/home/20200717_225935.jpg")
             position: center center
             size: cover
 
@@ -40,7 +39,7 @@ section.socialmedia
             family: 'Open Sans'
             size: 20px
         margin: 0 auto
-        padding-left: 10px
+        padding-left: 5px
         margin: 10px 0
         a
             color: $section-text
@@ -48,18 +47,27 @@ section.socialmedia
 
     table
         width: 300px
-        padding: 0 40px
-        
-    td
-        border: 1px solid white
-        // outline-color: white
-        td.icon
-            width: fit-content
+        padding: 0 40px   
+        // background-color: rgba(0,0,0,0.1)
+        // border-radius: 5% 
+        td
+            // border: 1px solid white
+            // outline-color: white
+        td.iconh
+            // width: fit-content
+            width: 50px
+            vertical-align: middle
+            text-align: center
+            img
+                width: 50px
+                border: 1px solid $section-text
+                border-radius: 50%
+                box-shadow: #000 0px 0 5px
 
     div.icon
         width: 20px
         height: 20px
-        background-color: red
+        background-color: blue
         margin: auto 10px
     // @media( max-width: 1000px)
     //     .home-cta
@@ -75,5 +83,5 @@ section.socialmedia
     //         margin-right: 20px
 
 @media ( min-width: 1000px )
-    section.academics
+    section.socialmedia
         padding: calc(20px + 3vw) 0 !important

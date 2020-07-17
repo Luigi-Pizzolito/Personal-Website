@@ -606,6 +606,16 @@ html {
   .home-cta:active {
     color: #000; }
 
+section.cc {
+  position: relative;
+  background-color: white;
+  padding: 5px !important; }
+  section.cc p {
+    color: #777;
+    font-family: 'Open Sans';
+    margin: 0 auto;
+    text-align: center; }
+
 section.about {
   background-image: url("/assets/img/home/about-bg.png");
   background-position: center bottom;
@@ -1026,8 +1036,7 @@ section.academics {
 section.socialmedia {
   position: relative;
   border-bottom: 1px solid white;
-  background-color: darkgrey;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/assets/img/home/20200717_225935.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/assets/img/home/20200717_225935.jpg");
   background-position: center center;
   background-size: cover; }
   section.socialmedia h2 {
@@ -1049,7 +1058,7 @@ section.socialmedia {
     font-family: 'Open Sans';
     font-size: 20px;
     margin: 0 auto;
-    padding-left: 10px;
+    padding-left: 5px;
     margin: 10px 0; }
     section.socialmedia .m-text a {
       color: #FFF;
@@ -1057,20 +1066,23 @@ section.socialmedia {
   section.socialmedia table {
     width: 300px;
     padding: 0 40px; }
-  section.socialmedia td {
-    border: 1px solid white; }
-    section.socialmedia td td.icon {
-      width: -webkit-fit-content;
-      width: -moz-fit-content;
-      width: fit-content; }
+    section.socialmedia table td.iconh {
+      width: 50px;
+      vertical-align: middle;
+      text-align: center; }
+      section.socialmedia table td.iconh img {
+        width: 50px;
+        border: 1px solid #FFF;
+        border-radius: 50%;
+        box-shadow: #000 0px 0 5px; }
   section.socialmedia div.icon {
     width: 20px;
     height: 20px;
-    background-color: red;
+    background-color: blue;
     margin: auto 10px; }
 
 @media (min-width: 1000px) {
-  section.academics {
+  section.socialmedia {
     padding: calc(20px + 3vw) 0 !important; } }
 
 .home-wrap {
