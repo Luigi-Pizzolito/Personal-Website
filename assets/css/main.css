@@ -606,9 +606,6 @@ html {
   .home-cta:active {
     color: #000; }
 
-section.academics p, section.publicspeaking p, section.software p, section.electronics p, section.sounddesign p {
-  text-shadow: #000 0px 0 5px; }
-
 section.about {
   background-image: url("/assets/img/home/about-bg.png");
   background-position: center bottom;
@@ -1026,6 +1023,56 @@ section.academics {
   section.academics {
     padding: calc(20px + 3vw) 0 !important; } }
 
+section.socialmedia {
+  position: relative;
+  border-bottom: 1px solid white;
+  background-color: darkgrey;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/assets/img/home/20200717_225935.jpg");
+  background-position: center center;
+  background-size: cover; }
+  section.socialmedia h2 {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-style: italic;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1;
+    margin: auto; }
+  section.socialmedia .home-lead {
+    color: #FFF;
+    font-family: 'Open Sans';
+    font-size: 20px;
+    margin: auto;
+    margin-bottom: 20px; }
+  section.socialmedia .m-text {
+    color: #FFF;
+    font-family: 'Open Sans';
+    font-size: 20px;
+    margin: 0 auto;
+    padding-left: 10px;
+    margin: 10px 0; }
+    section.socialmedia .m-text a {
+      color: #FFF;
+      text-decoration: none; }
+  section.socialmedia table {
+    width: 300px;
+    padding: 0 40px; }
+  section.socialmedia td {
+    border: 1px solid white; }
+    section.socialmedia td td.icon {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content; }
+  section.socialmedia div.icon {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    margin: auto 10px; }
+
+@media (min-width: 1000px) {
+  section.academics {
+    padding: calc(20px + 3vw) 0 !important; } }
+
 .home-wrap {
   display: -ms-flexbox;
   display: flex;
@@ -1080,3 +1127,6 @@ section.academics {
     width: auto; }
   .push-right {
     margin-left: 10px; } }
+
+section.academics p, section.publicspeaking p, section.software p, section.electronics p, section.sounddesign p, section.socialmedia p {
+  text-shadow: #000 0px 0 5px; }

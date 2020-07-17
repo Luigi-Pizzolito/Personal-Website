@@ -1,0 +1,79 @@
+section.socialmedia
+    position: relative
+    border-bottom: 1px solid white
+    background-color: darkgrey
+    background:
+            // image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("/assets/img/home/20200717_225935.jpg")
+            image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/assets/img/home/20200717_225935.jpg")
+            position: center center
+            size: cover
+
+    h2
+        color: $section-title
+        font:
+            family: 'Oswald'
+            style: italic
+            size: 60px
+            weight: 600
+        line-height: 1
+        // margin-left: 30px
+        // margin-top: 0
+        margin: auto
+        
+    // @media( max-width: 1000px)
+    //     h2
+    //         padding-top: 20px
+
+    .home-lead
+        color: $section-text
+        font:
+            family: 'Open Sans'
+            size: 20px
+        // margin-left: 30px
+        // padding-bottom: 30px
+        margin: auto
+        margin-bottom: 20px
+
+    .m-text
+        color: $section-text
+        font:
+            family: 'Open Sans'
+            size: 20px
+        margin: 0 auto
+        padding-left: 10px
+        margin: 10px 0
+        a
+            color: $section-text
+            text-decoration: none
+
+    table
+        width: 300px
+        padding: 0 40px
+        
+    td
+        border: 1px solid white
+        // outline-color: white
+        td.icon
+            width: fit-content
+
+    div.icon
+        width: 20px
+        height: 20px
+        background-color: red
+        margin: auto 10px
+    // @media( max-width: 1000px)
+    //     .home-cta
+    //         margin-bottom: 10px
+
+    // @media( max-width: 640px)
+    //     .home-lead
+    //         margin-bottom: 40vw
+    //         font-size: 20px
+
+    //     h2, .home-lead
+    //         margin-left: 20px
+    //         margin-right: 20px
+
+@media ( min-width: 1000px )
+    section.academics
+        padding: calc(20px + 3vw) 0 !important
