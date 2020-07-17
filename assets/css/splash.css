@@ -1,5 +1,4 @@
 :root {
-  --body-background: gray;
   --splash-loader: #1a46b7;
   --splash-loader2: #cc7b2e; }
 
@@ -29,12 +28,15 @@
     --nav-link-active: #fff;
     --section-title: #FFF;
     --section-text: #FFF;
-    --button-color: #FFF;
+    --button-color: var(--nav-link);
     --button-active: var(--nav-link-active);
-    --button-hover: var(--nav-link); } }
+    --button-hover: var(--nav-title); } }
+
+:root {
+  --body-background: var(--nav-background); }
 
 .splash {
-  background-color: white;
+  background-color: var(--body-background);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -75,7 +77,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  border: solid var(--nav-link) 1px;
+  border: solid var(--nav-mob-sub-background) 1px;
   padding-top: calc( 50vh - ( (115px/2) + 18px)); }
   .splash-logo-div img {
     max-width: 115px;
