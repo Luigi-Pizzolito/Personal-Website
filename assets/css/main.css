@@ -578,6 +578,7 @@ html {
   line-height: 1;
   text-decoration: none;
   color: #FFF;
+  background-color: rgba(0, 0, 0, 0.2);
   text-align: center;
   display: block;
   border: 1px solid #FFF;
@@ -604,6 +605,9 @@ html {
     color: #777; }
   .home-cta:active {
     color: #000; }
+
+section.academics p, section.publicspeaking p, section.software p, section.electronics p, section.sounddesign p {
+  text-shadow: #000 0px 0 5px; }
 
 section.about {
   background-image: url("/assets/img/home/about-bg.png");
@@ -753,7 +757,7 @@ section.electronics {
 section.software {
   position: relative;
   border-bottom: 1px solid white;
-  background-image: url("../img/home/software-bg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), transparent), url("../img/home/software-bg.png");
   background-position: center;
   background-size: cover; }
   section.software .cover {
@@ -982,6 +986,45 @@ section.videography {
 @media (min-width: 1200px) {
   section.videography h2 {
     margin-top: calc( 10px + 1vw); } }
+
+section.academics {
+  position: relative;
+  border-bottom: 1px solid white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("/assets/img/home/WechatIMG19.jpeg");
+  background-position: right center;
+  background-size: cover; }
+  section.academics h2 {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-style: italic;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1;
+    margin-left: 30px;
+    margin-top: 0;
+    margin-bottom: 20px; }
+  @media (max-width: 1000px) {
+    section.academics h2 {
+      padding-top: 20px; } }
+  section.academics .home-lead {
+    color: #FFF;
+    font-family: 'Open Sans';
+    margin-left: 30px;
+    padding-bottom: 30px; }
+  @media (max-width: 1000px) {
+    section.academics .home-cta {
+      margin-bottom: 10px; } }
+  @media (max-width: 640px) {
+    section.academics .home-lead {
+      margin-bottom: 40vw;
+      font-size: 20px; }
+    section.academics h2, section.academics .home-lead {
+      margin-left: 20px;
+      margin-right: 20px; } }
+
+@media (min-width: 1000px) {
+  section.academics {
+    padding: calc(20px + 3vw) 0 !important; } }
 
 .home-wrap {
   display: -ms-flexbox;

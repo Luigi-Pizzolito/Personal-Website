@@ -1,0 +1,46 @@
+section.academics
+    position: relative
+    border-bottom: 1px solid white
+    background:
+            image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("/assets/img/home/WechatIMG19.jpeg")
+            position: right center
+            size: cover
+
+    h2
+        color: $section-title
+        font:
+            family: 'Oswald'
+            style: italic
+            size: 60px
+            weight: 600
+        line-height: 1
+        margin-left: 30px
+        margin-top: 0
+        margin-bottom: 20px
+    @media( max-width: 1000px)
+        h2
+            padding-top: 20px
+
+    .home-lead
+        color: $section-text
+        font:
+            family: 'Open Sans'
+        margin-left: 30px
+        padding-bottom: 30px
+
+    @media( max-width: 1000px)
+        .home-cta
+            margin-bottom: 10px
+
+    @media( max-width: 640px)
+        .home-lead
+            margin-bottom: 40vw
+            font-size: 20px
+
+        h2, .home-lead
+            margin-left: 20px
+            margin-right: 20px
+
+@media ( min-width: 1000px )
+    section.academics
+        padding: calc(20px + 3vw) 0 !important
