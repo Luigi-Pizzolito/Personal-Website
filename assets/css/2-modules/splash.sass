@@ -30,7 +30,7 @@
     left: 0
     bottom: 0
     right: 0
-    border: solid $nav-link 1px
+    border: solid var(--nav-link) 1px
     padding-top: calc( 50vh - ( (115px/2) + 18px) )
     img
         max-width: 115px
@@ -42,7 +42,7 @@
         font:
         family: "Oswald"
         weight: 100
-        color: $nav-title
+        color: var(--nav-title)
         size: 12pt
         letter-spacing: 1px
     .lds-dual-ring
@@ -63,7 +63,7 @@
             padding: 0
             border-radius: 50%
             border: 6px solid
-            border-color: $splash-loader transparent $splash-loader2 transparent
+            border-color: var(--splash-loader) transparent var(--splash-loader2) transparent
             animation: lds-dual-ring 1.2s linear infinite
             @keyframes lds-dual-ring
                 0%

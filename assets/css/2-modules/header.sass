@@ -1,12 +1,12 @@
 .home-wrap
     header
         width: 135px
-        background: $nav-background
+        background: var(--nav-background)
         padding: 20px 0
         z-index: 2
 
         .header-position
-            background: $nav-background
+            background: var(--nav-background)
             width: 135px
             position: fixed
             top: 0
@@ -38,7 +38,7 @@
                 family: 'Oswald'
                 style: normal
                 weight: 200
-            color: $nav-title
+            color: var(--nav-title)
             // letter-spacing: 2px
             text-align: center
             padding-top: 5px
@@ -96,7 +96,7 @@
                 display: block
                 width: 100%
                 height: 2px
-                background-color: $nav-mob-hamburger
+                background-color: var(--nav-mob-hamburger)
                 position: relative
                 transition: all 0.3s ease-in-out
 
@@ -124,17 +124,17 @@
             text-decoration: none
         a:link,
         a:visited
-            color: $nav-link
+            color: var(--nav-link)
         a:hover
-            color: $nav-link-hover
+            color: var(--nav-link-hover)
         a:active
-            color: $nav-link-active 
+            color: var(--nav-link-active)
 
     .mobile-nav
         // display: none
         position: absolute
         width: 100%
-        background: $nav-mob-sub-background
+        background: var(--nav-mob-sub-background)
         padding: 10px 0 5px 0
         margin-left: 0
         transform: translateY( calc(-100% - 65px))

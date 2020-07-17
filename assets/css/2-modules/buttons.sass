@@ -7,11 +7,11 @@
         size: 28px
     line-height: 1
     text-decoration: none
-    color: $button-color
+    color: var(--button-color)
     background-color: rgba(0, 0, 0, 0.2)
     text-align: center
     display: block
-    border: 1px solid $button-color
+    border: 1px solid var(--button-color)
     padding: 0.3em 0
     margin: 0.3em auto
     box-shadow: 0px 5px 14px rgba(0,0,0,0.4)
@@ -22,7 +22,7 @@
     &::before
         content: ""
         position: absolute
-        background: $nav-mob-sub-background
+        background: var(--nav-mob-sub-background)
         bottom: 0
         left: 0
         right: 100%
@@ -32,6 +32,6 @@
     &:hover::before
         right: 0
     &:hover
-        color: $button-hover
+        color: var(--button-hover)
     &:active
-        color: $button-active
+        color: var(--button-active)
