@@ -1,7 +1,7 @@
 :root {
   --body-background: gray;
-  --splash-loader: #1a46b7;
-  --splash-loader2: #cc7b2e; }
+  --splash-loader: #28e5e4;
+  --splash-loader2: #0037d4; }
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -444,7 +444,7 @@ html {
     text-indent: 101%;
     white-space: nowrap;
     max-width: 115px;
-    background-image: url(/assets/img/logo.jpg);
+    background-image: url("/assets/img/LP-Logo.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

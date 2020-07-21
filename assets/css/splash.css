@@ -1,7 +1,7 @@
 :root {
   --body-background: gray;
-  --splash-loader: #1a46b7;
-  --splash-loader2: #cc7b2e; }
+  --splash-loader: #28e5e4;
+  --splash-loader2: #0037d4; }
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -34,7 +34,7 @@
     --button-hover: var(--nav-link); } }
 
 .splash {
-  background-color: white;
+  background-color: var(--nav-background);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -75,20 +75,13 @@
   left: 0;
   bottom: 0;
   right: 0;
-  border: solid var(--nav-link) 1px;
-  padding-top: calc( 50vh - ( (115px/2) + 18px)); }
+  border: solid var(--nav-mob-sub-background) 1px;
+  padding-top: calc( 50vh - (240px/2) - 10px); }
   .splash-logo-div img {
-    max-width: 115px;
-    height: 115px;
+    max-width: 240px;
+    height: 240px;
     size: contain;
-    border-radius: 8px;
     z-index: 1; }
-  .splash-logo-div p {
-    family: "Oswald";
-    weight: 100;
-    color: var(--nav-title);
-    size: 12pt;
-    letter-spacing: 1px; }
   .splash-logo-div .lds-dual-ring {
     width: 320px;
     height: 320px;
