@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/css/splash.css">
 
   {% include splash.html %}
   <script src="/assets/js/splash.js"></script>
   
   {% include favicon.html %}
+
+  <link rel="preload" href="/assets/fonts/oswald-regular-webfont.woff2" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="/assets/fonts/oswald-regularitalic-webfont.woff2" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="/assets/fonts/opensans-regular-webfont.woff2" as="font" crossorigin="anonymous" />
 
   <!-- ! folowing only needed for home page, move to new _layout please! -->
   <!-- ! github pages fix
