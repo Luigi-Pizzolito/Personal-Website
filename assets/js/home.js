@@ -1,5 +1,5 @@
 // GH card highlihgt colour!
-var highlightc = "ffffff";//"00f7a5";
+var highlightc = "ffffff";//"37cfa5";
 
 /*
  * NavBar
@@ -7,6 +7,41 @@ var highlightc = "ffffff";//"00f7a5";
 function mobileNav() {
         $('.mobile-nav').toggleClass('is-open');
         $('.mobile-nav-toggle').toggleClass('is-open');
+}
+
+function hoverClearNav() {
+        // console.log(elem.children);
+        // for (let i = 0; i < elem.children.length; i++) {
+        //         const link = elem.children[i];
+        //         if (link.children[1].classList.contains("activet")) {
+        //                 link.children[1].classList.replace("activet", "activet-dud");
+        //         }
+                
+        // }
+        document.getElementsByClassName("activet")[0].classList.replace("activet", "activet-dud");
+        document.getElementsByClassName("activet")[0].classList.replace("activet", "activet-dud");
+        document.getElementsByClassName("activet-dud")[0].parentElement.children[0].classList.remove("activet-l");
+        document.getElementsByClassName("activet-dud")[1].parentElement.children[0].classList.remove("activet-l");
+}
+
+function hoverSetNav() {
+        // console.log(elem.children);
+        // for (let i = 0; i < elem.children.length; i++) {
+        //         const link = elem.children[i];
+        //         if (link.children[1].classList.contains("activet-dud")) {
+        //                 link.children[1].classList.replace("activet-dud", "activet");
+        //         }
+                
+        // }
+        document.getElementsByClassName("activet-dud")[0].classList.replace("activet-dud", "activet");
+        document.getElementsByClassName("activet-dud")[0].classList.replace("activet-dud", "activet");
+        document.getElementsByClassName("activet")[0].parentElement.children[0].classList.add("activet-l");
+        document.getElementsByClassName("activet")[1].parentElement.children[0].classList.add("activet-l");
+}
+
+function highlightmobilenav() {
+        hoverClearNav();
+        hoverSetNav();
 }
 
 /*

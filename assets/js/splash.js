@@ -7,4 +7,8 @@ function pageLoaded() {
     if (document.getElementsByClassName("cc").length > 1) {
         document.getElementById("cc").innerHTML = "© Luigi Pizzolito "+new Date().getFullYear()+". All Rights Reserved.";
     }
+
+    setTimeout(() => {
+        highlightmobilenav();
+    }, 50);
 }

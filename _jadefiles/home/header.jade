@@ -1,13 +1,29 @@
 mixin nav-content()
-    ul
-        li: a(href="#about") About
-        li: a(href="#electronics") Electronics
-        li: a(href="#software") Software
-        li: a(href="#sounddesign") Sound Design
-        li: a(href="#publicspeaking",style="letter-spacing:-0.2px;") Public Appearances
-        li: a(href="#videography") Videography
-        li: a(href="#academics") Academics/CV
-        li: a(href="#contact") Contact
+    ul(onmouseover="hoverClearNav(this);",onmouseout="hoverSetNav(this);")
+        li
+            a(href="#about") About
+            .arrow.activet
+        li
+            a(href="#electronics") Electronics
+            .arrow
+        li
+            a(href="#software") Software
+            .arrow
+        li
+            a(href="#sounddesign") Sound Design
+            .arrow
+        li
+            a(href="#publicspeaking",style="letter-spacing:-0.2px;") Public Appearances
+            .arrow
+        li
+            a(href="#videography") Videography
+            .arrow
+        li
+            a(href="#academics") Academics/CV
+            .arrow
+        li
+            a(href="#contact") Contact
+            .arrow
 
 header
     .header-position

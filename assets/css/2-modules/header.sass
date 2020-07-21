@@ -123,13 +123,13 @@
         a
             font-family: Oswald
             text-decoration: none
-        a:link,
-        a:visited
-            color: var(--nav-link)
-        a:hover
-            color: var(--nav-link-hover)
-        a:active
-            color: var(--nav-link-active)
+            &:link,
+            &:visited
+                color: var(--nav-link)
+            &:hover
+                color: var(--nav-link-hover)
+            &:active
+                color: var(--nav-link-active)
 
     .mobile-nav
         // display: none
@@ -151,11 +151,54 @@
             text-align: center
             margin-bottom: 10px
 
+        .activet-l
+            color: var(--nav-link-hover)
+            text-decoration: 
+                line: underline
+                color: var(--highlight2)
+
+@media (min-width: 775px)
+    nav
+        ul
+            li
+                .arrow
+                    width: 0
+                    height: 0
+                    border-right: 12px solid var(--highlight2)
+                    border-bottom: 8px solid transparent
+                    border-top: 7px solid transparent
+                    position: absolute
+                    padding-left: 4px
+                    margin-top: 2px
+                    // display: none
+                    display: inline-block
+                    visibility: hidden
+                    opacity: 0
+                    transition: visibility 0s, opacity 0.25s ease-in-out
+
+                a:hover + .arrow
+                    // display: inline-block
+                    visibility: visible
+                    opacity: 1
+
+                .activet
+                    // display: inline-block
+                    visibility: visible
+                    opacity: 1
 
 
 @media (max-width: 775px)
     // .home-wrap
     //     width: auto
+
+    ul
+        a
+            &:hover
+                color: var(--nav-link-hover)
+                text-decoration: 
+                    line: underline
+                    color: var(--highlight2)
+
 
     .home-wrap
         header
