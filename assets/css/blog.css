@@ -9,13 +9,33 @@ section.cc {
     margin: 0 auto;
     text-align: center; }
 
-header h1 {
-  color: var(--section-title);
-  font-family: 'Oswald';
-  font-style: italic;
-  font-size: 60px;
-  font-weight: 600;
-  line-height: 1; }
+header {
+  background: var(--nav-background); }
+  header h1 {
+    color: var(--section-title);
+    font-family: 'Oswald';
+    font-style: italic;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1; }
+  header .logo-div {
+    margin: 0;
+    padding: 0;
+    z-index: 1; }
+    header .logo-div .logo {
+      overflow: hidden;
+      text-indent: 101%;
+      white-space: nowrap;
+      max-width: 115px;
+      background-image: url("/assets/img/LP-Logo.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      height: 115px;
+      padding: 0;
+      margin: 10px 0 0 10px;
+      border-radius: 8px;
+      z-index: 1; }
 
 body {
   display: grid;
@@ -23,8 +43,7 @@ body {
   height: 100vh; }
 
 header {
-  grid-column: 1 / 4;
-  background: lightpink; }
+  grid-column: 1 / 4; }
 
 .left-sidebar {
   grid-column: 1 / 2;

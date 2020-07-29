@@ -1,4 +1,6 @@
 header
+    background: var(--nav-background)
+
     h1
         color: var(--section-title)
         font:
@@ -7,3 +9,28 @@ header
             size: 60px
             weight: 600
         line-height: 1
+
+    .logo-div
+        margin: 0
+        padding: 0
+        z-index: 1
+        .logo
+            // +hide-text
+            //hide text
+            overflow: hidden
+            text-indent: 101%
+            white-space: nowrap
+
+            max-width: 115px
+            background:
+                // image: url(/assets/img/logo.jpg)
+                image: url("/assets/img/LP-Logo.png")
+                repeat: no-repeat
+                position: center
+                size: contain
+                // color: pink
+            height: 115px
+            padding: 0
+            margin: 10px 0 0 10px
+            border-radius: 8px
+            z-index: 1
