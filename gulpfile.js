@@ -61,7 +61,16 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('_site/assets/css'))
         .pipe(browserSync.reload({stream:true}))
         .pipe(gulp.dest('assets/css'));
-    return gulp.src('assets/css/main.scss')
+    gulp.src('assets/css/blog.scss')
+        .pipe(sass({
+            includePaths: ['css'],
+            onError: browserSync.notify
+        }))
+        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(gulp.dest('_site/assets/css'))
+        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest('assets/css'));
+    return gulp.src('assets/css/home.scss')
         .pipe(sass({
             includePaths: ['css'],
             onError: browserSync.notify

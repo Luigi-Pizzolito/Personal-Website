@@ -9,6 +9,10 @@ function pageLoaded() {
     }
 
     setTimeout(() => {
-        highlightmobilenav();
+        try {
+            highlightmobilenav();
+        } catch (error) {
+            console.log("looks like were not in homepage...");
+        }
     }, 50);
 }

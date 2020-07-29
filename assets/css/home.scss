@@ -1,13 +1,13 @@
-@import '1-base/vars';
+// @import '1-base/vars';
 // @import '2-modules/splash';
 
-@import '0-tools/bourbon/bourbon';
-@import '0-tools/normalize';
+// @import '0-tools/bourbon/bourbon';
+// @import '0-tools/normalize';
 
-@import '1-base/base';
-@import '1-base/fonts';
+// @import '1-base/base';
+// @import '1-base/fonts';
 
-@import '2-modules/header';
+@import '3-sections/home/header';
 @import '2-modules/buttons';
 @import '2-modules/cc';
 
