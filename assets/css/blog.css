@@ -9,6 +9,14 @@ section.cc {
     margin: 0 auto;
     text-align: center; }
 
+header h1 {
+  color: var(--section-title);
+  font-family: 'Oswald';
+  font-style: italic;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1; }
+
 body {
   display: grid;
   grid-template: auto 1fr auto / auto 1fr auto;
