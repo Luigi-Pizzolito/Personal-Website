@@ -3,6 +3,7 @@ header
     width: 100%
     padding-bottom: 135px
     background-color: var(--nav-mob-sub-background)
+    border-bottom: 1px solid var(--nav-mob-sub-background)
 
     .sec-nav, .main-nav
         position: absolute
@@ -96,5 +97,55 @@ header
             height: 40px
             width: 100%
 
-            background-color: blue
+            background-color: var(--nav-background)
             border-top: 1px solid var(--nav-mob-sub-background)
+
+            nav.site-navbar
+                overflow: hidden
+                ul
+                    list-style-type: none
+                    margin: 0
+                    padding: 0
+                    clear: both
+                    li
+                        float: left
+                        a, .dropbtn
+                            display: block
+                            color: var(--nav-link)
+                            border-right: 1px solid var(--nav-mob-sub-background)
+                            text-align: center
+                            padding: 10px 16px
+                            text-decoration: none
+                        a:hover, .dropdown:hover .dropbtn
+                            color: var(--nav-link-hover)
+                            background-color: var(--nav-mob-sub-background)
+                        a:active
+                            color: var(--nav-link-active)
+
+                        .dropdown
+                            overflow: hidden
+                            .dropdown-content
+                                display: none
+                                position: absolute
+                                background-color: var(--nav-mob-sub-background)
+                                // min-width: 160px
+                                // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+                                z-index: 1
+                                a
+                                    display: block
+                                    color: var(--nav-link)
+                                    border: 1px solid var(--nav-mob-sub-background)
+                                    border-bottom: none
+                                    text-align: left
+                                    padding: 5px 16px
+                                    text-decoration: none
+                                    &:last-child
+                                        border-bottom: 1px solid var(--nav-mob-sub-background)
+                            &:hover .dropdown-content
+                                display: block
+                                background-color: var(--nav-mob-sub-background-lighter)
+                            .dropdown-content.threei
+                                transform: translateY(calc(-3*28px)) translateY(-38px) translateY(-4px) translateX(-1px)
+                            .dropdown-content.twoi
+                                transform: translateY(calc(-2*28px)) translateY(-38px) translateY(-4px) translateX(-1px)
+                                

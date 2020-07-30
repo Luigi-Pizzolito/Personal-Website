@@ -1,3 +1,29 @@
+mixin nav-content()
+    ul
+        li
+            a(href="#") Home
+        li
+            a(href="#") About
+        li
+            .dropdown
+                a.dropbtn(href="#") Projects
+                    i.fa.fa-caret-down
+                .dropdown-content.threei
+                    a(href="#") Videography
+                    a(href="#") Software
+                    a(href="#") Electronics
+        li
+            .dropdown
+                a.dropbtn(href="#") Experiences
+                    i.fa.fa-caret-down
+                .dropdown-content.twoi
+                    a(href="#") Public Appearances
+                    a(href="#") Theatre Tech
+        li
+            a(href="#") Academics/CV
+        li
+            a(href="#") Contact
+
 header
     .main-nav
         .logo-div
@@ -6,4 +32,6 @@ header
         .title-div
             h1 Luigi Pizzolito
         .navbar-div
+            nav.site-navbar
+                +nav-content()
     .sec-nav

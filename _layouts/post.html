@@ -5,11 +5,11 @@ layout: default
 
 {% include blog/header.html %}
 
-<div class="left-sidebar" contenteditable>
+<div class="left-sidebar">
     Article Contents
 </div>
 
-<main contenteditable>
+<main>
     <h2>{{ page.title }}</h2>
     <p class="meta">{{ page.date | date_to_string }}</p>
     <p class="meta">{{ page.categories | join: ', ' }}</p>
@@ -19,8 +19,8 @@ layout: default
     </div>
 </main>
 
-<div class="right-sidebar" contenteditable>
-    Blog Sidebar
+<div class="right-sidebar">
+    Content Ovewview
 </div>
 
 {% include home/cc.html %}

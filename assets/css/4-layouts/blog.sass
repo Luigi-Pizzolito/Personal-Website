@@ -1,7 +1,7 @@
 body
     display: grid
     grid-template: auto 1fr auto / auto 1fr auto
-    height: 100vh
+    height: 200vh
 
 // etc
 
@@ -12,12 +12,13 @@ header
 
 .left-sidebar
     grid-column: 1 / 2
-    width: clamp(200px, 20vw, 250px)
+    // width: clamp(200px, 20vw, 250px)
+    width: 20px
     background: lightblue
 
 main
     grid-column: 2 / 3
-    background: coral
+    background: lightpink
 
 .right-sidebar
     grid-column: 3 / 4
