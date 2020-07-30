@@ -1,36 +1,100 @@
 header
-    background: var(--nav-background)
+    position: relative
+    width: 100%
+    padding-bottom: 135px
+    background-color: var(--nav-mob-sub-background)
 
-    h1
-        color: var(--section-title)
-        font:
-            family: 'Oswald'
-            style: italic
-            size: 60px
-            weight: 600
-        line-height: 1
+    .sec-nav, .main-nav
+        position: absolute
+        height: 135px
 
-    .logo-div
-        margin: 0
-        padding: 0
-        z-index: 1
-        .logo
-            // +hide-text
-            //hide text
-            overflow: hidden
-            text-indent: 101%
-            white-space: nowrap
+    .sec-nav
+        right: 0
+        top: 0
+        width: 27.8%
+        clip-path: polygon(28.8% 0, 100% 0%, 100% 100%, 0 100%)
+        background-color: green
 
-            max-width: 115px
-            background:
-                // image: url(/assets/img/logo.jpg)
-                image: url("/assets/img/LP-Logo.png")
-                repeat: no-repeat
-                position: center
-                size: contain
-                // color: pink
-            height: 115px
+    .main-nav
+        left: 0
+        top: 0
+        width: 80%
+        clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%)
+
+        background: var(--nav-background)
+        // clear: both
+        display: grid
+        grid-template: 95px 40px / auto 1fr
+        // height: calc(115px + 20px)
+
+        .logo-div
+            margin: 0
             padding: 0
-            margin: 10px 0 0 10px
-            border-radius: 8px
-            z-index: 1
+            // z-index: 1
+            // margin-right: 10px
+
+            grid-column: 1 / 1
+            grid-row: 1 / 2
+
+            // transform: translateY(-10px)
+            // transform: translateY(-5px)
+            // float: left
+            .logo
+                // +hide-text
+                //hide text
+                overflow: hidden
+                text-indent: 101%
+                white-space: nowrap
+
+                max-width: 115px
+                background:
+                    // image: url(/assets/img/logo.jpg)
+                    image: url("/assets/img/LP-Logo.png")
+                    repeat: no-repeat
+                    position: center
+                    size: contain
+                    // color: pink
+                height: 115px
+                padding: 5px
+                margin: 5px
+                border-top: 5px solid transparent
+                // margin-left: 5px
+                // margin-top: 20px
+                
+                
+
+                // border-radius: 8px
+                
+                // z-index: 1
+            .sep
+                height: 135px
+                width: 135px
+                border-right: 1px solid var(--nav-mob-sub-background)
+                transform: translateY(-5px)
+
+        .title-div
+            // float: left
+            grid-column: 2 / 2
+            grid-row: 1 / 1
+            // height: calc((115px+20px)-30px)
+
+            h1
+                color: var(--nav-title)
+                font:
+                    family: 'Oswald'
+                    style: italic
+                    size: 60px
+                    weight: 600
+                line-height: 1
+                // margin: 0
+                margin-top: 20px
+                margin-left: 10px
+
+        .navbar-div
+            grid-column: 2 / 2
+            grid-row: 2 / 2
+            height: 40px
+            width: 100%
+
+            background-color: blue
+            border-top: 1px solid var(--nav-mob-sub-background)

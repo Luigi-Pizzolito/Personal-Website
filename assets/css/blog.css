@@ -10,32 +10,72 @@ section.cc {
     text-align: center; }
 
 header {
-  background: var(--nav-background); }
-  header h1 {
-    color: var(--section-title);
-    font-family: 'Oswald';
-    font-style: italic;
-    font-size: 60px;
-    font-weight: 600;
-    line-height: 1; }
-  header .logo-div {
-    margin: 0;
-    padding: 0;
-    z-index: 1; }
-    header .logo-div .logo {
-      overflow: hidden;
-      text-indent: 101%;
-      white-space: nowrap;
-      max-width: 115px;
-      background-image: url("/assets/img/LP-Logo.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      height: 115px;
+  position: relative;
+  width: 100%;
+  padding-bottom: 135px;
+  background-color: var(--nav-mob-sub-background); }
+  header .sec-nav, header .main-nav {
+    position: absolute;
+    height: 135px; }
+  header .sec-nav {
+    right: 0;
+    top: 0;
+    width: 27.8%;
+    -webkit-clip-path: polygon(28.8% 0, 100% 0%, 100% 100%, 0 100%);
+            clip-path: polygon(28.8% 0, 100% 0%, 100% 100%, 0 100%);
+    background-color: green; }
+  header .main-nav {
+    left: 0;
+    top: 0;
+    width: 80%;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+    background: var(--nav-background);
+    display: grid;
+    grid-template: 95px 40px / auto 1fr; }
+    header .main-nav .logo-div {
+      margin: 0;
       padding: 0;
-      margin: 10px 0 0 10px;
-      border-radius: 8px;
-      z-index: 1; }
+      grid-column: 1 / 1;
+      grid-row: 1 / 2; }
+      header .main-nav .logo-div .logo {
+        overflow: hidden;
+        text-indent: 101%;
+        white-space: nowrap;
+        max-width: 115px;
+        background-image: url("/assets/img/LP-Logo.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        height: 115px;
+        padding: 5px;
+        margin: 5px;
+        border-top: 5px solid transparent; }
+      header .main-nav .logo-div .sep {
+        height: 135px;
+        width: 135px;
+        border-right: 1px solid var(--nav-mob-sub-background);
+        -webkit-transform: translateY(-5px);
+                transform: translateY(-5px); }
+    header .main-nav .title-div {
+      grid-column: 2 / 2;
+      grid-row: 1 / 1; }
+      header .main-nav .title-div h1 {
+        color: var(--nav-title);
+        font-family: 'Oswald';
+        font-style: italic;
+        font-size: 60px;
+        font-weight: 600;
+        line-height: 1;
+        margin-top: 20px;
+        margin-left: 10px; }
+    header .main-nav .navbar-div {
+      grid-column: 2 / 2;
+      grid-row: 2 / 2;
+      height: 40px;
+      width: 100%;
+      background-color: blue;
+      border-top: 1px solid var(--nav-mob-sub-background); }
 
 body {
   display: grid;
@@ -47,6 +87,7 @@ header {
 
 .left-sidebar {
   grid-column: 1 / 2;
+  width: clamp(200px, 20vw, 250px);
   background: lightblue; }
 
 main {
@@ -55,6 +96,7 @@ main {
 
 .right-sidebar {
   grid-column: 3 / 4;
+  width: clamp(200px, 25vw, 320px);
   background: yellow; }
 
 footer {
