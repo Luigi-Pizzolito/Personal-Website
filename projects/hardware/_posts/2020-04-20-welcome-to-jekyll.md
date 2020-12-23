@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll! Electronics"
+title:  "Bean"
 date:   2020-04-20 09:11:03
 categories: jekyll update
 tags: iot

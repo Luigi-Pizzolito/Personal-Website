@@ -11,7 +11,7 @@
 <!-- Configuration -->
 <script>
   function updateSearch() {
-    console.log(document.getElementById("search-input").value)
+    // console.log(document.getElementById("search-input").value)
     if (document.getElementById("search-input").value == '') {
       document.getElementsByClassName('hide-search')[0].style.display = '';
       document.getElementById("backsearch").style.display = 'none';
@@ -23,7 +23,7 @@
   }
 
   function loadTag(tag) {
-    console.log(tag);
+    // console.log(tag);
     document.getElementById("search-input").value = tag.name;
     updateSearch();
     document.getElementById("search-input").dispatchEvent(new Event("input"));

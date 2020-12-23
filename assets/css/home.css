@@ -335,7 +335,8 @@ section.electronics {
     section.electronics .caroussel .container {
       padding: 10px 0;
       margin: 5px;
-      display: inline-block;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
       -webkit-transform: translateX(0%);
               transform: translateX(0%);
       -webkit-animation: moveSlideshow 45s linear infinite;
