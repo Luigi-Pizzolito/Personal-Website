@@ -1,0 +1,40 @@
+<!-- Html Elements for Search -->
+<div id="search-container">
+  <input type="text" id="search-input" placeholder="Search..." onkeyup="updateSearch()" ondblclick="this.value=''; updateSearch(); document.getElementById('search-input').dispatchEvent(new Event('input'));">
+  <small style="display: none;" id="backsearch" onclick="document.getElementById('search-input').value=''; updateSearch(); document.getElementById('search-input').dispatchEvent(new Event('input'));">Back</small>
+  <ul id="results-container"></ul>
+</div>
+
+<!-- Script pointing to search-script.js -->
+<script src="/assets/js/search-script.js" type="text/javascript"></script>
+
+<!-- Configuration -->
+<script>
+  function updateSearch() {
+    console.log(document.getElementById("search-input").value)
+    if (document.getElementById("search-input").value == '') {
+      document.getElementsByClassName('hide-search')[0].style.display = '';
+      document.getElementById("backsearch").style.display = 'none';
+    } else {
+      document.getElementsByClassName('hide-search')[0].style.display = 'none';
+      document.getElementById("backsearch").style.display = '';
+    }
+
+  }
+
+  function loadTag(tag) {
+    console.log(tag);
+    document.getElementById("search-input").value = tag.name;
+    updateSearch();
+    document.getElementById("search-input").dispatchEvent(new Event("input"));
+  }
+
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/projects/search.json',
+    searchResultTemplate: '<li><a href="{url}">{title}</a><p class="item-desc">{description}<br /><small>{category} - {date}</small></li>',
+    noResultsText: '<p class="nf">No results found.</p>',
+    limit: 8
+  })
+</script>
