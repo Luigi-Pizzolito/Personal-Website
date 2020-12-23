@@ -93,7 +93,7 @@ layout: default
                     {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
                     {% endif %}
                     <p class="item-desc">
-                        {{ desc | strip_newlines | truncate: site.quick_view_length, '...' }}
+                        {{ desc | strip_newlines | strip_html | truncate: site.quick_view_length, '...' }}
                         <br />
                         <small>
                             {{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}
@@ -133,7 +133,7 @@ layout: default
                     {% else %}
                     {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
                     {% endif %}
-                    desc: "{{ desc | truncate: site.quick_view_length, '...' | replace: '"', '\"' }}",
+                    desc: "{{ desc | strip_html | strip_newlines |truncate: site.quick_view_length, '...' | replace: '"', '\"' }}",
                         catdate: "{{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}"
 
                     {% if forloop.last %}

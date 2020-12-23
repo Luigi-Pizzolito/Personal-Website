@@ -147,7 +147,7 @@ main {
   border-right: 1px solid var(--nav-mob-sub-background);
   padding-top: 10px;
   padding-bottom: 10px; }
-  main h2, main p {
+  main h2, main p, main h3, main ul, main li, main a {
     color: var(--nav-link-active);
     margin: 8px; }
   main .post img {

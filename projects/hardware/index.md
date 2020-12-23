@@ -11,3 +11,15 @@ categories: hardware
 </script>
 
 hello!
+
+{% for category in site.categories %}
+    {% if category[0] == page.categories %}
+  <!-- <h3>{{ category[0] }}</h3> -->
+  <ul>
+    {% for post in category[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {{ post.cover_image }}
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endfor %}
