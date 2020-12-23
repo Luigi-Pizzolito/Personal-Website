@@ -1,6 +1,6 @@
 name: Luigi Pizzolito
 markdown: kramdown
-highlighter: rouge # or pygments or null
+highlighter: rouge # or pygments, rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "noteforshell", "preview.png"]
 
 quick_view_length: 150

@@ -20,7 +20,9 @@
     --section-text: #FFF;
     --button-color: #ddd;
     --button-active: #eee;
-    --button-hover: #fff; } }
+    --button-hover: #fff;
+    --blog-sidebar: #ffffff;
+    --blog-background: #fafafa; } }
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -36,7 +38,9 @@
     --section-text: #FFF;
     --button-color: #ddd;
     --button-active: #eee;
-    --button-hover: #fff; } }
+    --button-hover: #fff;
+    --blog-sidebar: #202020;
+    --blog-background: #262626; } }
 
 /* stylelint-disable order/properties-alphabetical-order */
 /* stylelint-enable */

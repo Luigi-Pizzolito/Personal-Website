@@ -11,8 +11,7 @@ layout: default
 
 <main>
     <h2>{{ page.title }}</h2>
-    <p class="meta">{{ page.date | date_to_string }}</p>
-    <p class="meta">{{ page.categories | join: ', ' }}</p>
+    <p class="meta">{{ page.date | date: '%B %d, %Y' }} - {{ page.categories[1] | capitalize }} - {{ page.tags | join: ', ' }}</p>
 
     <div class="post">
         {{ content }}
@@ -25,7 +24,27 @@ layout: default
     {% include search.html %}
     <div class="hide-search">
 
-        <h3>Share</h3>
+        <h3 class="share-header">Share</h3>
+
+        <a id="tweet" target="_blank" alt="Tweet this page">Tweet this page</a>
+        <script language="javascript">
+            var link = document.getElementById('tweet');
+            var url = window.location;
+
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                // window.open("https://twitter.com/share?url=" + encodeURIComponent(url));
+                window.open("https://twitter.com/share?url=" + encodeURIComponent(url) + "&text=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=800');
+            }, false);
+
+            // function tweetCurrentPage() {
+            //     window.open("https://twitter.com/share?url=" + encodeURIComponent(window.location.href) + "&text=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            //     return false;
+            // }
+        </script>
+
+
 
         <h3>Other Posts</h3>
         <script>
@@ -201,16 +220,17 @@ layout: default
 -->
 
         <h4>Tags</h4>
-        {% assign tags = site.tags | sort %}
-        {% for tag in tags %}
-        <span class="site-tag">
-            <a onclick="loadTag(this);" name="{{ tag[0] | replace:'-', ' ' }}"
-                style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
-                {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
-            </a>
-        </span>
-        {% endfor %}
-
+        <div class="tagcontainer">
+            {% assign tags = site.tags | sort %}
+            {% for tag in tags %}
+            <span class="site-tag">
+                <a onclick="loadTag(this);" name="{{ tag[0] | replace:'-', ' ' }}"
+                    style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+                    {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+                </a>
+            </span>
+            {% endfor %}
+        </div>
     </div>
 
 </div>

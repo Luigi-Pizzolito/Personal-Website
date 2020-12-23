@@ -2,7 +2,7 @@ body
     display: grid
     grid-template: auto 1fr auto / auto 1fr auto
     min-height: 100vh
-    background: var(--nav-mob-sub-background) 
+    background: var(--blog-sidebar) 
 
 // etc
 
@@ -15,23 +15,35 @@ header
     grid-column: 1 / 2
     // width: clamp(200px, 20vw, 250px)
     width: 20px
-    background: var(--nav-mob-sub-background)
+    background: var(--blog-sidebar)
     color: var(--nav-title)
-    border-right: 1px solid var(--nav-mob-sub-background)
+    // border-right: 1px solid var(--nav-mob-sub-background)
+
+
+
 
 main
     grid-column: 2 / 3
-    background: lightpink
+    background: var(--blog-background)
+    border-left: 1px solid var(--nav-mob-sub-background)
+    border-right: 1px solid var(--nav-mob-sub-background)
+    h2, p
+        color: var(--nav-link-active)
+        margin: 8px
+    .post
+
+
 
 .right-sidebar
     grid-column: 3 / 4
     width: clamp(200px, 25vw, 320px)
-    background: var(--nav-mob-sub-background)
+    background: var(--blog-sidebar)
     color: var(--nav-title)
-    border-left: 1px solid var(--nav-mob-sub-background)
+    // border-left: 1px solid var(--nav-mob-sub-background)
     position: sticky
     top: 0
     height: fit-content
+    margin-right: 10px
     ul, li
         list-style-type: none
         margin: 0px auto
@@ -88,14 +100,24 @@ main
             &:hover
                 cursor: pointer
 
-    .site-tag
-        a
-            &:hover
-                cursor:  pointer !important
+    #tweet
+        padding-left: 20px
+        &:hover
+            cursor: pointer
+
+    .tagcontainer
+        .site-tag
+            a
+                &:hover
+                    cursor:  pointer !important
+
+    .share-header
+        padding-top: 0
 
 
 footer
     grid-column: 1 / 4 
+    border-top: 1px solid var(--nav-mob-sub-background)
 //   background: wheat
 //   padding: 2rem
 //   text-align: center
