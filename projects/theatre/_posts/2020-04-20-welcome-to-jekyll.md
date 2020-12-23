@@ -1,5 +1,5 @@
 ---
-layout: post-full
+layout: post
 title:  "Welcome to Jekyll! Electronics"
 date:   2020-04-20 09:11:03
 categories: jekyll update
