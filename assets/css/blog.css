@@ -139,7 +139,7 @@ header {
   width: 20px;
   background: var(--nav-mob-sub-background);
   color: var(--nav-title);
-  border-left: 1px solid var(--nav-mob-sub-background); }
+  border-right: 1px solid var(--nav-mob-sub-background); }
 
 main {
   grid-column: 2 / 3;

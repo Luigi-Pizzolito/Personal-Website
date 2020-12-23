@@ -78,6 +78,23 @@ layout: default
 
             <!-- random posts -->
             <script>
+                function getRandomArbitrary(min, max) {
+                    return Math.random() * (max - min) + min;
+                }
+
+                /**
+                 * Returns a random integer between min (inclusive) and max (inclusive).
+                 * The value is no lower than min (or the next integer greater than min
+                 * if min isn't an integer) and no greater than max (or the next integer
+                 * lower than max if max isn't an integer).
+                 * Using Math.round() will give you a non-uniform distribution!
+                 */
+                function getRandomInt(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+
                 function putrandposts() {
                     var posts = [
                         {% for post in site.posts %}
@@ -101,9 +118,15 @@ layout: default
                 {% endfor %}
                             ];
 
-                console.log(posts);
+                // console.log(posts);
+                var postarr = []
                 for (let index = 0; index < {{ site.sidebarunrelpostlimit }}; index++) {
-                    const i = Math.floor(Math.random() * (posts.length + 1));
+                    var i = getRandomInt(0, posts.length-1);
+                    while ( postarr.includes(i) ) {
+                        i = getRandomInt(0, posts.length-1);
+                    }
+                    postarr.push(i);
+                    // console.log(i+"/"+(posts.length-1));
                     let item = document.createElement("li");
                     let title = document.createElement("a");
                     title.href = posts[i].url;

@@ -20,7 +20,8 @@ function pageLoaded() {
         try {
             updateBlogSidebar();
         } catch (error) {
-            console.log("looks like were not in blogpage...")
+            console.log("looks like were not in blogpage...");
+            console.warn(error);
         }
     }, 55);
 }
