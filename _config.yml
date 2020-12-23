@@ -2,3 +2,8 @@ name: Luigi Pizzolito
 markdown: kramdown
 highlighter: rouge # or pygments or null
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "noteforshell", "preview.png"]
+
+quick_view_length: 150
+top_categ: ["academics", "hardware", "publicspeaking", "software", "theatre", "videography"]
+sidebarpostlimit: 5
+sidebarunrelpostlimit: 2

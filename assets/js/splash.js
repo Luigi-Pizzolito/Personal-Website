@@ -15,4 +15,12 @@ function pageLoaded() {
             console.log("looks like were not in homepage...");
         }
     }, 50);
+
+    setTimeout(() => {
+        try {
+            updateBlogSidebar();
+        } catch (error) {
+            console.log("looks like were not in blogpage...")
+        }
+    }, 55);
 }

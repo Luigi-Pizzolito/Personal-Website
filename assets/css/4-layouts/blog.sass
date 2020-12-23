@@ -23,7 +23,31 @@ main
 .right-sidebar
     grid-column: 3 / 4
     width: clamp(200px, 25vw, 320px)
-    background: yellow
+    background: var(--nav-mob-sub-background)
+    color: var(--nav-title)
+    ul, li
+        list-style-type: none
+        margin: 0px auto
+    h3, h4
+        padding-left: 40px
+        color: var(--nav-title)
+        margin: 0px auto
+    h3
+        padding-top: 10px
+    a
+        text-decoration: none
+        color: var(--nav-title)
+        &:link,
+            &:visited
+                color: var(--nav-link)
+            &:hover
+                color: var(--nav-link-hover)
+            &:active
+                color: var(--nav-link-active)
+
+    p.item-desc
+        font-size: 11px
+        color: var(--nav-link)
 
 footer
     grid-column: 1 / 4 

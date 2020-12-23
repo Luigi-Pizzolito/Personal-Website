@@ -68,7 +68,7 @@ header {
         font-size: 60px;
         font-weight: 600;
         line-height: 1;
-        margin-top: 20px;
+        margin-top: 30px;
         margin-left: 10px; }
     header .main-nav .navbar-div {
       grid-column: 2 / 2;
@@ -145,7 +145,29 @@ main {
 .right-sidebar {
   grid-column: 3 / 4;
   width: clamp(200px, 25vw, 320px);
-  background: yellow; }
+  background: var(--nav-mob-sub-background);
+  color: var(--nav-title); }
+  .right-sidebar ul, .right-sidebar li {
+    list-style-type: none;
+    margin: 0px auto; }
+  .right-sidebar h3, .right-sidebar h4 {
+    padding-left: 40px;
+    color: var(--nav-title);
+    margin: 0px auto; }
+  .right-sidebar h3 {
+    padding-top: 10px; }
+  .right-sidebar a {
+    text-decoration: none;
+    color: var(--nav-title); }
+    .right-sidebar a:link:visited {
+      color: var(--nav-link); }
+    .right-sidebar a:link:hover {
+      color: var(--nav-link-hover); }
+    .right-sidebar a:link:active {
+      color: var(--nav-link-active); }
+  .right-sidebar p.item-desc {
+    font-size: 11px;
+    color: var(--nav-link); }
 
 footer {
   grid-column: 1 / 4; }
