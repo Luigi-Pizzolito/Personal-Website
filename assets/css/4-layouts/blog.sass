@@ -1,7 +1,7 @@
 body
     display: grid
     grid-template: auto 1fr auto / auto 1fr auto
-    height: 200vh
+    min-height: 100vh
     background: var(--nav-mob-sub-background) 
 
 // etc
@@ -35,8 +35,12 @@ main
     ul, li
         list-style-type: none
         margin: 0px auto
+        padding-left: 20px
+        li
+            padding-left: 0
     h3, h4
-        padding-left: 40px
+        padding-left: 20px
+        padding-top: 0
         color: var(--nav-title)
         margin: 0px auto
     h3
@@ -49,6 +53,7 @@ main
                 color: var(--nav-link)
             &:hover
                 color: var(--nav-link-hover)
+                cursor: pointer !important
             &:active
                 color: var(--nav-link-active)
 
@@ -58,10 +63,31 @@ main
         margin-bottom: 10px
 
     span.site-tag
-        padding-left: 40px
+        padding-left: 20px
         a
             display: inline-block
             margin-right: 12px
+
+    #search-container
+        padding-left: 20px
+        ul
+            padding: 0
+        .nf
+            padding-top: 5px
+            margin-bottom: 0
+        input
+            width: -webkit-fill-available
+            margin-right: 20px
+            background-color: var(--nav-mob-sub-background)
+            color: var(--nav-link)
+            border: var(--nav-background) 2px solid
+            margin-top: 10px
+
+    .site-tag
+        a
+            &:hover
+                cursor:  pointer !important
+
 
 footer
     grid-column: 1 / 4 

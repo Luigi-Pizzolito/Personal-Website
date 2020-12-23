@@ -1,0 +1,21 @@
+---
+---
+[
+  {% for post in site.posts %}
+    {
+
+      "title"    : "{{ post.title | strip_html | escape }}",
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "category" : "{{ post.categories[1]  | capitalize }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "date"     : "{{ post.date | date: '%B %d, %Y' }}",
+      {% if post.description %}
+      {% assign desc = post.description %}
+      {% else %}
+      {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
+      {% endif %}
+      "description" : "{{ desc | strip_newlines | truncate: site.quick_view_length, '...' | strip_html | escape }}"
+
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
