@@ -5,15 +5,9 @@ layout: default
 
 {% include blog/header.html %}
 
-<script>
-    function updateBlogSidebar() {
-        document.getElementsByClassName("sec-nav")[0].style.background = 'url("/assets/img/blog/header/{{ page.categories[1] }}.png") center right';
-    }
-</script>
-
 <main style="padding:10px 20px;">
     <h2>{{ page.title }}</h2>
-    <p class="meta">{{ page.date | date: '%B %d, %Y' }} - {{ page.categories[1] | capitalize }} - {{ page.tags | join: ', ' }}</p>
+    <!-- <p class="meta">{{ page.date | date: '%B %d, %Y' }} - {{ page.categories[1] | capitalize }} - {{ page.tags | join: ', ' }}</p> -->
 
     <div class="post">
         {{ content }}
