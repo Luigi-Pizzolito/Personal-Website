@@ -191,7 +191,8 @@ main {
   .right-sidebar #search-container {
     padding-left: 20px; }
     .right-sidebar #search-container ul {
-      padding: 0; }
+      padding: 0;
+      margin-top: 10px; }
     .right-sidebar #search-container .nf {
       padding-top: 5px;
       margin-bottom: 0; }
@@ -202,6 +203,10 @@ main {
       color: var(--nav-link);
       border: var(--nav-background) 2px solid;
       margin-top: 10px; }
+    .right-sidebar #search-container #backsearch {
+      font-size: 12px; }
+      .right-sidebar #search-container #backsearch:hover {
+        cursor: pointer; }
   .right-sidebar .site-tag a:hover {
     cursor: pointer !important; }
 
