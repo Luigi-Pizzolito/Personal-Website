@@ -128,7 +128,8 @@ header {
 body {
   display: grid;
   grid-template: auto 1fr auto / auto 1fr auto;
-  height: 200vh; }
+  height: 200vh;
+  background: var(--nav-mob-sub-background); }
 
 header {
   grid-column: 1 / 4; }
@@ -136,7 +137,9 @@ header {
 .left-sidebar {
   grid-column: 1 / 2;
   width: 20px;
-  background: lightblue; }
+  background: var(--nav-mob-sub-background);
+  color: var(--nav-title);
+  border-left: 1px solid var(--nav-mob-sub-background); }
 
 main {
   grid-column: 2 / 3;
@@ -146,7 +149,13 @@ main {
   grid-column: 3 / 4;
   width: clamp(200px, 25vw, 320px);
   background: var(--nav-mob-sub-background);
-  color: var(--nav-title); }
+  color: var(--nav-title);
+  border-left: 1px solid var(--nav-mob-sub-background);
+  position: sticky;
+  top: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content; }
   .right-sidebar ul, .right-sidebar li {
     list-style-type: none;
     margin: 0px auto; }

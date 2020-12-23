@@ -7,3 +7,5 @@ quick_view_length: 150
 top_categ: ["academics", "hardware", "publicspeaking", "software", "theatre", "videography"]
 sidebarpostlimit: 5
 sidebarunrelpostlimit: 2
+
+recentpostlim: 2

@@ -2,6 +2,7 @@ body
     display: grid
     grid-template: auto 1fr auto / auto 1fr auto
     height: 200vh
+    background: var(--nav-mob-sub-background) 
 
 // etc
 
@@ -14,7 +15,9 @@ header
     grid-column: 1 / 2
     // width: clamp(200px, 20vw, 250px)
     width: 20px
-    background: lightblue
+    background: var(--nav-mob-sub-background)
+    color: var(--nav-title)
+    border-left: 1px solid var(--nav-mob-sub-background)
 
 main
     grid-column: 2 / 3
@@ -25,6 +28,10 @@ main
     width: clamp(200px, 25vw, 320px)
     background: var(--nav-mob-sub-background)
     color: var(--nav-title)
+    border-left: 1px solid var(--nav-mob-sub-background)
+    position: sticky
+    top: 0
+    height: fit-content
     ul, li
         list-style-type: none
         margin: 0px auto

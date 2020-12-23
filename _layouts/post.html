@@ -6,7 +6,7 @@ layout: default
 {% include blog/header.html %}
 
 <div class="left-sidebar">
-    Article Contents
+    <!-- Article Contents -->
 </div>
 
 <main>
@@ -22,43 +22,68 @@ layout: default
 <div class="right-sidebar">
     <h3>Other Posts</h3>
     <script>
-        var pagecat = "{{ page.categories[1] }}";
         function updateBlogSidebar() {
-            var inst = document.getElementsByClassName("post-listSidebar")[0].getElementsByClassName(pagecat)[0];
+            var inst = document.getElementsByClassName("post-listSidebar")[0].getElementsByClassName("{{ page.categories[1] }}")[0];
             document.getElementsByClassName("post-listSidebar")[0].removeChild(inst);
             document.getElementsByClassName("post-listSidebar")[0].prepend(inst);
+
+            document.getElementsByClassName("sec-nav")[0].style.background = 'url("/assets/img/blog/header/{{ page.categories[1] }}.png") center right';
         }
     </script>
 
+    <div class="recentpost-listSidebar">
+        <h4>Recents</h4>
+        <ul>
+            {% for post in site.related_posts limit:site.recentpostlim%}
+            <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+            {% if post.description %}
+            {% assign desc = post.description %}
+            {% else %}
+            {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
+            {% endif %}
+            <p class="item-desc">
+                {{ desc | truncate: site.quick_view_length, '...' }}
+                <br />
+                <small>
+                    {{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}
+                </small>
+            </p>
+            {% endfor %}
+        </ul>
+    </div>
+
     <div class="post-listSidebar">
+        <h4>Random</h4>
         {% for category in site.categories %}
 
         {% if site.top_categ contains category[0] %}
 
 
         <div class="{{ category[0] }}">
-            <h4 >{{ category[0] | capitalize  }}</h4>
+            <!-- <h4 ></h4> -->
             {% if category[0] == page.categories[1] %}
-                {% assign plim = site.sidebarpostlimit %}
+            {% assign plim = site.sidebarpostlimit %}
             {% else %}
-                {% assign plim = site.sidebarunrelpostlimit %}
+            {% assign plim = site.sidebarunrelpostlimit %}
             {% endif %}
             <ul>
-                
+
                 {% for post in category[1] limit:plim %}
                 <li>
-                    <a href="{{ post.url }}" >{{ post.title }}</a>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
 
                     {% if post.description %}
-                        {% assign desc = post.description %}
+                    {% assign desc = post.description %}
                     {% else %}
-                        {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
+                    {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
                     {% endif %}
                     <p class="item-desc">
                         {{ desc | truncate: site.quick_view_length, '...' }}
                         <br />
                         <small>
-                            {{ post.date | date: '%B %d, %Y' }}
+                            {{ category[0] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}
                         </small>
                     </p>
                 </li>
