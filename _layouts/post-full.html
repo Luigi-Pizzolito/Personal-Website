@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="/assets/css/blog.css">
+
+{% include blog/header.html %}
+
+<script>
+    function updateBlogSidebar() {
+        document.getElementsByClassName("sec-nav")[0].style.background = 'url("/assets/img/blog/header/{{ page.categories[1] }}.png") center right';
+    }
+</script>
+
+<main style="padding-left:20px;">
+    <h2>{{ page.title }}</h2>
+    <p class="meta">{{ page.date | date: '%B %d, %Y' }} - {{ page.categories[1] | capitalize }} - {{ page.tags | join: ', ' }}</p>
+
+    <div class="post">
+        {{ content }}
+    </div>
+</main>
+
+{% include home/cc.html %}

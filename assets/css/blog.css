@@ -148,6 +148,8 @@ main {
   main h2, main p {
     color: var(--nav-link-active);
     margin: 8px; }
+  main .post img {
+    max-width: 100%; }
 
 .right-sidebar {
   grid-column: 3 / 4;
