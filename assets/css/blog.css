@@ -160,7 +160,8 @@ main {
     main .cards .card {
       border: 2px solid var(--nav-mob-sub-background-lighter);
       border-radius: 4px;
-      margin: .5rem; }
+      margin: .5rem;
+      background: var(--blog-sidebar); }
       main .cards .card img {
         max-width: 100%;
         height: auto;

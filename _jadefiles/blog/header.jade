@@ -3,26 +3,26 @@ mixin nav-content()
         li
             a(href="/") Home
         li
-            a(href="#") About
+            a(href="/static/about.html") About
         li
             .dropdown
-                a.dropbtn(href="#") Projects
+                a.dropbtn(href="/projects") Projects
                     i.fa.fa-caret-down
                 .dropdown-content.threei
-                    a(href="#") Videography
-                    a(href="#") Software
-                    a(href="#") Electronics
+                    a(href="/projects/videography") Videography
+                    a(href="/projects/software") Software
+                    a(href="/projects/hardware") Electronics
         li
             .dropdown
                 a.dropbtn(href="#") Experiences
                     i.fa.fa-caret-down
                 .dropdown-content.twoi
-                    a(href="#") Public Appearances
-                    a(href="#") Theatre Tech
+                    a(href="/projects/publicspeaking") Public Appearances
+                    a(href="/projects/theatre") Theatre Tech
         li
-            a(href="#") Academics/CV
+            a(href="/projects/academics") Academics/CV
         li
-            a(href="#") Contact
+            a(href="/static/contact.html") Contact
 
 header
     .main-nav

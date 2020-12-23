@@ -1,7 +1,7 @@
 ---
 layout: post-full
 title:  "Contact Me"
-categories: contact social_media
+categories: contact
 ---
 
 <script>
