@@ -5,6 +5,7 @@
 ### Jekyll ###
 _site/
 _includes/
+!_includes/search.html
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
