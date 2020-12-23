@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  "Welcome to Jekyll! Electronics"
-date:   2020-04-20 09:11:03
+date:   2020-02-01 09:11:03
 categories: jekyll update
-tags: iot
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!

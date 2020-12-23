@@ -5,7 +5,7 @@ exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "noteforsh
 
 quick_view_length: 150
 top_categ: ["academics", "hardware", "publicspeaking", "software", "theatre", "videography"]
-sidebarpostlimit: 5
-sidebarunrelpostlimit: 2
 
+# sidebarpostlimit: 1
+sidebarunrelpostlimit: 3
 recentpostlim: 2

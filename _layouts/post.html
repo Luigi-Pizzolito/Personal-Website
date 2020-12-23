@@ -23,17 +23,20 @@ layout: default
     <h3>Other Posts</h3>
     <script>
         function updateBlogSidebar() {
-            var inst = document.getElementsByClassName("post-listSidebar")[0].getElementsByClassName("{{ page.categories[1] }}")[0];
-            document.getElementsByClassName("post-listSidebar")[0].removeChild(inst);
-            document.getElementsByClassName("post-listSidebar")[0].prepend(inst);
+            // var inst = document.getElementsByClassName("post-listSidebar")[0].getElementsByClassName("{{ page.categories[1] }}")[0];
+            // document.getElementsByClassName("post-listSidebar")[0].removeChild(inst);
+            // document.getElementsByClassName("post-listSidebar")[0].prepend(inst);
 
             document.getElementsByClassName("sec-nav")[0].style.background = 'url("/assets/img/blog/header/{{ page.categories[1] }}.png") center right';
+
+            putrandposts();
         }
     </script>
 
     <div class="recentpost-listSidebar">
-        <h4>Recents</h4>
+        <!-- <h4>Recents</h4> -->
         <ul>
+            <!--
             {% for post in site.related_posts limit:site.recentpostlim%}
             <li>
                 <a href="{{ post.url }}">{{ post.title }}</a>
@@ -51,9 +54,74 @@ layout: default
                 </small>
             </p>
             {% endfor %}
+        -->
+
+            <!-- latest 2 posts or most related posts -->
+            {% for post in site.related_posts limit:site.recentpostlim %}
+            <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+
+                {% if post.description %}
+                {% assign desc = post.description %}
+                {% else %}
+                {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
+                {% endif %}
+                <p class="item-desc">
+                    {{ desc | truncate: site.quick_view_length, '...' }}
+                    <br />
+                    <small>
+                        {{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}
+                    </small>
+                </p>
+            </li>
+            {% endfor %}
+
+            <!-- random posts -->
+            <script>
+                function putrandposts() {
+                    var posts = [
+                        {% for post in site.posts %}
+                {
+
+                    title: "{{ post.title }}",
+                        url: "{{ post.url }}",
+                            {% if post.description %}
+                {% assign desc = post.description %}
+                {% else %}
+                {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
+                {% endif %}
+                desc: "{{ desc | truncate: site.quick_view_length, '...' | replace: '"', '\"' }}",
+                    catdate: "{{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}"
+
+                {% if forloop.last %}
+                                }
+                {% else %}
+                                },
+                {% endif %}
+                {% endfor %}
+                            ];
+
+                console.log(posts);
+                for (let index = 0; index < {{ site.sidebarunrelpostlimit }}; index++) {
+                    const i = Math.floor(Math.random() * (posts.length + 1));
+                    let item = document.createElement("li");
+                    let title = document.createElement("a");
+                    title.href = posts[i].url;
+                    title.innerHTML = posts[i].title;
+                    let descr = document.createElement("p");
+                    descr.classList = "item-desc";
+                    descr.innerHTML = (posts[i].desc) + "<br /><small>" + posts[i].catdate + "</small>";
+                    item.appendChild(title);
+                    item.appendChild(descr);
+                    document.getElementsByClassName("recentpost-listSidebar")[0].getElementsByTagName("ul")[0].appendChild(item);
+                }
+
+                }
+            </script>
+
         </ul>
     </div>
-
+    <!--
     <div class="post-listSidebar">
         <h4>Random</h4>
         {% for category in site.categories %}
@@ -62,7 +130,7 @@ layout: default
 
 
         <div class="{{ category[0] }}">
-            <!-- <h4 ></h4> -->
+
             {% if category[0] == page.categories[1] %}
             {% assign plim = site.sidebarpostlimit %}
             {% else %}
@@ -100,13 +168,19 @@ layout: default
 
 
     </div>
-    <!-- <ul class="">
-        {% for post in site.posts %}
+-->
 
-        <li{% if forloop.last %} class="last" {% endif %}>{{ post.title }}</li>
+    <h4>Tags</h4>
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+    <span class="site-tag">
+        <a href="/tag/{{ tag | first | slugify }}/"
+            style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+            {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+        </a>
+    </span>
+    {% endfor %}
 
-            {% endfor %}
-    </ul> -->
 </div>
 
 {% include home/cc.html %}

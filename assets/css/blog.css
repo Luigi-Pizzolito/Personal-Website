@@ -176,7 +176,13 @@ main {
       color: var(--nav-link-active); }
   .right-sidebar p.item-desc {
     font-size: 11px;
-    color: var(--nav-link); }
+    color: var(--nav-link);
+    margin-bottom: 10px; }
+  .right-sidebar span.site-tag {
+    padding-left: 40px; }
+    .right-sidebar span.site-tag a {
+      display: inline-block;
+      margin-right: 12px; }
 
 footer {
   grid-column: 1 / 4; }
