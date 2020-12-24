@@ -59,7 +59,13 @@ layout: default
                     // document.getElementsByClassName("post-listSidebar")[0].prepend(inst);
 
                     document.getElementsByClassName("sec-nav")[0].style.background = 'url("/assets/img/blog/header/{{ page.categories[1] }}.png") center right';
+
                     document.getElementById("nav-{{ page.categories[1] }}").classList.add("activet-l")
+
+                    document.getElementById("navb-{{ page.categories[1] }}").classList.add("active-navb")
+                    if (document.getElementById("navb-{{ page.categories[1] }}").parentElement.children.length > 1) {
+                        document.getElementById("navb-{{ page.categories[1] }}").parentElement.parentElement.firstChild.classList.add("active-navb")
+                    }
 
                     putrandposts();
                 }

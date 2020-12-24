@@ -3,26 +3,26 @@ mixin nav-content()
         li
             a(href="/") Home
         li
-            a(href="/static/about.html") About
+            a(href="/static/about.html",id="navb-about") About
         li
             .dropdown
-                a.dropbtn(href="/projects") Projects 
+                a.dropbtn(href="/projects",id="navb-projects") Projects 
                     i.fa.fa-caret-up
                 .dropdown-content.threei
-                    a(href="/projects/videography") Videography
-                    a(href="/projects/software") Software
-                    a(href="/projects/hardware") Electronics
+                    a(href="/projects/videography",id="navb-videography") Videography
+                    a(href="/projects/software",id="navb-software") Software
+                    a(href="/projects/hardware",id="navb-hardware") Electronics
         li
             .dropdown
                 a.dropbtn(href="#") Experiences 
                     i.fa.fa-caret-up
                 .dropdown-content.twoi
-                    a(href="/projects/publicspeaking") Public Appearances
-                    a(href="/projects/theatre") Theatre Tech
+                    a(href="/projects/publicspeaking",id="navb-publicspeaking") Public Appearances
+                    a(href="/projects/theatre",id="navb-theatre") Theatre Tech
         li
-            a(href="/projects/academics") Academics/CV
+            a(href="/projects/academics",id="navb-academics") Academics/CV
         li
-            a(href="/static/contact.html") Contact
+            a(href="/static/contact.html",id="navb-contact") Contact
 
 mixin nav-content-mobile()
     ul
@@ -97,5 +97,10 @@ script.
         document.querySelector('.main-pad').classList.toggle("extrapad")
         document.querySelector('main').classList.toggle("extrapad")
 
-        document.querySelector('.right-sidebar').querySelector('.main-pad').classList.toggle("extrapad")
+        try {
+            document.querySelector('.right-sidebar').querySelector('.main-pad').classList.toggle("extrapad")
+        } catch (error) {
+            
+        }
+        
     }
