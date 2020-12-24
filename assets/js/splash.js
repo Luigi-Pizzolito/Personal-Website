@@ -21,7 +21,6 @@ function pageLoaded() {
             updateBlogSidebar();
         } catch (error) {
             console.log("looks like were not in blogpage...");
-            console.warn(error);
         }
     }, 55);
 }

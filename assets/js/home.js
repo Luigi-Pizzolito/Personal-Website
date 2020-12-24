@@ -233,3 +233,60 @@ var scene2 = new ScrollMagic.Scene({
         .addIndicators()
         .addTo(controller2);
 }, 50);
+
+
+//header sidebar scrollspy
+function getDocHeight() {
+        var D = document;
+        return Math.max(
+            D.body.scrollHeight, D.documentElement.scrollHeight,
+            D.body.offsetHeight, D.documentElement.offsetHeight,
+            D.body.clientHeight, D.documentElement.clientHeight
+        )
+    }
+
+    function amountscrolled(){
+        var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
+        var docheight = getDocHeight();
+        var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+        var trackLength = docheight - winheight
+        var pctScrolled = (scrollTop/trackLength).toFixed(2) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
+        return pctScrolled
+    }
+
+setTimeout(() => {
+        //sounddesign section
+        var controller3 = new ScrollMagic.Controller();
+        // build scene
+        var scene3 = new ScrollMagic.Scene({
+                duration: document.documentElement.scrollHeight,//animateElem3.scrollHeight,// + (2 * animateElem2.offsetTop), //+ ((1 / 8) * 2 * window.innerHeight), // the scene should last for a scroll distance of 100px
+                offset: 0//,// - ((1 / 8) * window.innerHeight), // start this scene after scrolling for 50px
+                // triggerElement: animateElem3
+        })
+                .on("progress", function (e) {
+                        // console.log(amountscrolled());
+                        if (!spyInibit) {
+                                try {
+                                        document.getElementsByClassName("arrow activet")[0].style.transform="translateY("+Math.round(((30*7)-5)*amountscrolled())+"px)"
+                                } catch (error) {
+                                        
+                                }
+                        }
+                        
+                })
+                .addIndicators()
+                .addTo(controller3);
+        }, 45);
+var spyInibit = false;
+function inhibitSpy() {
+        spyInibit = true;
+        try {
+                document.getElementsByClassName("arrow activet")[0].style.transform="translateY(0px)"
+        } catch (error) {
+                
+        }
+}
+
+function rehabSpy() {
+        spyInibit = false;
+}
