@@ -10,6 +10,7 @@ layout: default
 </div>
 
 <main>
+    <div class="main-pad"></div>
     <h2>{{ page.title }}</h2>
     <p class="meta">{{ page.date | date: '%B %d, %Y' }} - {{ page.categories[1] | capitalize }} - {{ page.tags | join: ', ' }}</p>
 
@@ -54,6 +55,7 @@ layout: default
                 // document.getElementsByClassName("post-listSidebar")[0].prepend(inst);
 
                 document.getElementsByClassName("sec-nav")[0].style.background = 'url("/assets/img/blog/header/{{ page.categories[1] }}.png") center right';
+                document.getElementById("nav-{{ page.categories[1] }}").classList.add("activet-l")
 
                 putrandposts();
             }

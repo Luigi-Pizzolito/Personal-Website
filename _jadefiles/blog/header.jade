@@ -24,6 +24,29 @@ mixin nav-content()
         li
             a(href="/static/contact.html") Contact
 
+mixin nav-content-mobile()
+    ul
+        li
+            a(href="/") Home
+        li
+            a(href="/static/about.html",id="nav-about") About
+        li
+            a(href="/projects",id="nav-projects") All Projects
+        li
+            a.faded(href="/projects/videography",id="nav-videography") Videography
+        li
+            a.faded(href="/projects/software",id="nav-software") Software
+        li
+            a.faded(href="/projects/hardware",id="nav-hardware") Electronics
+        li
+            a.faded(href="/projects/publicspeaking",id="nav-publicspeaking") Public Appearances
+        li
+            a.faded(href="/projects/theatre",id="nav-theatre") Theatre Tech
+        li
+            a(href="/projects/academics",id="nav-academics") Academics/CV
+        li
+            a(href="/static/contact.html",id="nav-contact") Contact
+
 header
     .main-nav
         .logo-div
@@ -35,3 +58,35 @@ header
             nav.site-navbar
                 +nav-content()
     .sec-nav
+
+
+
+
+
+
+
+
+
+
+
+    .header-position
+
+        .logo-div
+            h1.logo Luigi Pizzolito
+        span.logo-desc Luigi Pizzolito
+
+        .mobile-nav-toggle(onclick="mobileNav();"): span
+
+.mobile-nav(onclick="mobileNav()")
+    +nav-content-mobile()
+
+script.
+    /*
+    * NavBar
+    */
+    function mobileNav() {
+        document.querySelector('.mobile-nav').classList.toggle('is-open');
+        document.querySelector('.mobile-nav-toggle').classList.toggle('is-open');
+        document.querySelector('.main-pad').classList.toggle("extrapad")
+        document.querySelector('main').classList.toggle("extrapad")
+    }
