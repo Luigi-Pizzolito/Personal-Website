@@ -9,6 +9,60 @@ section.cc {
     margin: 0 auto;
     text-align: center; }
 
+.home-cta {
+  width: 80%;
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--button-color);
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: block;
+  border: 1px solid var(--button-color);
+  padding: 0.3em 0;
+  margin: 0.3em auto;
+  box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+  transition: 0.08s ease-in;
+  border-radius: 4px; }
+  .home-cta::before {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.2s ease-in-out; }
+  .home-cta:hover::before {
+    right: 0; }
+  .home-cta:hover {
+    color: var(--button-hover); }
+  .home-cta:active {
+    color: var(--button-active); }
+
+.blog-cta {
+  line-height: 1;
+  text-decoration: none;
+  color: var(--button-color);
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: block;
+  border: 1px solid var(--button-color);
+  padding: 0.3em 0.2em;
+  transition: 0.08s ease-in;
+  border-radius: 2px; }
+  .blog-cta:hover {
+    color: var(--button-hover); }
+  .blog-cta:active {
+    color: var(--button-active);
+    background-color: rgba(255, 255, 255, 0.4); }
+
 header {
   position: relative;
   width: 100%;
@@ -133,7 +187,7 @@ header {
 main div.main-pad {
   display: none; }
 
-@media (max-width: 775px) {
+@media (max-width: 1000px) {
   main {
     margin-top: 65px; }
     main div.main-pad {
@@ -308,7 +362,8 @@ main {
     color: var(--nav-link-active);
     margin: 8px; }
   main .post img {
-    max-width: 100%; }
+    max-width: 100%;
+    border-radius: 2px; }
   main .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -344,7 +399,8 @@ main {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  margin-right: 10px; }
+  margin-right: 10px;
+  padding-top: 0; }
   .right-sidebar ul, .right-sidebar li {
     list-style-type: none;
     margin: 0px auto;
@@ -405,7 +461,14 @@ main {
     cursor: pointer !important; }
   .right-sidebar .share-header {
     padding-top: 0; }
+  .right-sidebar #stt {
+    margin: 10px 20px;
+    width: calc(100% - 20px); }
 
 footer {
   grid-column: 1 / 4;
   border-top: 1px solid var(--nav-mob-sub-background); }
+
+@media (max-width: 1000px) and (min-width: 775px) {
+  .right-sidebar {
+    padding-top: 65px; } }
