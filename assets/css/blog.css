@@ -49,8 +49,8 @@ section.cc {
 .blog-cta {
   line-height: 1;
   text-decoration: none;
-  color: var(--button-color);
-  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--nav-title);
+  background-color: var(--nav-mob-sub-background);
   text-align: center;
   display: block;
   border: 1px solid var(--button-color);
@@ -58,7 +58,7 @@ section.cc {
   transition: 0.08s ease-in;
   border-radius: 2px; }
   .blog-cta:hover {
-    color: var(--button-hover); }
+    color: var(--nav-link-hover); }
   .blog-cta:active {
     color: var(--button-active);
     background-color: rgba(255, 255, 255, 0.4); }
@@ -147,6 +147,8 @@ header {
               text-align: center;
               padding: 10px 16px;
               text-decoration: none; }
+            header .main-nav .navbar-div nav.site-navbar ul li .active-navb {
+              color: var(--highlight2) !important; }
             header .main-nav .navbar-div nav.site-navbar ul li a:hover, header .main-nav .navbar-div nav.site-navbar ul li .dropdown:hover .dropbtn {
               color: var(--nav-link-hover);
               background-color: var(--nav-mob-sub-background); }
@@ -183,11 +185,13 @@ header {
 
 .mobile-nav {
   display: none; }
+  .mobile-nav .sml-elem {
+    display: none; }
 
 main div.main-pad {
   display: none; }
 
-@media (max-width: 1000px) {
+@media (max-width: 1045px) {
   main {
     margin-top: 65px; }
     main div.main-pad {
@@ -197,6 +201,13 @@ main div.main-pad {
       transition: height 0.5s ease-in-out; }
     main div.main-pad.extrapad {
       height: 296px; }
+  .right-sidebar div.main-pad {
+    display: block;
+    width: 100%;
+    height: 0;
+    transition: height 0.5s ease-in-out; }
+  .right-sidebar div.main-pad.extrapad {
+    height: 310px; }
   header {
     width: auto;
     background: var(--nav-background);
@@ -331,10 +342,28 @@ main div.main-pad {
         color: var(--nav-link-hover);
         text-decoration-line: underline;
         text-decoration-color: var(--highlight2); }
+    .mobile-nav .sttcont {
+      position: relative; }
+      .mobile-nav .sttcont #stt-nav {
+        margin: 0;
+        margin-top: -20px;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+        padding: 5px 10px; }
   .mobile-nav.is-open {
     display: block;
     -webkit-transform: translateY(0%);
             transform: translateY(0%); } }
+
+@media screen and (max-width: 775px) {
+  .mobile-nav {
+    padding: 10px 0 calc(10px + 8px) 0; }
+    .mobile-nav .med-elem {
+      display: none; }
+    .mobile-nav .sml-elem {
+      display: block; } }
 
 body {
   display: grid;
@@ -356,8 +385,7 @@ main {
   background: var(--blog-background);
   border-left: 1px solid var(--nav-mob-sub-background);
   border-right: 1px solid var(--nav-mob-sub-background);
-  padding-top: 10px;
-  padding-bottom: 10px; }
+  padding: 1rem; }
   main h2, main p, main h3, main ul, main li, main a, main h4, main h5 {
     color: var(--nav-link-active);
     margin: 8px; }
@@ -454,21 +482,36 @@ main {
       .right-sidebar #search-container #backsearch:hover {
         cursor: pointer; }
   .right-sidebar #tweet {
-    padding-left: 20px; }
+    padding: 5px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 0 20px; }
     .right-sidebar #tweet:hover {
       cursor: pointer; }
   .right-sidebar .tagcontainer .site-tag a:hover {
     cursor: pointer !important; }
   .right-sidebar .share-header {
     padding-top: 0; }
+  .right-sidebar .sidebar-button {
+    margin: 10px 20px; }
   .right-sidebar #stt {
-    margin: 10px 20px;
-    width: calc(100% - 20px); }
+    width: calc(100% - 25px); }
 
 footer {
   grid-column: 1 / 4;
   border-top: 1px solid var(--nav-mob-sub-background); }
 
-@media (max-width: 1000px) and (min-width: 775px) {
+@media (max-width: 1045px) and (min-width: 775px) {
   .right-sidebar {
-    padding-top: 65px; } }
+    padding-top: 65px;
+    padding-bottom: 30px; } }
+
+@media (max-width: 775px) {
+  .left-sidebar {
+    display: none; }
+  main {
+    grid-column: 1 / 4; }
+  .right-sidebar {
+    grid-column: 1 / 4;
+    width: auto; } }

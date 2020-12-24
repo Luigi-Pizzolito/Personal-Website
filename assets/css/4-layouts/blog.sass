@@ -27,8 +27,7 @@ main
     background: var(--blog-background)
     border-left: 1px solid var(--nav-mob-sub-background)
     border-right: 1px solid var(--nav-mob-sub-background)
-    padding-top: 10px
-    padding-bottom: 10px
+    padding: 1rem
     h2, p, h3, ul, li, a, h4, h5
         color: var(--nav-link-active)
         margin: 8px
@@ -135,7 +134,9 @@ main
                 cursor: pointer
 
     #tweet
-        padding-left: 20px
+        padding: 5px
+        width: max-content
+        margin: 0 20px
         &:hover
             cursor: pointer
 
@@ -148,10 +149,11 @@ main
     .share-header
         padding-top: 0
 
-    #stt
+    .sidebar-button
         margin: 10px 20px
-        width: calc(100% - 20px)
-
+    
+    #stt
+        width: calc(100% - 25px)
 
 footer
     grid-column: 1 / 4 
@@ -168,10 +170,22 @@ footer
     // padding: 1rem
 
 
-@media (max-width:1000px) and (min-width:775px)
+
+
+@media (max-width:1045px) and (min-width:775px)
     .right-sidebar
         padding-top: 65px
+        padding-bottom: 30px
 
 
 @media (max-width:775px)
-    
+    .left-sidebar
+        display: none
+
+    main
+        grid-column: 1 / 4
+        
+
+    .right-sidebar
+        grid-column: 1 / 4
+        width: auto

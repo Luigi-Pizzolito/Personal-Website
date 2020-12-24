@@ -154,6 +154,8 @@ header
         display: none
 .mobile-nav
     display: none
+    .sml-elem
+        display: none
 
 
 
@@ -163,7 +165,7 @@ main div.main-pad
     display: none
 
 
-@media (max-width: 1000px)
+@media (max-width: 1045px)
     main
         margin-top: 65px
         
@@ -178,6 +180,17 @@ main div.main-pad
         div.main-pad.extrapad
             height: 296px
 
+    .right-sidebar
+        div.main-pad
+            display: block
+            width: 100%
+            // background-color: red
+            height: 0
+            transition: height 0.5s ease-in-out
+            // border: 1px solid white
+            
+        div.main-pad.extrapad
+            height: 310px
     
     header
         width: auto
@@ -312,7 +325,26 @@ main div.main-pad
                 text-decoration:
                     line: underline
                     color: var(--highlight2)
+        .sttcont
+            position: relative
+            #stt-nav
+                margin: 0
+                margin-top: -20px
+                position: absolute
+                left: 50%
+                transform: translateX(-50%)
+                padding: 5px 10px
+
     .mobile-nav.is-open
             display: block
             transform: translateY(0%)
-                                
+
+
+
+@media screen and ( max-width:  775px)
+    .mobile-nav
+        padding: 10px 0 calc(10px + 8px) 0
+        .med-elem
+            display: none
+        .sml-elem
+            display: block

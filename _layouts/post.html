@@ -12,7 +12,8 @@ layout: default
 <main>
     <div class="main-pad"></div>
     <h2>{{ page.title }}</h2>
-    <p class="meta">{{ page.date | date: '%B %d, %Y' }} - {{ page.categories[1] | capitalize }} - {{ page.tags | join: ', ' }}</p>
+    <p class="meta">{{ page.date | date: '%B %d, %Y' }} - {{ page.categories[1] | capitalize }} -
+        {{ page.tags | join: ', ' }}</p>
 
     <div class="post">
         {{ content }}
@@ -20,51 +21,54 @@ layout: default
 </main>
 
 <div class="right-sidebar">
-
+    <div class="main-pad"></div>
     <!-- <h3>Search</h3> -->
     {% include search.html %}
     <div class="hide-search">
 
-        <h3 class="share-header">Share</h3>
+        <div class="share-elem">
+            <h3 class="share-header">Share</h3>
 
-        <a id="tweet" target="_blank" alt="Tweet this page">Tweet this page</a>
-        <script language="javascript">
-            var link = document.getElementById('tweet');
-            var url = window.location;
+            <a id="tweet" target="_blank" alt="Tweet this page" class="blog-cta sidebar-button">Tweet <i
+                    class="fab fa-twitter"></i></a>
+            <script language="javascript">
+                var link = document.getElementById('tweet');
+                var url = window.location;
 
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
 
-                // window.open("https://twitter.com/share?url=" + encodeURIComponent(url));
-                window.open("https://twitter.com/share?url=" + encodeURIComponent(url) + "&text=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=800');
-            }, false);
+                    // window.open("https://twitter.com/share?url=" + encodeURIComponent(url));
+                    window.open("https://twitter.com/share?url=" + encodeURIComponent(url) + "&text=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=800');
+                }, false);
 
             // function tweetCurrentPage() {
             //     window.open("https://twitter.com/share?url=" + encodeURIComponent(window.location.href) + "&text=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
             //     return false;
             // }
-        </script>
+            </script>
+        </div>
 
 
+        <div class="otherposts-elem">
+            <h3>Other Posts</h3>
+            <script>
+                function updateBlogSidebar() {
+                    // var inst = document.getElementsByClassName("post-listSidebar")[0].getElementsByClassName("{{ page.categories[1] }}")[0];
+                    // document.getElementsByClassName("post-listSidebar")[0].removeChild(inst);
+                    // document.getElementsByClassName("post-listSidebar")[0].prepend(inst);
 
-        <h3>Other Posts</h3>
-        <script>
-            function updateBlogSidebar() {
-                // var inst = document.getElementsByClassName("post-listSidebar")[0].getElementsByClassName("{{ page.categories[1] }}")[0];
-                // document.getElementsByClassName("post-listSidebar")[0].removeChild(inst);
-                // document.getElementsByClassName("post-listSidebar")[0].prepend(inst);
+                    document.getElementsByClassName("sec-nav")[0].style.background = 'url("/assets/img/blog/header/{{ page.categories[1] }}.png") center right';
+                    document.getElementById("nav-{{ page.categories[1] }}").classList.add("activet-l")
 
-                document.getElementsByClassName("sec-nav")[0].style.background = 'url("/assets/img/blog/header/{{ page.categories[1] }}.png") center right';
-                document.getElementById("nav-{{ page.categories[1] }}").classList.add("activet-l")
+                    putrandposts();
+                }
+            </script>
 
-                putrandposts();
-            }
-        </script>
-
-        <div class="recentpost-listSidebar">
-            <!-- <h4>Recents</h4> -->
-            <ul>
-                <!--
+            <div class="recentpost-listSidebar">
+                <!-- <h4>Recents</h4> -->
+                <ul>
+                    <!--
             {% for post in site.related_posts limit:site.recentpostlim%}
             <li>
                 <a href="{{ post.url }}">{{ post.title }}</a>
@@ -84,95 +88,95 @@ layout: default
             {% endfor %}
         -->
 
-                <!-- latest 2 posts or most related posts -->
-                {% for post in site.related_posts limit:site.recentpostlim %}
-                <li>
-                    <a href="{{ post.url }}">{{ post.title }}</a>
+                    <!-- latest 2 posts or most related posts -->
+                    {% for post in site.related_posts limit:site.recentpostlim %}
+                    <li>
+                        <a href="{{ post.url }}">{{ post.title }}</a>
 
-                    {% if post.description %}
-                    {% assign desc = post.description %}
-                    {% else %}
-                    {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
-                    {% endif %}
-                    <p class="item-desc">
-                        {{ desc | strip_newlines | strip_html | truncate: site.quick_view_length, '...' }}
-                        <br />
-                        <small>
-                            {{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}
-                        </small>
-                    </p>
-                </li>
-                {% endfor %}
-
-                <!-- random posts -->
-                <script>
-                    function getRandomArbitrary(min, max) {
-                        return Math.random() * (max - min) + min;
-                    }
-
-                    /**
-                     * Returns a random integer between min (inclusive) and max (inclusive).
-                     * The value is no lower than min (or the next integer greater than min
-                     * if min isn't an integer) and no greater than max (or the next integer
-                     * lower than max if max isn't an integer).
-                     * Using Math.round() will give you a non-uniform distribution!
-                     */
-                    function getRandomInt(min, max) {
-                        min = Math.ceil(min);
-                        max = Math.floor(max);
-                        return Math.floor(Math.random() * (max - min + 1)) + min;
-                    }
-
-                    function putrandposts() {
-                        var posts = [
-                            {% for post in site.posts %}
-                    {
-
-                        title: "{{ post.title }}",
-                            url: "{{ post.url }}",
-                                {% if post.description %}
-                    {% assign desc = post.description %}
-                    {% else %}
-                    {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
-                    {% endif %}
-                    desc: "{{ desc | strip_html | strip_newlines |truncate: site.quick_view_length, '...' | replace: '"', '\"' }}",
-                        catdate: "{{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}"
-
-                    {% if forloop.last %}
-                                }
-                    {% else %}
-                                },
-                    {% endif %}
+                        {% if post.description %}
+                        {% assign desc = post.description %}
+                        {% else %}
+                        {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
+                        {% endif %}
+                        <p class="item-desc">
+                            {{ desc | strip_newlines | strip_html | truncate: site.quick_view_length, '...' }}
+                            <br />
+                            <small>
+                                {{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}
+                            </small>
+                        </p>
+                    </li>
                     {% endfor %}
+
+                    <!-- random posts -->
+                    <script>
+                        function getRandomArbitrary(min, max) {
+                            return Math.random() * (max - min) + min;
+                        }
+
+                        /**
+                         * Returns a random integer between min (inclusive) and max (inclusive).
+                         * The value is no lower than min (or the next integer greater than min
+                         * if min isn't an integer) and no greater than max (or the next integer
+                         * lower than max if max isn't an integer).
+                         * Using Math.round() will give you a non-uniform distribution!
+                         */
+                        function getRandomInt(min, max) {
+                            min = Math.ceil(min);
+                            max = Math.floor(max);
+                            return Math.floor(Math.random() * (max - min + 1)) + min;
+                        }
+
+                        function putrandposts() {
+                            var posts = [
+                                {% for post in site.posts %}
+                        {
+
+                            title: "{{ post.title }}",
+                                url: "{{ post.url }}",
+                                    {% if post.description %}
+                        {% assign desc = post.description %}
+                        {% else %}
+                        {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
+                        {% endif %}
+                        desc: "{{ desc | strip_html | strip_newlines |truncate: site.quick_view_length, '...' | replace: '"', '\"' }}",
+                            catdate: "{{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}"
+
+                        {% if forloop.last %}
+                                }
+                        {% else %}
+                                },
+                        {% endif %}
+                        {% endfor %}
                             ];
 
-                    // console.log(posts);
-                    var postarr = []
-                    for (let index = 0; index < {{ site.sidebarunrelpostlimit }}; index++) {
-                        var i = getRandomInt(0, posts.length - 1);
-                        while (postarr.includes(i)) {
-                            i = getRandomInt(0, posts.length - 1);
+                        // console.log(posts);
+                        var postarr = []
+                        for (let index = 0; index < {{ site.sidebarunrelpostlimit }}; index++) {
+                            var i = getRandomInt(0, posts.length - 1);
+                            while (postarr.includes(i)) {
+                                i = getRandomInt(0, posts.length - 1);
+                            }
+                            postarr.push(i);
+                            // console.log(i+"/"+(posts.length-1));
+                            let item = document.createElement("li");
+                            let title = document.createElement("a");
+                            title.href = posts[i].url;
+                            title.innerHTML = posts[i].title;
+                            let descr = document.createElement("p");
+                            descr.classList = "item-desc";
+                            descr.innerHTML = (posts[i].desc) + "<br /><small>" + posts[i].catdate + "</small>";
+                            item.appendChild(title);
+                            item.appendChild(descr);
+                            document.getElementsByClassName("recentpost-listSidebar")[0].getElementsByTagName("ul")[0].appendChild(item);
                         }
-                        postarr.push(i);
-                        // console.log(i+"/"+(posts.length-1));
-                        let item = document.createElement("li");
-                        let title = document.createElement("a");
-                        title.href = posts[i].url;
-                        title.innerHTML = posts[i].title;
-                        let descr = document.createElement("p");
-                        descr.classList = "item-desc";
-                        descr.innerHTML = (posts[i].desc) + "<br /><small>" + posts[i].catdate + "</small>";
-                        item.appendChild(title);
-                        item.appendChild(descr);
-                        document.getElementsByClassName("recentpost-listSidebar")[0].getElementsByTagName("ul")[0].appendChild(item);
-                    }
 
                 }
-                </script>
+                    </script>
 
-            </ul>
-        </div>
-        <!--
+                </ul>
+            </div>
+            <!--
     <div class="post-listSidebar">
         <h4>Random</h4>
         {% for category in site.categories %}
@@ -221,24 +225,32 @@ layout: default
     </div>
 -->
 
-        <h4>Tags</h4>
-        <div class="tagcontainer">
-            {% assign tags = site.tags | sort %}
-            {% for tag in tags %}
-            <span class="site-tag">
-                <a onclick="loadTag(this);" name="{{ tag[0] | replace:'-', ' ' }}"
-                    style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
-                    {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
-                </a>
-            </span>
-            {% endfor %}
+        </div>
+
+        <div class="tags-elem">
+            <h4>Tags</h4>
+            <div class="tagcontainer">
+                {% assign tags = site.tags | sort %}
+                {% for tag in tags %}
+                <span class="site-tag">
+                    <a onclick="loadTag(this);" name="{{ tag[0] | replace:'-', ' ' }}"
+                        style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+                        {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+                    </a>
+                </span>
+                {% endfor %}
+            </div>
         </div>
 
 
 
 
 
-        <button id="stt" class="blog-cta"  onclick="window.scrollTo({top: 0,behavior:'smooth'})">Scroll to Top</button>
+        <div class="stt-elem">
+            <button id="stt" class="blog-cta sidebar-button"
+                onclick="window.scrollTo({top: 0,behavior:'smooth'})">Scroll to
+                Top</button>
+        </div>
 
 
 

@@ -6,16 +6,16 @@ mixin nav-content()
             a(href="/static/about.html") About
         li
             .dropdown
-                a.dropbtn(href="/projects") Projects
-                    i.fa.fa-caret-down
+                a.dropbtn(href="/projects") Projects 
+                    i.fa.fa-caret-up
                 .dropdown-content.threei
                     a(href="/projects/videography") Videography
                     a(href="/projects/software") Software
                     a(href="/projects/hardware") Electronics
         li
             .dropdown
-                a.dropbtn(href="#") Experiences
-                    i.fa.fa-caret-down
+                a.dropbtn(href="#") Experiences 
+                    i.fa.fa-caret-up
                 .dropdown-content.twoi
                     a(href="/projects/publicspeaking") Public Appearances
                     a(href="/projects/theatre") Theatre Tech
@@ -78,7 +78,14 @@ header
         .mobile-nav-toggle(onclick="mobileNav();"): span
 
 .mobile-nav(onclick="mobileNav()")
-    +nav-content-mobile()
+    .med-elem
+        +nav-content-mobile()
+    .sml-elem
+        hr
+        #transplant
+        hr
+        .sttcont
+            button(id="stt-nav",class="blog-cta sidebar-button",onclick="window.scrollTo({top: 0,behavior:'smooth'})") Scroll to Top
 
 script.
     /*
@@ -89,4 +96,6 @@ script.
         document.querySelector('.mobile-nav-toggle').classList.toggle('is-open');
         document.querySelector('.main-pad').classList.toggle("extrapad")
         document.querySelector('main').classList.toggle("extrapad")
+
+        document.querySelector('.right-sidebar').querySelector('.main-pad').classList.toggle("extrapad")
     }
