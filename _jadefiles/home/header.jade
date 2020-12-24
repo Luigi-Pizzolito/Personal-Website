@@ -1,28 +1,28 @@
 mixin nav-content()
     ul(onmouseover="hoverClearNav(this);",onmouseout="hoverSetNav(this);")
         li
-            a(href="#about",onmouseover="inhibitSpy()",onmouseout="rehabSpy()") About
+            a.scroll_to(href="#about",onmouseover="inhibitSpy()",onmouseout="rehabSpy()") About
             .arrow.activet
         li
-            a(href="#electronics") Electronics
+            a.scroll_to(href="#electronics") Electronics
             .arrow
         li
-            a(href="#software") Software
+            a.scroll_to(href="#software") Software
             .arrow
         li
-            a(href="#sounddesign") Sound Design
+            a.scroll_to(href="#sounddesign") Sound Design
             .arrow
         li
-            a(href="#publicspeaking",style="letter-spacing:-0.2px;") Public Appearances
+            a.scroll_to(href="#publicspeaking",style="letter-spacing:-0.2px;") Public Appearances
             .arrow
         li
-            a(href="#videography") Videography
+            a.scroll_to(href="#videography") Videography
             .arrow
         li
-            a(href="#academics") Academics/CV
+            a.scroll_to(href="#academics") Academics/CV
             .arrow
         li
-            a(href="#contact") Contact
+            a.scroll_to(href="#contact") Contact
             .arrow
 
 header
@@ -42,5 +42,5 @@ header
 
         .mobile-nav-toggle(onclick="mobileNav();"): span
 
-.mobile-nav
+.mobile-nav(onclick="mobileNav()")
     +nav-content()

@@ -150,7 +150,7 @@ setTimeout(() => {
                 triggerElement: "#scrollparalaxsoftitemsdiv"
         })
                 .addTo(controller)
-                .addIndicators() // add indicators (requires plugin)
+                // .addIndicators() // add indicators (requires plugin)
                 .on("update", function (e) {
                         // $("#scrollDirection").text(e.target.controller().info("scrollDirection"));
                 })
@@ -230,7 +230,7 @@ var scene2 = new ScrollMagic.Scene({
                 // animateElem2.style.backgroundPosition = "center " + e.progress.toFixed(2)*100 +"%";
                 animateElem2.style.setProperty("background-position-y", e.progress.toFixed(2)*100+"%");
         })
-        .addIndicators()
+        // .addIndicators()
         .addTo(controller2);
 }, 50);
 
@@ -266,24 +266,37 @@ setTimeout(() => {
                 .on("progress", function (e) {
                         // console.log(amountscrolled());
                         if (!spyInibit) {
-                                try {
+                                if (window.innerWidth >= 775) {
                                         document.getElementsByClassName("arrow activet")[0].style.transform="translateY("+Math.round(((30*7)-5)*amountscrolled())+"px)"
-                                } catch (error) {
-                                        
                                 }
                         }
                         
                 })
-                .addIndicators()
+                // .addIndicators()
                 .addTo(controller3);
+
+
+
+
+                //smooth Jquery scrolling
+                $('.scroll_to').click(function(e){
+                        var jump = $(this).attr('href');
+                        var new_position = $(jump).offset();
+                        setTimeout(() => {
+                                $('html, body').stop().animate({ scrollTop: new_position.top }, 500);   
+                        }, (window.innerWidth >= 775) ? 0 : 350);
+                        e.preventDefault();
+                    });
+
+
+
+
         }, 45);
 var spyInibit = false;
 function inhibitSpy() {
         spyInibit = true;
-        try {
+        if (window.innerWidth >= 775) {
                 document.getElementsByClassName("arrow activet")[0].style.transform="translateY(0px)"
-        } catch (error) {
-                
         }
 }
 

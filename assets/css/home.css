@@ -684,7 +684,12 @@ section.socialmedia {
     font-size: 60px;
     font-weight: 600;
     line-height: 1;
-    margin: auto; }
+    margin: auto;
+    margin-top: -20px;
+    padding-top: 20px; }
+  @media (max-width: 640px) {
+    section.socialmedia h2 {
+      text-align: center; } }
   section.socialmedia .home-lead {
     color: var(--section-text);
     font-family: 'Open Sans';
