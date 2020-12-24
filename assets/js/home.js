@@ -16,12 +16,18 @@ function hoverClearNav() {
         //         if (link.children[1].classList.contains("activet")) {
         //                 link.children[1].classList.replace("activet", "activet-dud");
         //         }
-                
+
         // }
-        document.getElementsByClassName("activet")[0].classList.replace("activet", "activet-dud");
-        document.getElementsByClassName("activet")[0].classList.replace("activet", "activet-dud");
-        document.getElementsByClassName("activet-dud")[0].parentElement.children[0].classList.remove("activet-l");
-        document.getElementsByClassName("activet-dud")[1].parentElement.children[0].classList.remove("activet-l");
+        if (window.innerWidth >= 775) {
+                document.getElementsByClassName("activet")[0].classList.replace("activet", "activet-dud");
+                document.getElementsByClassName("activet")[0].classList.replace("activet", "activet-dud");
+                document.getElementsByClassName("activet-dud")[0].parentElement.children[0].classList.remove("activet-l");
+                document.getElementsByClassName("activet-dud")[1].parentElement.children[0].classList.remove("activet-l");
+        } else {
+                for (var i = 0; i < document.getElementsByClassName("mobile-nav")[0].firstElementChild.children.length; i++) {
+                        document.getElementsByClassName("mobile-nav")[0].firstElementChild.children[i].children[0].classList.remove("activet-l");
+                }
+        }
 }
 
 function hoverSetNav() {
@@ -31,17 +37,42 @@ function hoverSetNav() {
         //         if (link.children[1].classList.contains("activet-dud")) {
         //                 link.children[1].classList.replace("activet-dud", "activet");
         //         }
-                
+
         // }
-        document.getElementsByClassName("activet-dud")[0].classList.replace("activet-dud", "activet");
-        document.getElementsByClassName("activet-dud")[0].classList.replace("activet-dud", "activet");
-        document.getElementsByClassName("activet")[0].parentElement.children[0].classList.add("activet-l");
-        document.getElementsByClassName("activet")[1].parentElement.children[0].classList.add("activet-l");
+        if (!(window.innerWidth >= 775)) {
+                // document.getElementsByClassName("mobile-nav")[0].firstElementChild.children[0].children[0].classList.remove("activet-l");
+                mobileScrollspy();
+        } else {
+                document.getElementsByClassName("activet-dud")[0].classList.replace("activet-dud", "activet");
+                document.getElementsByClassName("activet-dud")[0].classList.replace("activet-dud", "activet");
+                document.getElementsByClassName("activet")[0].parentElement.children[0].classList.add("activet-l");
+                document.getElementsByClassName("activet")[1].parentElement.children[0].classList.add("activet-l");
+
+                document.getElementsByClassName("arrow activet")[0].style.transform = "translateY(" + Math.round(((30 * 7) - 5) * amountscrolled()) + "px)"
+        }
 }
 
 function highlightmobilenav() {
         hoverClearNav();
         hoverSetNav();
+}
+
+function mobileScrollspy() {
+        var secscrolled = 0;
+        var runningcounter = 0;
+        for (var i = 0; i < (document.getElementsByTagName("section").length - 1); i++) {
+                if (window.scrollY >= (document.getElementsByTagName("section")[i].scrollHeight + runningcounter) - 200) {
+                        secscrolled++;
+                        runningcounter += document.getElementsByTagName("section")[i].scrollHeight;
+                } else {
+                        break;
+                }
+        }
+        for (var i = 0; i < document.getElementsByClassName("mobile-nav")[0].firstElementChild.children.length; i++) {
+                document.getElementsByClassName("mobile-nav")[0].firstElementChild.children[i].children[0].classList.remove("activet-l");
+        }
+        document.getElementsByClassName("mobile-nav")[0].firstElementChild.children[secscrolled].children[0].classList.add("activet-l");
+        // console.log(secscrolled);
 }
 
 /*
@@ -202,36 +233,36 @@ setTimeout(() => {
 
 
 setTimeout(() => {
-//sounddesign section
-var controller2 = new ScrollMagic.Controller();
-// build scene
-var animateElem2 = document.getElementById("sounddesign");
-var trigElem2 = document.querySelector('#trigger2');
-var scene2 = new ScrollMagic.Scene({
-        duration: animateElem2.scrollHeight,// + (2 * animateElem2.offsetTop), //+ ((1 / 8) * 2 * window.innerHeight), // the scene should last for a scroll distance of 100px
-        offset: -trigElem2.offsetTop + 20,// - ((1 / 8) * window.innerHeight), // start this scene after scrolling for 50px
-        triggerElement: animateElem2
-})
-        // .on("enter", function () {
-        //         // trigger animation by changing inline style.
-        //         animateElem2.style.backgroundColor = "grey";
-        // })
-        // .on("leave", function () {
-        //         // reset style
-        //         animateElem2.style.backgroundColor = "";
-        // })
-        .on("progress", function (e) {
-                // $("#progress").text(e.progress.toFixed(3));
-                // console.log(e.progress.toFixed(3));
-                // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
-                // document.querySelector('#scrollparalaxsoftitemsdiv').scroll(0, e.progress.toFixed(3)*(document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight-document.querySelector('#scrollparalaxsoftitemsdiv').offsetHeight))
-                // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
-                // console.log(e.progress.toFixed(2)*100);
-                // animateElem2.style.backgroundPosition = "center " + e.progress.toFixed(2)*100 +"%";
-                animateElem2.style.setProperty("background-position-y", e.progress.toFixed(2)*100+"%");
+        //sounddesign section
+        var controller2 = new ScrollMagic.Controller();
+        // build scene
+        var animateElem2 = document.getElementById("sounddesign");
+        var trigElem2 = document.querySelector('#trigger2');
+        var scene2 = new ScrollMagic.Scene({
+                duration: animateElem2.scrollHeight,// + (2 * animateElem2.offsetTop), //+ ((1 / 8) * 2 * window.innerHeight), // the scene should last for a scroll distance of 100px
+                offset: -trigElem2.offsetTop + 20,// - ((1 / 8) * window.innerHeight), // start this scene after scrolling for 50px
+                triggerElement: animateElem2
         })
-        // .addIndicators()
-        .addTo(controller2);
+                // .on("enter", function () {
+                //         // trigger animation by changing inline style.
+                //         animateElem2.style.backgroundColor = "grey";
+                // })
+                // .on("leave", function () {
+                //         // reset style
+                //         animateElem2.style.backgroundColor = "";
+                // })
+                .on("progress", function (e) {
+                        // $("#progress").text(e.progress.toFixed(3));
+                        // console.log(e.progress.toFixed(3));
+                        // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
+                        // document.querySelector('#scrollparalaxsoftitemsdiv').scroll(0, e.progress.toFixed(3)*(document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight-document.querySelector('#scrollparalaxsoftitemsdiv').offsetHeight))
+                        // console.log(e.progress.toFixed(3)*document.querySelector('#scrollparalaxsoftitemsdiv').scrollHeight)
+                        // console.log(e.progress.toFixed(2)*100);
+                        // animateElem2.style.backgroundPosition = "center " + e.progress.toFixed(2)*100 +"%";
+                        animateElem2.style.setProperty("background-position-y", e.progress.toFixed(2) * 100 + "%");
+                })
+                // .addIndicators()
+                .addTo(controller2);
 }, 50);
 
 
@@ -239,23 +270,24 @@ var scene2 = new ScrollMagic.Scene({
 function getDocHeight() {
         var D = document;
         return Math.max(
-            D.body.scrollHeight, D.documentElement.scrollHeight,
-            D.body.offsetHeight, D.documentElement.offsetHeight,
-            D.body.clientHeight, D.documentElement.clientHeight
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
         )
-    }
+}
 
-    function amountscrolled(){
-        var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
+function amountscrolled() {
+        var winheight = window.innerHeight || (document.documentElement || document.body).clientHeight
         var docheight = getDocHeight();
         var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
         var trackLength = docheight - winheight
-        var pctScrolled = (scrollTop/trackLength).toFixed(2) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
+        var pctScrolled = (scrollTop / trackLength).toFixed(2) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
         return pctScrolled
-    }
+}
+
 
 setTimeout(() => {
-        //sounddesign section
+        //scrollspy section
         var controller3 = new ScrollMagic.Controller();
         // build scene
         var scene3 = new ScrollMagic.Scene({
@@ -265,12 +297,23 @@ setTimeout(() => {
         })
                 .on("progress", function (e) {
                         // console.log(amountscrolled());
-                        if (!spyInibit) {
-                                if (window.innerWidth >= 775) {
-                                        document.getElementsByClassName("arrow activet")[0].style.transform="translateY("+Math.round(((30*7)-5)*amountscrolled())+"px)"
+                        if (window.innerWidth >= 755) {
+                                //desktop scrollspy
+                                if (!spyInibit) {
+                                        if (window.innerWidth >= 775) {
+                                                try {
+                                                        document.getElementsByClassName("arrow activet")[0].style.transform = "translateY(" + Math.round(((30 * 7) - 5) * amountscrolled()) + "px)"
+                                                } catch (error) {
+
+                                                }
+                                        }
                                 }
+                        } else {
+                                //mobile scrollspy
+                                mobileScrollspy();
+
                         }
-                        
+
                 })
                 // .addIndicators()
                 .addTo(controller3);
@@ -278,25 +321,36 @@ setTimeout(() => {
 
 
 
-                //smooth Jquery scrolling
-                $('.scroll_to').click(function(e){
-                        var jump = $(this).attr('href');
-                        var new_position = $(jump).offset();
+        //smooth Jquery scrolling
+        $('.scroll_to').click(function (e) {
+                var jump = $(this).attr('href');
+                var new_position = $(jump).offset();
+                setTimeout(() => {
+                        $('html, body').stop().animate({ scrollTop: new_position.top - ((window.innerWidth >= 775) ? 0 : 65) }, 500);
+                }, (window.innerWidth >= 775) ? 0 : 350);
+                if (window.innerWidth >= 775) {
                         setTimeout(() => {
-                                $('html, body').stop().animate({ scrollTop: new_position.top }, 500);   
-                        }, (window.innerWidth >= 775) ? 0 : 350);
-                        e.preventDefault();
-                    });
+                                // try {
+                                        // document.getElementsByClassName("activet-dud")[0].classList.replace("activet-dud", "activet");
+                // document.getElementsByClassName("activet-dud")[0].classList.replace("activet-dud", "activet");
+                                        // document.getElementsByClassName("arrow activet")[0].style.transform = "translateY(" + Math.round(((30 * 7) - 5) * amountscrolled()) + "px)"
+                                // } catch (error) {
+        
+                                // }
+                        }, 510);
+                }
+                e.preventDefault();
+        });
 
 
 
 
-        }, 45);
+}, 45);
 var spyInibit = false;
 function inhibitSpy() {
         spyInibit = true;
         if (window.innerWidth >= 775) {
-                document.getElementsByClassName("arrow activet")[0].style.transform="translateY(0px)"
+                document.getElementsByClassName("arrow activet")[0].style.transform = "translateY(0px)"
         }
 }
 

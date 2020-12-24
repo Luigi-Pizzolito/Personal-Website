@@ -162,9 +162,20 @@
     color: var(--nav-link-hover);
     text-decoration-line: underline;
     text-decoration-color: var(--highlight2); }
+  .home-wrap .mobile-nav {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
+    z-index: 2; }
   .home-wrap header {
     width: auto;
-    padding: 10px 0; }
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3; }
     .home-wrap header .header-position {
       width: auto;
       position: relative;
@@ -293,6 +304,10 @@ section.about {
 @media (min-width: 1000px) {
   section.about h2 {
     margin-top: 20px; } }
+
+@media (max-width: 775px) {
+  section.about {
+    margin-top: 65px; } }
 
 section.electronics {
   position: relative;
