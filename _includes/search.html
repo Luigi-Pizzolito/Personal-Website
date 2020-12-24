@@ -32,13 +32,16 @@
       document.getElementById("search-input").dispatchEvent(new Event("input"));
     }
 
-    SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('results-container'),
-      json: '/projects/search.json',
-      searchResultTemplate: '<li><a href="{url}">{title}</a><p class="item-desc">{description}<br /><small>{category} - {date}</small></li>',
-      noResultsText: '<p class="nf">No results found.</p>',
-      limit: 12
-    })
+    function startSearchE() {
+        var searchE = SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/projects/search.json',
+        searchResultTemplate: '<li><a href="{url}">{title}</a><p class="item-desc">{description}<br /><small>{category} - {date}</small></li>',
+        noResultsText: '<p class="nf">No results found.</p>',
+        limit: 12
+      })
+    }
+    startSearchE();
   </script>
 </div>

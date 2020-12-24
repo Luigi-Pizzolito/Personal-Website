@@ -53,7 +53,34 @@ layout: default
         <div class="otherposts-elem">
             <h3>Other Posts</h3>
             <script>
+
+                
+
+                function transplant() {
+                    // sbkp = document.querySelector('.right-sidebar').innerHTML;
+                    document.querySelector('#transplant').appendChild(document.querySelector('.search-elem'));
+                    document.querySelector('#transplant').appendChild(document.querySelector('.tags-elem'));
+                    document.querySelector('#transplant').appendChild(document.querySelector('.share-elem'));
+                }
+
+                function untransplant() {
+                    document.querySelector('#transplant').innerHTML="";
+
+                    document.querySelector('.right-sidebar').innerHTML = sbkp;
+                    if (!(document.querySelector('.is-open') == null)) {
+                        document.querySelector('.right-sidebar').querySelector('.main-pad').classList.toggle("extrapad")
+                    }
+                }
+
+                
+                var transplantUpdated = (window.innerWidth >= 755) ? "big" : "fixpls";
+                // if (!(window.innerWidth >= 755)) {
+                //     //make small
+                //     fixstart = true;
+                // }
+                var sbkp = "error, page never fully loaded!"
                 function updateBlogSidebar() {
+                    
                     // var inst = document.getElementsByClassName("post-listSidebar")[0].getElementsByClassName("{{ page.categories[1] }}")[0];
                     // document.getElementsByClassName("post-listSidebar")[0].removeChild(inst);
                     // document.getElementsByClassName("post-listSidebar")[0].prepend(inst);
@@ -67,33 +94,37 @@ layout: default
                         document.getElementById("navb-{{ page.categories[1] }}").parentElement.parentElement.firstChild.classList.add("active-navb")
                     }
 
+                    window.addEventListener('resize', function (event) {
+                        if ( window.innerWidth >= 775 ) {
+                            if (transplantUpdated != "big") {
+                                untransplant();
+                                transplantUpdated = "big";
+                                startSearchE();
+                            }
+                        } else {
+                            if (transplantUpdated != "small") {
+                                transplant();
+                                transplantUpdated = "small";
+                                startSearchE();
+                            }
+                        }
+                    });
+
                     putrandposts();
+
+
+
+                    sbkp = document.querySelector('.right-sidebar').innerHTML;
+                    if (transplantUpdated == "fixpls") {
+                        transplant();
+                        transplantUpdated = "small";
+                    }
                 }
             </script>
 
             <div class="recentpost-listSidebar">
                 <!-- <h4>Recents</h4> -->
                 <ul>
-                    <!--
-            {% for post in site.related_posts limit:site.recentpostlim%}
-            <li>
-                <a href="{{ post.url }}">{{ post.title }}</a>
-            </li>
-            {% if post.description %}
-            {% assign desc = post.description %}
-            {% else %}
-            {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
-            {% endif %}
-            <p class="item-desc">
-                {{ desc | truncate: site.quick_view_length, '...' }}
-                <br />
-                <small>
-                    {{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}
-                </small>
-            </p>
-            {% endfor %}
-        -->
-
                     <!-- latest 2 posts or most related posts -->
                     {% for post in site.related_posts limit:site.recentpostlim %}
                     <li>
@@ -134,31 +165,23 @@ layout: default
                         }
 
                         function putrandposts() {
-                            var posts = [
-                                {% for post in site.posts %}
+                            var posts = [                   {% for post in site.posts %}
                         {
-
                             title: "{{ post.title }}",
-                                url: "{{ post.url }}",
-                                    {% if post.description %}
-                        {% assign desc = post.description %}
-                        {% else %}
-                        {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
-                        {% endif %}
+                                url: "{{ post.url }}",      {% if post.description %}
+                                                            {% assign desc = post.description %}
+                                                            {% else %}
+                                                            {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
+                                                            {% endif %}
                         desc: "{{ desc | strip_html | strip_newlines |truncate: site.quick_view_length, '...' | replace: '"', '\"' }}",
-                            catdate: "{{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}"
-
-                        {% if forloop.last %}
-                                }
-                        {% else %}
-                                },
-                        {% endif %}
-                        {% endfor %}
-                            ];
+                        catdate: "{{ post.categories[1] | capitalize  }} - {{ post.date | date: '%B %d, %Y' }}" {% if forloop.last %}
+                        }                                   {% else %}
+                        },                                  {% endif %}{% endfor %}
+                        ];
 
                         // console.log(posts);
                         var postarr = []
-                        for (let index = 0; index < {{ site.sidebarunrelpostlimit }}; index++) {
+                        for (let index = 0; index < {{ site.sidebarunrelpostlimitextended }}; index++) {
                             var i = getRandomInt(0, posts.length - 1);
                             while (postarr.includes(i)) {
                                 i = getRandomInt(0, posts.length - 1);
@@ -174,13 +197,23 @@ layout: default
                             descr.innerHTML = (posts[i].desc) + "<br /><small>" + posts[i].catdate + "</small>";
                             item.appendChild(title);
                             item.appendChild(descr);
-                            document.getElementsByClassName("recentpost-listSidebar")[0].getElementsByTagName("ul")[0].appendChild(item);
+
+                            if (index < {{ site.sidebarunrelpostlimit }}) {
+                                document.getElementsByClassName("recentpost-listSidebar")[0].getElementsByTagName("ul")[0].appendChild(item);
+                            } else {
+                                document.getElementsByClassName("recentpost-listSidebar-extended")[0].getElementsByTagName("ul")[0].appendChild(item);
+                            }
                         }
 
                 }
                     </script>
 
                 </ul>
+            </div>
+
+
+            <div class="recentpost-listSidebar-extended">
+                <ul></ul>
             </div>
             <!--
     <div class="post-listSidebar">
@@ -258,7 +291,9 @@ layout: default
                 Top</button>
         </div>
 
-
+        <div class="more-elem">
+            <a id="mpb" href="/projects" class="blog-cta sidebar-button">More Posts</a>
+        </div>
 
 
 

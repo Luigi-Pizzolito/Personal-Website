@@ -77,10 +77,11 @@ header
 
         .mobile-nav-toggle(onclick="mobileNav();"): span
 
-.mobile-nav(onclick="mobileNav()")
-    .med-elem
+.mobile-nav
+    .med-elem(onclick="mobileNav()")
         +nav-content-mobile()
     .sml-elem
+        p some sort of nav dropdown +js to set active
         hr
         #transplant
         hr

@@ -9,4 +9,5 @@ quick_view_length_index: 150
 quick_view_length_index_noimg: 450
 # sidebarpostlimit: 1
 sidebarunrelpostlimit: 3
+sidebarunrelpostlimitextended: 8
 recentpostlim: 2

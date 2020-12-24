@@ -163,9 +163,12 @@ header
 
 
 
-main div.main-pad
+.right-sidebar div.main-pad
     display: none
 
+@media (max-width:1045px) and (min-width:775px)
+    .right-sidebar div.main-pad
+        display: block
 
 @media (max-width: 1045px)
     main
@@ -184,7 +187,7 @@ main div.main-pad
 
     .right-sidebar
         div.main-pad
-            display: block
+            // display: block
             width: 100%
             // background-color: red
             height: 0

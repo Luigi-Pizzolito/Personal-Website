@@ -154,6 +154,11 @@ main
     
     #stt
         width: calc(100% - 25px)
+    #mpb
+        width: calc(100% - 33px)
+
+    .recentpost-listSidebar-extended, .more-elem
+        display: none
 
 footer
     grid-column: 1 / 4 
@@ -189,3 +194,12 @@ footer
     .right-sidebar
         grid-column: 1 / 4
         width: auto
+        .recentpost-listSidebar-extended
+            display: block
+        .main-pad
+            background-color: red
+            // display: none
+        .stt-elem
+            display: none
+        .more-elem
+            display: block
