@@ -6,4 +6,5 @@ function updateBlogSidebar() {
     if (document.getElementById("navb-"+param1).parentElement.children.length > 1) {
         document.getElementById("navb-"+param1).parentElement.parentElement.firstChild.classList.add("active-navb")
     }
+    document.querySelector('#droppagegoto').value = document.querySelector('#nav-drop-'+param1).value
 }

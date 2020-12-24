@@ -94,6 +94,8 @@ layout: default
                         document.getElementById("navb-{{ page.categories[1] }}").parentElement.parentElement.firstChild.classList.add("active-navb")
                     }
 
+                    document.querySelector('#droppagegoto').value = document.querySelector('#nav-drop-{{ page.categories[1] }}').value
+
                     window.addEventListener('resize', function (event) {
                         if ( window.innerWidth >= 775 ) {
                             if (transplantUpdated != "big") {

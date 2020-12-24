@@ -1,7 +1,7 @@
 <div class="search-elem">
   <!-- Html Elements for Search -->
   <div id="search-container">
-    <input type="text" id="search-input" placeholder="Search..." onkeyup="updateSearch()"
+    <input type="text" id="search-input" placeholder="Search..." onkeyup="updateSearch()" onkeydown="updateSearch()" onchange="updateSearch()"
       ondblclick="this.value=''; updateSearch(); document.getElementById('search-input').dispatchEvent(new Event('input'));">
     <small style="display: none;" id="backsearch"
       onclick="document.getElementById('search-input').value=''; updateSearch(); document.getElementById('search-input').dispatchEvent(new Event('input'));">Back</small>
@@ -21,7 +21,12 @@
       } else {
         document.getElementsByClassName('hide-search')[0].style.display = 'none';
         document.getElementById("backsearch").style.display = '';
+        // if (window.innerWidth < 755 && (document.querySelector('#results-container').lastElementChild == null) ? false : document.querySelector('#results-container').lastElementChild.localName !== "hr") {
+        //   document.querySelector('#results-container').appendChild(document.createElement("hr"))
+        // }
       }
+
+      
 
     }
 
@@ -37,9 +42,9 @@
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
         json: '/projects/search.json',
-        searchResultTemplate: '<li><a href="{url}">{title}</a><p class="item-desc">{description}<br /><small>{category} - {date}</small></li>',
+        searchResultTemplate: '<li><a href="{url}">{title}</a><p class="item-desc" onclick="window.location.pathname=\'{url}\';">{description}<br /><small>{category} - {date}</small></li>',
         noResultsText: '<p class="nf">No results found.</p>',
-        limit: 12
+        limit: (window.innerWidth < 755) ? 50 : 12
       })
     }
     startSearchE();

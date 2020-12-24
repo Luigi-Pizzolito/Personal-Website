@@ -47,6 +47,18 @@ mixin nav-content-mobile()
         li
             a(href="/static/contact.html",id="nav-contact") Contact
 
+mixin nav-content-mobile-dropdown()
+    option(value="/") Home
+    option(value="/static/about.html",id="nav-drop-about") About
+    option(value="/projects",id="nav-drop-projects") All Projects
+    option.faded(value="/projects/videography",id="nav-drop-videography") Videography
+    option.faded(value="/projects/software",id="nav-drop-software") Software
+    option.faded(value="/projects/hardware",id="nav-drop-hardware") Electronics
+    option.faded(value="/projects/publicspeaking",id="nav-drop-publicspeaking") Public Appearances
+    option.faded(value="/projects/theatre",id="nav-drop-theatre") Theatre Tech
+    option(value="/projects/academics",id="nav-drop-academics") Academics/CV
+    option(value="/static/contact.html",id="nav-drop-contact") Contact
+
 header
     .main-nav
         a(href="/").logo-div
@@ -82,6 +94,8 @@ header
         +nav-content-mobile()
     .sml-elem
         p some sort of nav dropdown +js to set active
+        select(name="page",id="droppagegoto",class="blog-cta sidebar-button",onchange="window.location.pathname=this.value;")
+            +nav-content-mobile-dropdown()
         hr
         #transplant
         hr

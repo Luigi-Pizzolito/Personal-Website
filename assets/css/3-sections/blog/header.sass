@@ -346,10 +346,104 @@ header
 
 
 
-@media screen and ( max-width:  775px)
+@media ( max-width:  775px)
     .mobile-nav
-        padding: 10px 0 calc(10px + 8px) 0
+        padding: 10px 0 calc(10px + 32px) 0
         .med-elem
             display: none
         .sml-elem
             display: block
+            padding: 0 50px
+            hr
+                margin: 15px 10px
+            #stt-nav
+                    width: calc(100% - 25px)
+                    margin-top: 0
+            select#droppagegoto
+                color: var(--highlight2)
+                padding: 2px 5px
+                margin: 0 20px
+                width: -webkit-fill-available
+                font-weight: bold
+                option
+                    color: var(--nav-link)
+                    background-color: var(--blog-sidebar)
+            #transplant
+                // background-color: red
+                color: var(--nav-title)
+                    
+                h3, h4
+                    padding-left: 20px
+                    padding-top: 0
+                    color: var(--nav-title)
+                    margin: 0px auto
+                h3
+                    padding-top: 10px
+
+                span.site-tag
+                    padding-left: 20px
+                    a
+                        display: inline-block
+                        margin-right: 12px
+                .tagcontainer
+                    .site-tag
+                        a
+                            &:hover
+                                cursor:  pointer !important
+
+                #search-container
+                    padding-left: 20px
+                    // margin-top: 10px
+                    ul
+                        padding: 0
+                        margin-top: 10px
+                    .nf
+                        padding-top: 5px
+                        margin-bottom: 0
+                    input
+                        width: -webkit-fill-available
+                        margin-right: 20px
+                        background-color: var(--nav-mob-sub-background)
+                        color: var(--nav-link)
+                        border: var(--nav-background) 2px solid
+                        // margin-top: 10px
+                    #backsearch
+                        font-size: 12px
+                        &:hover
+                            cursor: pointer
+                    #results-container
+                        overflow-y: scroll
+                        max-height: 300px
+                        border: 1px solid var(--nav-mob-sub-background-lighter)
+                        margin-bottom: 5px
+                        padding: 0 15px
+                        li
+                            margin: 5px 0
+                            a
+                                font-family: "Open Sans"
+                            p.item-desc
+                                font-size: 11px
+                                margin: 0
+                                margin-bottom: 10px
+
+                .share-header
+                    // padding-top: 0
+
+                .sidebar-button
+                    margin: 10px 20px
+
+                #tweet
+                    padding: 5px
+                    width: max-content
+                    margin: 0 20px
+                    &:hover
+                        cursor: pointer
+
+
+
+
+    main
+        // h2
+        //     border-top: 1px solid white   
+        div.main-pad.extrapad
+            height: 500px //355px to 500px non-linear
