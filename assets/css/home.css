@@ -49,7 +49,8 @@
   .home-wrap header .logo-div {
     margin: 0;
     padding: 0;
-    z-index: 1; }
+    z-index: 1;
+    text-decoration: none; }
   .home-wrap header .site-nav {
     z-index: 1; }
     .home-wrap header .site-nav ul {
@@ -286,7 +287,8 @@ section.cc {
 section.about {
   background-position: center bottom;
   background-size: cover;
-  border-bottom: 1px solid var(--nav-background); }
+  border-bottom: 1px solid var(--nav-background);
+  background-color: var(--blog-sidebar); }
   section.about h2 {
     color: var(--section-title);
     font-family: 'Oswald';
@@ -329,7 +331,8 @@ section.electronics {
   position: relative;
   border-bottom: 1px solid var(--nav-background);
   background-position: right bottom;
-  background-size: cover; }
+  background-size: cover;
+  background-color: var(--blog-sidebar); }
   section.electronics .cover {
     background-color: black;
     opacity: 0.25;
@@ -434,9 +437,9 @@ section.electronics {
 section.software {
   position: relative;
   border-bottom: 1px solid var(--nav-background);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), transparent), url("../img/home/software-bg.png");
   background-position: center;
-  background-size: cover; }
+  background-size: cover;
+  background-color: var(--blog-sidebar); }
   section.software .cover {
     background-color: black;
     opacity: 0.25;
@@ -510,7 +513,8 @@ section.sounddesign {
   position: relative;
   border-bottom: 1px solid var(--nav-background);
   background-position: center top;
-  background-size: cover; }
+  background-size: cover;
+  background-color: var(--blog-sidebar); }
   section.sounddesign h2 {
     color: var(--section-title);
     font-family: 'Oswald';
@@ -543,7 +547,8 @@ section.publicspeaking {
   border-bottom: 1px solid var(--nav-background);
   background-position: center bottom;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-color: var(--blog-sidebar); }
   section.publicspeaking h2 {
     color: var(--section-title);
     font-family: 'Oswald';
@@ -582,7 +587,8 @@ section.videography {
   section.videography .bg-one, section.videography .bg-two {
     position: absolute;
     height: 100%;
-    z-index: -1; }
+    z-index: -1;
+    background-color: var(--blog-sidebar); }
   section.videography .bg-one {
     background-position: center center;
     background-position: -15vw -6vw;
@@ -661,9 +667,9 @@ section.videography {
 section.academics {
   position: relative;
   border-bottom: 1px solid var(--nav-background);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("/assets/img/home/academics-bg.jpg");
   background-position: right center;
-  background-size: cover; }
+  background-size: cover;
+  background-color: var(--blog-sidebar); }
   section.academics h2 {
     color: var(--section-title);
     font-family: 'Oswald';
@@ -700,9 +706,9 @@ section.academics {
 section.socialmedia {
   position: relative;
   border-bottom: 1px solid var(--nav-background);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/assets/img/home/social-bg.jpg");
   background-position: center center;
-  background-size: cover; }
+  background-size: cover;
+  background-color: var(--blog-sidebar); }
   section.socialmedia h2 {
     color: var(--section-title);
     font-family: 'Oswald';

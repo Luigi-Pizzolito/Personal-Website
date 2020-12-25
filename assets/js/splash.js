@@ -23,4 +23,8 @@ function pageLoaded() {
             console.log("looks like were not in blogpage...");
         }
     }, 55);
+
+    // var lazyLoadInstance = new LazyLoad({
+    //     // Your custom settings go here
+    //   });
 }
