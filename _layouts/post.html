@@ -198,7 +198,7 @@ layout: default
                             title.innerHTML = posts[i].title;
                             let descr = document.createElement("p");
                             descr.classList = "item-desc";
-                            descr.onclick = "window.location.pathname='"+posts[i].url+"';";
+                            descr.setAttribute('onclick', "window.location.pathname='"+posts[i].url+"';");
                             descr.innerHTML = (posts[i].desc) + "<br /><small>" + posts[i].catdate + "</small>";
                             item.appendChild(title);
                             item.appendChild(descr);
