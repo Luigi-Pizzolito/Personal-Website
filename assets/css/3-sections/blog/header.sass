@@ -81,6 +81,7 @@ header
 
             h1
                 color: var(--nav-title)
+                // color: transparent
                 font:
                     family: 'Oswald'
                     style: italic
@@ -88,8 +89,22 @@ header
                     weight: 600
                 line-height: 1
                 // margin: 0
-                margin-top: 30px
+                margin-top: 20px
+                padding-top: 5px
                 margin-left: 10px
+
+                background: url(/assets/img/blog/header/animated_text_fill.png) repeat-y
+                background-clip: text
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                -webkit-animation: aitf 10s linear infinite
+                -webkit-transform: translate3d(0,0,0)
+                -webkit-backface-visibility: hidden
+                @-webkit-keyframes aitf
+                    0%
+                        background-position: 0% 50%
+                    100%
+                        background-position: 100% 50%
 
         .navbar-div
             grid-column: 2 / 2
