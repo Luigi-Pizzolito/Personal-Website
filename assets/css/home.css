@@ -667,7 +667,7 @@ section.videography {
 section.academics {
   position: relative;
   border-bottom: 1px solid var(--nav-background);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("/assets/img/home/WechatIMG19.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("/assets/img/home/academics-bg.jpg");
   background-position: right center;
   background-size: cover; }
   section.academics h2 {
@@ -706,7 +706,7 @@ section.academics {
 section.socialmedia {
   position: relative;
   border-bottom: 1px solid var(--nav-background);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/assets/img/home/20200717_225935.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/assets/img/home/social-bg.jpg");
   background-position: center center;
   background-size: cover; }
   section.socialmedia h2 {
