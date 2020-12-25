@@ -54,8 +54,8 @@
   z-index: 1000; }
 
 .splash-loaded {
-  -webkit-animation: slideupoot 0.8s ease-in forwards;
-          animation: slideupoot 0.8s ease-in forwards; }
+  -webkit-animation: slideupoot 0.5s ease-in forwards;
+          animation: slideupoot 0.5s ease-in forwards; }
 
 @-webkit-keyframes slideupoot {
   0% {

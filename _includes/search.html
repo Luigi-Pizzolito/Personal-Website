@@ -3,6 +3,7 @@
   <div id="search-container">
     <input type="text" id="search-input" placeholder="Search..." onkeyup="updateSearch()" onkeydown="updateSearch()" onchange="updateSearch()"
       ondblclick="this.value=''; updateSearch(); document.getElementById('search-input').dispatchEvent(new Event('input'));">
+    <label for="search-input" style="display: none;">Search posts...</label>
     <small style="display: none;" id="backsearch"
       onclick="document.getElementById('search-input').value=''; updateSearch(); document.getElementById('search-input').dispatchEvent(new Event('input'));">Back</small>
     <ul id="results-container"></ul>

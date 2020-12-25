@@ -139,7 +139,7 @@ layout: default
                         {% else %}
                         {% assign desc = post.excerpt | remove: '<p>' | remove: '</p>' %}
                         {% endif %}
-                        <p class="item-desc">
+                        <p class="item-desc" onclick="window.location.pathname='{{ post.url }}';">
                             {{ desc | strip_newlines | strip_html | truncate: site.quick_view_length, '...' }}
                             <br />
                             <small>
@@ -198,6 +198,7 @@ layout: default
                             title.innerHTML = posts[i].title;
                             let descr = document.createElement("p");
                             descr.classList = "item-desc";
+                            descr.onclick = "window.location.pathname='"+posts[i].url+"';";
                             descr.innerHTML = (posts[i].desc) + "<br /><small>" + posts[i].catdate + "</small>";
                             item.appendChild(title);
                             item.appendChild(descr);
