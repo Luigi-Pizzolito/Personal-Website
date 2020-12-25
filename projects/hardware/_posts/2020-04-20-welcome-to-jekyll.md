@@ -9,6 +9,7 @@ cover_image: "/assets/img/blog/83606.jpg"
 
 Image load test:
 <!-- ![Miku Forever](/assets/img/blog/83606.jpg) -->
-<!-- ![Miku Forever](){:class="lazy" data-src="/assets/img/blog/83606.jpg"} -->
+<!-- ![Miku Forever](as){:class="lazy" data-src="/assets/img/blog/83606.jpg"} -->
 <!-- <img src="/assets/img/blog/83606.jpg" alt="Miku Forever"> -->
-<img alt="A lazy image" class="lazy" data-src="/assets/img/blog/83606.jpg" />
+<!-- <img alt="A lazy image" class="lazy" data-src="/assets/img/blog/83606.jpg" /> -->
+<img alt="lazylaoded" class="lazy" data-src="https://wallpaperplay.com/walls/full/9/a/c/35089.jpg" />

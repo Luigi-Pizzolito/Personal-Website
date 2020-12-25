@@ -212,6 +212,8 @@ header {
     transition: height 0.5s ease-in-out; }
   .right-sidebar div.main-pad.extrapad {
     height: 310px; }
+  .right-sidebar #mpb {
+    margin-bottom: 40px; }
   header {
     width: auto;
     background: var(--nav-background);
@@ -468,9 +470,12 @@ main {
   main h2, main p, main h3, main ul, main li, main a, main h4, main h5 {
     color: var(--nav-link-active);
     margin: 8px; }
+  main .meta {
+    color: var(--nav-link); }
   main .post img {
     max-width: 100%;
-    border-radius: 5px; }
+    border-radius: 5px;
+    margin: 10px 0; }
   main .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
