@@ -23,7 +23,7 @@ layout: default
 <div class="right-sidebar">
     <div class="main-pad"></div>
     <!-- <h3>Search</h3> -->
-    {% include search.html %}
+    {% include blog/search.html %}
     <div class="hide-search">
 
         <div class="share-elem">
@@ -56,7 +56,7 @@ layout: default
             <h3>Other Posts</h3>
             <script>
 
-                
+                {% include blog/galery-multimodal.js %}
 
                 function transplant() {
                     // sbkp = document.querySelector('.right-sidebar').innerHTML;
@@ -123,6 +123,8 @@ layout: default
                         transplant();
                         transplantUpdated = "small";
                     }
+
+                    createGaleryMultiModals();
                 }
             </script>
 
@@ -306,5 +308,7 @@ layout: default
     </div>
 
 </div>
+
+{% include blog/img-modal.html %}
 
 {% include home/cc.html %}

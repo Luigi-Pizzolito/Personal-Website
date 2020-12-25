@@ -10,7 +10,7 @@ categories: contact
     param1 = "{{ page.categories[1] }}";
   }
   
-  {% include blog-dynam.js %}
+  {% include blog/blog-dynam.js %}
 </script>
 
 hello!

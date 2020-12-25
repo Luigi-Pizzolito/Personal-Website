@@ -96,7 +96,7 @@ gulp.task('jade', function () {
  */
 gulp.task('watch', function () {
     gulp.watch(['assets/css/**/*.sass', 'assets/css/*.scss'], ['sass']); //, '_includes/**/*'
-    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_posts/**',  'projects/*', 'projects/**', '*.yml', 'assets/img/**', 'assets/js/**.js', 'assets/img/**.*'], ['jekyll-rebuild']);
+    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_posts/**',  'projects/*', 'projects/**', '*.yml', 'assets/img/**', 'assets/js/**.js', 'assets/img/**.*', '_includes/**/*.js'], ['jekyll-rebuild']);
     gulp.watch(['_jadefiles/**/*.jade', '_jadefiles/**/**/*.jade'], ['jade', 'jekyll-rebuild']);
 });
 
