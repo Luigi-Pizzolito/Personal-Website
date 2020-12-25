@@ -17,7 +17,7 @@ categories: projects
 
 
   {% for post in site.posts %}
-  <div class="card">
+  <div class="card" onclick="window.location.pathname='{{ post.url }}'">
     {% if post.cover_image %}
     <img src="{{ post.cover_image }}" alt="{{ post.title }}">
     {% assign desc_len = site.quick_view_length_index %}

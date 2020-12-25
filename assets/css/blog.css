@@ -441,7 +441,7 @@ header {
           .mobile-nav .sml-elem #transplant #tweet:hover {
             cursor: pointer; }
   main div.main-pad.extrapad {
-    height: 500px; } }
+    height: 0px; } }
 
 body {
   display: grid;
@@ -479,7 +479,14 @@ main {
       border: 2px solid var(--nav-mob-sub-background-lighter);
       border-radius: 4px;
       margin: .5rem;
-      background: var(--blog-sidebar); }
+      background: var(--blog-sidebar);
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      transition: -webkit-transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out; }
+      main .cards .card:hover {
+        -webkit-transform: scale(1.02);
+                transform: scale(1.02); }
       main .cards .card img {
         max-width: 100%;
         height: auto;
