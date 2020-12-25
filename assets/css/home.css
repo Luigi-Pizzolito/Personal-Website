@@ -284,7 +284,6 @@ section.cc {
     text-align: center; }
 
 section.about {
-  background-image: url("/assets/img/home/about-bg.png");
   background-position: center bottom;
   background-size: cover;
   border-bottom: 1px solid var(--nav-background); }
@@ -329,7 +328,6 @@ section.about {
 section.electronics {
   position: relative;
   border-bottom: 1px solid var(--nav-background);
-  background-image: url("/assets/img/home/electronics-bg.png");
   background-position: right bottom;
   background-size: cover; }
   section.electronics .cover {
@@ -511,7 +509,6 @@ section.software {
 section.sounddesign {
   position: relative;
   border-bottom: 1px solid var(--nav-background);
-  background-image: url("/assets/img/home/sounddesign-bg.png");
   background-position: center top;
   background-size: cover; }
   section.sounddesign h2 {
@@ -544,7 +541,6 @@ section.sounddesign {
 section.publicspeaking {
   position: relative;
   border-bottom: 1px solid var(--nav-background);
-  background-image: url("/assets/img/home/publicspeaking-bg.png");
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -588,7 +584,6 @@ section.videography {
     height: 100%;
     z-index: -1; }
   section.videography .bg-one {
-    background-image: url("/assets/img/home/videography-bg-0.png");
     background-position: center center;
     background-position: -15vw -6vw;
     background-size: 80vw;
@@ -600,7 +595,6 @@ section.videography {
             clip-path: polygon(0 0, 84.8% 0%, 54.5% 100%, 0% 100%);
     width: 80%; }
   section.videography .bg-two {
-    background-image: url("/assets/img/home/videography-bg-1.png");
     background-size: cover;
     background-position: left center;
     right: 0;
