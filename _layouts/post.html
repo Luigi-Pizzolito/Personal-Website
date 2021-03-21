@@ -186,11 +186,13 @@ layout: default
                         ];
 
                         // console.log(posts);
-                        var postarr = []
-                        for (let index = 0; index < {{ site.sidebarunrelpostlimitextended }}; index++) {
-                            var i = getRandomInt(0, posts.length - 1);
+                        var postarr = [];
+                        for (let index = 0; index < ( posts.length < {{ site.sidebarunrelpostlimitextended }} ? posts.length : {{ site.sidebarunrelpostlimitextended }} ); index++) {
+                            var i = getRandomInt(0, posts.length);
+                            if (posts.length == 1) i=0;
                             while (postarr.includes(i)) {
-                                i = getRandomInt(0, posts.length - 1);
+                                i = getRandomInt(0, posts.length);
+                                
                             }
                             postarr.push(i);
                             // console.log(i+"/"+(posts.length-1));

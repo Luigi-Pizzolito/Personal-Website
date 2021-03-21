@@ -41,6 +41,21 @@ function createGaleryMultiModal(modal) {
         addimg2.setAttribute('onclick', 'toSlide('+(i+1)+');');
         addimg2.appendChild(img2);
         modalDots.appendChild(addimg2)
+
+        modalDots.style.display = "flex";
+        let arr = modalImgs.parentElement.getElementsByTagName('a');
+        for (let f = 0; f < arr.length; f++) {
+            arr[f].style.display = "block";
+        }
+    }
+
+    //avoid extra elements if it is a single image
+    if (images.length == 1) {
+        modalDots.style.display = "none";
+        let arr = modalImgs.parentElement.getElementsByTagName('a');
+        for (let f = 0; f < arr.length; f++) {
+            arr[f].style.display = "none";
+        }
     }
 
     // currentModal = modal;
