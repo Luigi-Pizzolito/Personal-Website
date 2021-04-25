@@ -25,14 +25,14 @@ function pageLoaded() {
         }
     }, 55);
 
-    setTimeout(() => {
-        try {
-            // updateBlogSidebar();
-            setupModalClicks();
-        } catch (error) {
-            // console.log("looks like were not in blogpage...");
-        }
-    }, 60);
+    // setTimeout(() => {
+    //     try {
+    //         // updateBlogSidebar();
+    //         setupModalClicks();
+    //     } catch (error) {
+    //         // console.log("looks like were not in blogpage...");
+    //     }
+    // }, 60);
 
     // var lazyLoadInstance = new LazyLoad({
     //     // Your custom settings go here

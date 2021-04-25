@@ -5,6 +5,8 @@ layout: default
 
 {% include blog/header.html %}
 
+<style>{% include blog/simple-lightbox.min.css %}</style>
+
 <div class="left-sidebar">
     <!-- Article Contents -->
 </div>
@@ -56,7 +58,9 @@ layout: default
             <h3>Other Posts</h3>
             <script>
 
-                {% include blog/galery-multimodal.js %}
+                //include script for image gallery, either blog/galery-multimodal.js or blog/simple-lightbox.min.js
+                {% include blog/simple-lightbox.min.js %}
+                var lightbox = new SimpleLightbox('.gallery a', { /* options */ captionsData: "alt" });
 
                 function transplant() {
                     // sbkp = document.querySelector('.right-sidebar').innerHTML;
@@ -124,7 +128,7 @@ layout: default
                         transplantUpdated = "small";
                     }
 
-                    setupModalClicks();
+                    // setupModalClicks();
                 }
             </script>
 
@@ -311,6 +315,8 @@ layout: default
 
 </div>
 
+{% comment %} 
 {% include blog/img-modal.html %}
+{% endcomment %} 
 
 {% include home/cc.html %}
